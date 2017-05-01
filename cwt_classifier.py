@@ -5,7 +5,7 @@ import time
 from datetime import timedelta
 
 import metrics
-import mexhatcwtfeatureextraction
+import frequecy_feature_extraction
 import numpy as np
 import tensorflow as tf
 import tf_helper
@@ -275,7 +275,7 @@ if __name__ == '__main__':
     cross_vald_auc = []
     subj_idx = np.arange(start=1, step=1, stop=subjects + 1)
     p = np.array([1 / subjects] * subjects)
-    cwt = mexhatcwtfeatureextraction.MHFeatureExtraction()
+    cwt = frequecy_feature_extraction.MHFeatureExtraction()
     held_out_obs = np.random.choice(subj_idx, (2, 16), replace=False, p=p)
     print("held_our_obs:{}, shape:{}".format(held_out_obs, held_out_obs.shape))
     for cross_valid_it in np.arange(held_out_obs.shape[1]):

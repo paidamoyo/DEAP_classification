@@ -15,9 +15,12 @@ class MHFeatureExtraction(object):
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
         self.subjects = 32
         self.num_labels = 4
+        self.fs = 128
         self.channels = 32
+        self.subject_1 = loadmat(os.path.abspath(os.path.join(self.dir_path, '', "DEAP_s/s_{}.mat".format(1))))['data']
+        print("subject_1:{}".format(self.subject_1.shape))
 
-    def daubcwt(self, data):
+    def ricket_cwt(self, data):
         widths = np.arange(1, 21)
         cwtmatr = signal.cwt(data, signal.ricker, widths)
         return cwtmatr, self.get_max_freq(cwtmatr)
@@ -33,7 +36,7 @@ class MHFeatureExtraction(object):
     def transform_inputs(self, components, data):
         return np.dot(data, components.T)
 
-    def extract_features(self, test_idx, valid_idx):
+    def extract_features(self, test_idx, valid_idx, type):
         train_data = []
         train_lab = []
         valid_data = []
@@ -53,15 +56,15 @@ class MHFeatureExtraction(object):
             for obs in np.arange(s_data.shape[0]):
                 s_label_obs = s_label[obs, :]
                 for channel in np.arange(self.channels):
-                    _, maxfreq = self.daubcwt(s_data[obs, channel, :])
+                    power_spectrum, _ = self.power_spectrum(s_data[obs, channel, :])
                     if subj == valid_idx:
-                        valid_data.append(maxfreq)
+                        valid_data.append(power_spectrum)
                         valid_lab.append(s_label_obs)
                     elif subj == test_idx:
-                        test_data.append(maxfreq)
+                        test_data.append(power_spectrum)
                         test_lab.append(s_label_obs)
                     else:
-                        train_data.append(maxfreq)
+                        train_data.append(power_spectrum)
                         train_lab.append(s_label_obs)
 
         data = {'train': [np.array(train_data), np.array(train_lab)],
@@ -89,40 +92,60 @@ class MHFeatureExtraction(object):
         np.save(data_file, data)
         return data, label
 
-    def plot_spectrum(self, ctwmatr, max_freq, name):
-
+    def plot_ricket_transform(self, trial):
+        ctwmatr, _ = self.ricket_cwt(data=self.subject_1[trial, 1, :])
+        name = "subject1 channel1 trial{} ricket tranform".format(trial)
         plt.figure()
         plt.imshow(ctwmatr, cmap=cm.spectral_r, aspect='auto',
                    vmax=abs(ctwmatr).max(), vmin=-abs(ctwmatr).max())
-
-        plt.show()
-        title = 'signal_{}'.format(name)
-        path = os.path.abspath(os.path.join(self.dir_path, '', title))
-        plt.title(title)
-        plt.savefig(path)
-        print("max_freq:{}".format(max_freq.shape))
-        plt.figure()
-        plt.scatter(np.arange(start=1, stop=8064 + 1, step=1), max_freq)
-        file = "max_freq{}".format(name)
-        plt.title(file)
-        path = os.path.abspath(os.path.join(self.dir_path, '', file))
-        plt.savefig(path)
+        plt.savefig(name)
 
     def get_max_freq(self, ctwmatr):
         return np.max(ctwmatr, axis=0)
 
+    def plot_spectrogram(self, trial):
+        s_data_subject = self.subject_1[trial, 1, :]
+        name = "subject1 channel1 trial{} spectrogram".format(trial)
+        plt.figure()
+        f, t, Sxx = signal.spectrogram(x=s_data_subject, fs=self.fs)
+        plt.figure()
+        plt.pcolormesh(t, f, Sxx)
+        print("Spectrogram:{}, time:{}, f:{}".format(Sxx.shape, t.shape, f.shape))
+        plt.ylabel('Frequency [Hz]')
+        plt.ylim([0, 61])
+        plt.xlim([0, 61])
+        plt.xlabel('Time [sec]')
+        plt.show()
+        plt.title(name)
+        plt.savefig(name)
 
-def plot_examples(signal):
-    s = loadmat(os.path.abspath(os.path.join(cwt.dir_path, '', "DEAP_s/s_{}.mat".format(signal))))
-    s_data = s['data']
-    coeff, max_freeq = cwt.daubcwt(s_data[signal, 1, :])
-    print("coeff:{}".format(coeff.shape))
-    cwt.plot_spectrum(coeff, max_freeq, "s_{}_spectral".format(signal))
+    def plot_power_spectrum(self, trial):
+        name = "subject1 channel1 trial{} powerspectrum".format(trial)
+        s_data_subject = self.subject_1[trial, 1, :]
+        Pxx_den, f = self.power_spectrum(s_data_subject)
+        plt.figure()
+        plt.semilogy(f, Pxx_den)
+        plt.ylim([0.5e-3, 1e1])
+        plt.xlabel('frequency [Hz]')
+        plt.ylabel('PSD [V**2/Hz]')
+        plt.title(name)
+        plt.savefig(name)
+
+    def power_spectrum(self, s_data_subject):
+        f, Pxx_den = signal.welch(s_data_subject, self.fs, nperseg=1024)
+        print("power_spectrum:{}".format(Pxx_den.shape))
+        return Pxx_den, f
 
 
 if __name__ == '__main__':
     np.random.seed(31415)
     cwt = MHFeatureExtraction()
     # cwt.extract_features(valid_idx=1, test_idx=2)
-    plot_examples(signal=1)
-    plot_examples(signal=9)
+    # subject 1 trial 1
+    cwt.plot_spectrogram(trial=1)
+    cwt.plot_power_spectrum(trial=1)
+    cwt.plot_ricket_transform(trial=1)
+    # subject 1 trial 9
+    cwt.plot_spectrogram(trial=9)
+    cwt.plot_power_spectrum(trial=9)
+    cwt.plot_ricket_transform(trial=9)
