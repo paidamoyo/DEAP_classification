@@ -4,12 +4,12 @@ Classify EEG Signals
 ```
  mkdir DEAP_s, CONV, MHCTW
 ```
-* To run the CWT classification
+* To train the CWT classification
 ```
 python cwt_classifier.py
 ```
 
-* To run the Convolutional Neural Network classification
+* To train the Convolutional Neural Network classification
 ```
  python conv_classifier.py
  ```
