@@ -56,15 +56,15 @@ class MHFeatureExtraction(object):
             for obs in np.arange(s_data.shape[0]):
                 s_label_obs = s_label[obs, :]
                 for channel in np.arange(self.channels):
-                    power_spectrum, _ = self.power_spectrum(s_data[obs, channel, :])
+                    _, maxfreq = self.ricket_cwt(s_data[obs, channel, :])
                     if subj == valid_idx:
-                        valid_data.append(power_spectrum)
+                        valid_data.append(maxfreq)
                         valid_lab.append(s_label_obs)
                     elif subj == test_idx:
-                        test_data.append(power_spectrum)
+                        test_data.append(maxfreq)
                         test_lab.append(s_label_obs)
                     else:
-                        train_data.append(power_spectrum)
+                        train_data.append(maxfreq)
                         train_lab.append(s_label_obs)
 
         data = {'train': [np.array(train_data), np.array(train_lab)],
