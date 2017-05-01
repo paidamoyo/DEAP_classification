@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+!mlp_classifier*.log
+!conv_classifier*.log
+CONV/
+DEAP_s/
+MHCTW/
