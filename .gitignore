@@ -4,3 +4,5 @@
 CONV/
 DEAP_s/
 MHCTW/
+*/__pycache__/*
+conv_classifier_v21__t1.log
