@@ -31,7 +31,7 @@ class CWTClassifier(object):
                  valid,
                  l2_reg,
                  ration_observation,
-                 hidden_dim=500
+                 hidden_dim=50
                  ):
         self.input_dim = input_dim
         self.hidden_dim = hidden_dim

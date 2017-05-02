@@ -9,6 +9,7 @@ from scipy.io import loadmat
 from scipy import signal
 import matplotlib.cm as cm
 from wavelets import WaveletAnalysis, Ricker
+from  pca_features import PCAAnalysis
 
 
 class Frequency_Feature_Extraction(object):
@@ -25,17 +26,6 @@ class Frequency_Feature_Extraction(object):
         widths = np.arange(1, 21)
         cwtmatr = signal.cwt(data, signal.ricker, widths)
         return cwtmatr, self.get_max_freq(cwtmatr)
-
-    def moments(self, data):
-        mean = np.mean(data, 0)
-        constant = 1e-10
-        std = np.std(data, 0) + constant
-        print_moments = "mean {}, std:{}".format(mean.shape, std.shape)
-        print(print_moments)
-        return mean, std
-
-    def transform_inputs(self, components, data):
-        return np.dot(data, components.T)
 
     def extract_features(self, test_idx, valid_idx):
         train_data = []
@@ -56,17 +46,25 @@ class Frequency_Feature_Extraction(object):
             print("data:{}, label:{}".format(s_data.shape, s_label.shape))
             for obs in np.arange(s_data.shape[0]):
                 s_label_obs = s_label[obs, :]
+                channels_max_freq = []
                 for channel in np.arange(self.channels):
                     _, maxfreq = self.clean_tranform(s_data[obs, channel, :])
-                    if subj == valid_idx:
-                        valid_data.append(maxfreq)
-                        valid_lab.append(s_label_obs)
-                    elif subj == test_idx:
-                        test_data.append(maxfreq)
-                        test_lab.append(s_label_obs)
-                    else:
-                        train_data.append(maxfreq)
-                        train_lab.append(s_label_obs)
+                    channels_max_freq.append(maxfreq)
+                observation_freq = np.array(channels_max_freq)
+                print('observation_freq:{}'.format(observation_freq.shape))
+                pca = PCAAnalysis()
+                pca_trans = pca.pca_components(observation_freq, n_components=3).transform(observation_freq)
+                print("pca_trans:{}".format(pca_trans.shape, pca_trans))
+                pca_trans = np.reshape(pca_trans, newshape=(self.channels * 3))
+                if subj == valid_idx:
+                    valid_data.append(pca_trans)
+                    valid_lab.append(s_label_obs)
+                elif subj == test_idx:
+                    test_data.append(pca_trans)
+                    test_lab.append(s_label_obs)
+                else:
+                    train_data.append(pca_trans)
+                    train_lab.append(s_label_obs)
 
         data = {'train': [np.array(train_data), np.array(train_lab)],
                 'valid': [np.array(valid_data), np.array(valid_lab)],
@@ -131,7 +129,6 @@ class Frequency_Feature_Extraction(object):
     def clean_tranform(self, s_data_subject):
         wa = WaveletAnalysis(data=s_data_subject, wavelet=Ricker(), dt=1 / 128)
         max_freq = self.get_max_freq(wa.wavelet_power)
-        print("max_freq:{}".format(max_freq))
         return wa, max_freq
 
     def get_max_freq(self, ctwmatr):
@@ -174,7 +171,6 @@ class Frequency_Feature_Extraction(object):
 if __name__ == '__main__':
     np.random.seed(31415)
     cwt = Frequency_Feature_Extraction()
-    # cwt.extract_features(valid_idx=1, test_idx=2)
     # subject 1 trial 1
     cwt.plot_spectrogram(trial=1)
     cwt.plot_power_spectrum(trial=1)
@@ -185,3 +181,4 @@ if __name__ == '__main__':
     cwt.plot_power_spectrum(trial=9)
     cwt.wavelet_clean(trial=9)
     # cwt.plot_ricket_transform(trial=9)
+    cwt.extract_features(valid_idx=1, test_idx=2)
