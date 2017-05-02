@@ -96,8 +96,8 @@ class FrequencyFeatureExtraction(object):
             folder = 'MHCTW/'
         else:
             folder = 'CONV/'
-        label_file = os.path.abspath(os.path.join(self.dir_path, '', '{}{}_label'.format(name, folder)))
-        data_file = os.path.abspath(os.path.join(self.dir_path, '', '{}{}_data'.format(name, folder)))
+        label_file = os.path.abspath(os.path.join(self.dir_path, '', '{}{}_label'.format(folder, name)))
+        data_file = os.path.abspath(os.path.join(self.dir_path, '', '{}{}_data'.format(folder, name)))
         np.save(label_file, label)
         np.save(data_file, data)
         return data, label
