@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 from scipy.io import loadmat
 from scipy import signal
 import matplotlib.cm as cm
-from wavelets import Ricker, WaveletAnalysis
+from wavelets import WaveletAnalysis, Ricker
 
 
-class MHFeatureExtraction(object):
+class Frequency_Feature_Extraction(object):
     def __init__(self, ):
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
         self.subjects = 32
@@ -102,6 +102,7 @@ class MHFeatureExtraction(object):
         plt.savefig(name)
 
     def wavelet_clean(self, trial):
+        origin = 'lower'
         name = "subject1 channel1 trial{} ricket wavelet transform".format(trial)
         s_data_subject = self.subject_1[trial, 1, :]
         wa, _ = self.clean_tranform(s_data_subject)
@@ -113,11 +114,14 @@ class MHFeatureExtraction(object):
         scales = wa.scales[::-1]
         fig, ax = plt.subplots()
         T, S = np.meshgrid(t, scales)
-        print("power:{}, wa:{}".format(power.shape, wa))
-        ax.contourf(T, S, power, 100)
+        print("power:{}, T:{} S:{}".format(power.shape, T.shape, S.shape))
+        CS = plt.contourf(T, S, power, 100,
+                          origin=origin)
+        # Make a colorbar for the ContourSet returned by the contourf call.
+        plt.colorbar(CS)
         # ax.set_ylim([0, 1])
         # ax.set_yscale('log')
-        ax.set_ylabel('Scale')
+        ax.set_ylabel('Frequency [Hz]')
         ax.set_xlabel('Time [sec]')
         plt.title(name)
         fig.savefig(name)
@@ -152,7 +156,7 @@ class MHFeatureExtraction(object):
         plt.figure()
         plt.semilogy(f, Pxx_den)
         plt.ylim([0.5e-3, 1e1])
-        plt.xlabel('frequency [Hz]')
+        plt.xlabel('Frequency [Hz]')
         plt.ylabel('PSD [V**2/Hz]')
         plt.title(name)
         plt.savefig(name)
@@ -165,15 +169,15 @@ class MHFeatureExtraction(object):
 
 if __name__ == '__main__':
     np.random.seed(31415)
-    cwt = MHFeatureExtraction()
+    cwt = Frequency_Feature_Extraction()
     # cwt.extract_features(valid_idx=1, test_idx=2)
     # subject 1 trial 1
     cwt.plot_spectrogram(trial=1)
     cwt.plot_power_spectrum(trial=1)
-    # cwt.plot_ricket_transform(trial=1)
     cwt.wavelet_clean(trial=1)
+    # cwt.plot_ricket_transform(trial=1)
     # subject 1 trial 9
     cwt.plot_spectrogram(trial=9)
     cwt.plot_power_spectrum(trial=9)
-    # cwt.plot_ricket_transform(trial=9)
     cwt.wavelet_clean(trial=9)
+    # cwt.plot_ricket_transform(trial=9)
