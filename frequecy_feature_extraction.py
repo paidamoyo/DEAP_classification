@@ -52,18 +52,16 @@ class Frequency_Feature_Extraction(object):
                     channels_max_freq.append(maxfreq)
                 observation_freq = np.array(channels_max_freq)
                 # print('observation_freq:{}'.format(observation_freq.shape))
-                pca = PCAAnalysis()
-                pca_trans = pca.pca_components(observation_freq, n_components=3).transform(observation_freq)
-                # print("pca_trans:{}{}".format(pca_trans.shape, pca_trans))
-                pca_trans = np.reshape(pca_trans, newshape=(self.channels * 3))
+                observation_freq = np.reshape(observation_freq,
+                                              newshape=(observation_freq.shape[0] * observation_freq.shape[1]))
                 if subj == valid_idx:
-                    valid_data.append(pca_trans)
+                    valid_data.append(observation_freq)
                     valid_lab.append(s_label_obs)
                 elif subj == test_idx:
-                    test_data.append(pca_trans)
+                    test_data.append(observation_freq)
                     test_lab.append(s_label_obs)
                 else:
-                    train_data.append(pca_trans)
+                    train_data.append(observation_freq)
                     train_lab.append(s_label_obs)
 
         data = {'train': [np.array(train_data), np.array(train_lab)],
@@ -74,6 +72,14 @@ class Frequency_Feature_Extraction(object):
         self.shuffle_obs(data['valid'], name='valid')
         self.shuffle_obs(data['test'], name='test')
         return data
+
+    def pca_transform(self, observation_freq):
+        pca = PCAAnalysis()
+        n_components = 3
+        pca_trans = pca.pca_components(observation_freq, n_components).transform(observation_freq)
+        # print("pca_trans:{}{}".format(pca_trans.shape, pca_trans))
+        pca_trans = np.reshape(pca_trans, newshape=(self.channels * n_components))
+        return pca_trans
 
     def shuffle_obs(self, observations, name):
         signal = observations[0]

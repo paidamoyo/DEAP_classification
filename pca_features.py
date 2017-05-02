@@ -10,7 +10,9 @@ class PCAAnalysis(object):
 
         pca_fit = PCA(n_components=n_components).fit(
             normalized_x)  # n_components is the components number after reduction
-        # print_components = "components:{}".format(pca_fit.components_.shape)
+        print_components = "components:{}, variance{}".format(pca_fit.components_.shape,
+                                                              pca_fit.explained_variance_ratio_)
+        # print(print_components)
         return pca_fit
 
     def moments(self, data):
