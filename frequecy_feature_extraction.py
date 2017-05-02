@@ -12,7 +12,7 @@ from wavelets import WaveletAnalysis, Ricker
 from  pca_features import PCAAnalysis
 
 
-class Frequency_Feature_Extraction(object):
+class FrequencyFeatureExtraction(object):
     def __init__(self, ):
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
         self.subjects = 32
@@ -48,7 +48,7 @@ class Frequency_Feature_Extraction(object):
                 s_label_obs = s_label[obs, :]
                 channels_max_freq = []
                 for channel in np.arange(self.channels):
-                    _, maxfreq = self.clean_tranform(s_data[obs, channel, :])
+                    _, maxfreq = self.ricket_cwt(s_data[obs, channel, :])
                     channels_max_freq.append(maxfreq)
                 observation_freq = np.array(channels_max_freq)
                 # print('observation_freq:{}'.format(observation_freq.shape))
@@ -181,7 +181,7 @@ class Frequency_Feature_Extraction(object):
 
 if __name__ == '__main__':
     np.random.seed(31415)
-    cwt = Frequency_Feature_Extraction()
+    cwt = FrequencyFeatureExtraction()
     # subject 1 trial 1
     cwt.plot_spectrogram(trial=1)
     cwt.plot_power_spectrum(trial=1)
