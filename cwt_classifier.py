@@ -263,7 +263,7 @@ if __name__ == '__main__':
     print("gpu_memory_fraction:{}".format(vm))
     FLAGS = {
         'num_iterations': 10000,  # should 3000 epochs
-        'batch_size': 200,
+        'batch_size': 40,
         'seed': 31415,
         'require_improvement': 1000,
         'learning_rate': 3e-4,
