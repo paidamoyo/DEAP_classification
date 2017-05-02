@@ -51,9 +51,12 @@ class FrequencyFeatureExtraction(object):
                     _, maxfreq = self.ricket_cwt(s_data[obs, channel, :])
                     channels_max_freq.append(maxfreq)
                 observation_freq = np.array(channels_max_freq)
-                # print('observation_freq:{}'.format(observation_freq.shape))
+                print('observation_freq:{}'.format(observation_freq.shape))
+                n_components = 3
+                observation_freq = self.pca_transform(observation_freq, n_components)
                 observation_freq = np.reshape(observation_freq,
                                               newshape=(observation_freq.shape[0] * observation_freq.shape[1]))
+
                 if subj == valid_idx:
                     valid_data.append(observation_freq)
                     valid_lab.append(s_label_obs)
@@ -73,9 +76,8 @@ class FrequencyFeatureExtraction(object):
         self.shuffle_obs(data['test'], name='test')
         return data
 
-    def pca_transform(self, observation_freq):
+    def pca_transform(self, observation_freq, n_components):
         pca = PCAAnalysis()
-        n_components = 3
         pca_trans = pca.pca_components(observation_freq, n_components).transform(observation_freq)
         # print("pca_trans:{}{}".format(pca_trans.shape, pca_trans))
         pca_trans = np.reshape(pca_trans, newshape=(self.channels * n_components))
