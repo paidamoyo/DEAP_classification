@@ -223,7 +223,7 @@ class CWTClassifier(object):
         test_acc = metrics.print_test_accuracy(correct, cls_pred, self.test_y, logging)
         test_auc = metrics.plot_roc(logits, self.test_y, self.num_classes,
                                     name='CWT_{}_{}'.format(self.valid_idx, self.test_idx))
-        test_f1_score = metrics.calculate_f1_score(y_true=self.test_y, y_pred=cls_pred)
+        test_f1_score = metrics.calculate_f1_score(y_true=metrics.convert_labels_to_cls(self.test_y), y_pred=cls_pred)
         return test_acc, test_auc, test_f1_score
 
     @staticmethod

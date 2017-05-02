@@ -12,7 +12,7 @@ def convert_labels_to_cls(labels):
 
 
 def calculate_f1_score(y_true, y_pred):
-    return f1_score(y_true, y_pred)
+    return f1_score(y_true, y_pred, average='weighted')
 
 
 def cls_accuracy(correct):
@@ -40,7 +40,6 @@ def print_test_accuracy(correct, cls_pred, labels, logging):
     print("Confusion Matrix:")
     logging.debug("Confusion Matrix:")
 
-    # print(tf.confusion_matrix(labels=convert_labels_to_cls(labels), predictions=cls_pred, num_classes=10))
     plot_confusion_matrix(cls_pred=cls_pred, labels=labels, logging=logging)
     return acc
 
