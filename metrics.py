@@ -95,6 +95,6 @@ def plot_line(input_func, name):
     plt.plot(x, input_func, color='blue', linestyle='-', label='test')
     plt.axhline(y=np.mean(input_func), color='red')
     plt.title(name)
-    plt.xlabel('Iteration')
+    plt.xlabel('Cross Validation Pairs')
     plt.legend(loc='best')
     plt.savefig(name)

@@ -4,10 +4,11 @@ import sys
 import time
 from datetime import timedelta
 
-import convfeatureextraction
-import metrics
 import numpy as np
 import tensorflow as tf
+
+import conv_feature_extraction
+import metrics
 import tf_helper
 
 
@@ -277,7 +278,7 @@ class ConvClassifier(object):
         logits = self.session.run(self.y_logits, feed_dict=feed_dict)
         print("Test Loss:{}".format(test_loss))
         test_auc = metrics.plot_roc(logits, self.test_y, self.num_classes,
-                                    name='MLP_{}_{}'.format(self.valid_idx, self.test_idx))
+                                    name='CONV_{}_{}'.format(self.valid_idx, self.test_idx))
         test_acc = metrics.print_test_accuracy(correct, cls_pred, self.test_y, logging)
         test_f1_score = metrics.calculate_f1_score(y_true=self.test_y, y_pred=cls_pred)
         return test_acc, test_auc, test_f1_score
@@ -345,12 +346,12 @@ if __name__ == '__main__':
     }
     np.random.seed(FLAGS['seed'])
     subjects = 32
-    cross_vald_acc = []
+    cross_valid_acc = []
     cross_valid_auc = []
     cross_valid_f1_score = []
     subj_idx = np.arange(start=1, step=1, stop=subjects + 1)
     p = np.array([1 / subjects] * subjects)
-    conv_feature = convfeatureextraction.ConvFeatureExtraction()
+    conv_feature = conv_feature_extraction.ConvFeatureExtraction()
     held_out_obs = np.random.choice(subj_idx, (2, 16), replace=False, p=p)
     print("held_our_obs:{}, shape:{}".format(held_out_obs, held_out_obs.shape))
     for cross_valid_it in np.arange(held_out_obs.shape[1]):
@@ -359,6 +360,7 @@ if __name__ == '__main__':
         logging.basicConfig(filename=log_file, filemode='w', level=logging.DEBUG)
         idx_cross = "valid_idx:{}, test_idx:{}".format(valid_idx, test_idx)
         logging.debug(idx_cross)
+        logging.debug(held_out_obs)
         print(idx_cross)
         conv_feature.extract_features(valid_idx=valid_idx, test_idx=test_idx)
         print(args)
@@ -392,12 +394,20 @@ if __name__ == '__main__':
 
         with conv.session:
             acc, auc, f1_score = conv.train_test()
-            cross_vald_acc.append(acc)
+            cross_valid_acc.append(acc)
             cross_valid_auc.append(auc)
-            cross_valid_f1_score.append(auc)
-    final_results_print = "Results acc:{}, auc:{}".format(np.mean(cross_vald_acc), np.mean(cross_valid_auc))
+            cross_valid_f1_score.append(f1_score)
+    final_results_print = "Results acc:{}, auc:{}, f1_score:{}".format(np.mean(cross_valid_acc),
+                                                                       np.mean(cross_valid_auc),
+                                                                       np.mean(cross_valid_f1_score))
     print(final_results_print)
     logging.debug(final_results_print)
-    logging.debug(cross_vald_acc)
-    metrics.plot_line(cross_vald_acc, name="Conv_Cross_Valid_ACC")
-    metrics.plot_line(cross_valid_auc, name="Conv_Cross_Valid_AUC")
+    logging.debug(cross_valid_acc)
+    logging.debug(cross_valid_auc)
+    logging.debug(cross_valid_f1_score)
+    np.save('conv_cross_vald_auc', cross_valid_auc)
+    np.save('conv_cross_vald_acc', cross_valid_acc)
+    np.save('conv_cross_vald_acc', cross_valid_f1_score)
+    metrics.plot_line(cross_valid_acc, name="Conv Cross Valid ACC")
+    metrics.plot_line(cross_valid_auc, name="Conv Cross Valid AUC")
+    metrics.plot_line(cross_valid_f1_score, name="Conv Cross Valid F1 Score")

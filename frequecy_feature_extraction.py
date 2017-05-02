@@ -37,7 +37,7 @@ class Frequency_Feature_Extraction(object):
     def transform_inputs(self, components, data):
         return np.dot(data, components.T)
 
-    def extract_features(self, test_idx, valid_idx, type):
+    def extract_features(self, test_idx, valid_idx):
         train_data = []
         train_lab = []
         valid_data = []
@@ -105,7 +105,7 @@ class Frequency_Feature_Extraction(object):
         origin = 'lower'
         name = "subject1 channel1 trial{} ricket wavelet transform".format(trial)
         s_data_subject = self.subject_1[trial, 1, :]
-        wa, _ = self.clean_tranform(s_data_subject)
+        wa, max_freq = self.clean_tranform(s_data_subject)
         # wavelet power spectrum
         power = wa.wavelet_power
         # associated time vector
@@ -119,16 +119,20 @@ class Frequency_Feature_Extraction(object):
                           origin=origin)
         # Make a colorbar for the ContourSet returned by the contourf call.
         plt.colorbar(CS)
-        # ax.set_ylim([0, 1])
-        # ax.set_yscale('log')
         ax.set_ylabel('Frequency [Hz]')
         ax.set_xlabel('Time [sec]')
         plt.title(name)
         fig.savefig(name)
 
+        plt.figure()
+        plt.plot(max_freq)
+        plt.savefig(name + 'max_freq')
+
     def clean_tranform(self, s_data_subject):
         wa = WaveletAnalysis(data=s_data_subject, wavelet=Ricker(), dt=1 / 128)
-        return wa, self.get_max_freq(wa.wavelet_power)
+        max_freq = self.get_max_freq(wa.wavelet_power)
+        print("max_freq:{}".format(max_freq))
+        return wa, max_freq
 
     def get_max_freq(self, ctwmatr):
         return np.max(ctwmatr, axis=0)

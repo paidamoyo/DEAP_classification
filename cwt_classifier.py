@@ -4,14 +4,15 @@ import sys
 import time
 from datetime import timedelta
 
-import metrics
-import frequecy_feature_extraction
 import numpy as np
 import tensorflow as tf
+
+import frequecy_feature_extraction
+import metrics
 import tf_helper
 
 
-class MLPClassifier(object):
+class CWTClassifier(object):
     def __init__(self,
                  batch_size,
                  learning_rate,
@@ -216,8 +217,10 @@ class MLPClassifier(object):
         logits = self.session.run(self.y_logits, feed_dict=feed_dict)
         print("Test Loss:{}".format(test_loss))
         test_acc = metrics.print_test_accuracy(correct, cls_pred, self.test_y, logging)
-        test_auc = metrics.plot_roc(logits, self.test_y, self.num_classes, name='MLP')
-        return test_acc, test_auc
+        test_auc = metrics.plot_roc(logits, self.test_y, self.num_classes,
+                                    name='CWT_{}_{}'.format(self.valid_idx, self.test_idx))
+        test_f1_score = metrics.calculate_f1_score(y_true=self.test_y, y_pred=cls_pred)
+        return test_acc, test_auc, test_f1_score
 
     @staticmethod
     def get_last_batch_index(input_size, idx, batch_size):
@@ -271,8 +274,9 @@ if __name__ == '__main__':
     }
     np.random.seed(FLAGS['seed'])
     subjects = 32
-    cross_vald_acc = []
-    cross_vald_auc = []
+    cross_valid_acc = []
+    cross_valid_auc = []
+    cross_valid_f1_score = []
     subj_idx = np.arange(start=1, step=1, stop=subjects + 1)
     p = np.array([1 / subjects] * subjects)
     cwt = frequecy_feature_extraction.Frequency_Feature_Extraction()
@@ -284,6 +288,7 @@ if __name__ == '__main__':
         logging.basicConfig(filename=log_file, filemode='w', level=logging.DEBUG)
         idx_cross = "valid_idx:{}, test_idx:{}".format(valid_idx, test_idx)
         logging.debug(idx_cross)
+        logging.debug(held_out_obs)
         print(idx_cross)
         cwt.extract_features(valid_idx=valid_idx, test_idx=test_idx)
         logging.debug(args_print)
@@ -300,21 +305,32 @@ if __name__ == '__main__':
                                                                 train_data[0].shape)
         print(data_infor_print)
         logging.debug(data_infor_print)
-        mlp = MLPClassifier(batch_size=FLAGS['batch_size'], learning_rate=FLAGS['learning_rate'],
-                            beta1=FLAGS['beta1'], beta2=FLAGS['beta2'],
-                            require_improvement=FLAGS['require_improvement'], seed=FLAGS['seed'],
-                            num_iterations=FLAGS['num_iterations'],
-                            num_classes=train_data[1].shape[1], input_dim=train_data[0].shape[1], batch_norm=True,
-                            gpu_memory_fraction=vm, keep_prob=FLAGS['keep_prob'], train=train_data, test=test_data,
-                            valid=valid_data, l2_reg=FLAGS['l2_reg'], ration_observation=0.5)
+        cwt_classifier = CWTClassifier(batch_size=FLAGS['batch_size'], learning_rate=FLAGS['learning_rate'],
+                                       beta1=FLAGS['beta1'], beta2=FLAGS['beta2'],
+                                       require_improvement=FLAGS['require_improvement'], seed=FLAGS['seed'],
+                                       num_iterations=FLAGS['num_iterations'],
+                                       num_classes=train_data[1].shape[1], input_dim=train_data[0].shape[1],
+                                       batch_norm=True,
+                                       gpu_memory_fraction=vm, keep_prob=FLAGS['keep_prob'], train=train_data,
+                                       test=test_data,
+                                       valid=valid_data, l2_reg=FLAGS['l2_reg'], ration_observation=0.5)
 
-        with mlp.session:
-            acc, auc = mlp.train_test()
-            cross_vald_acc.append(acc)
-            cross_vald_auc.append(auc)
-    final_results_print = "Results: acc{}, auc:{}".format(np.mean(cross_vald_acc), np.mean(cross_vald_auc))
+        with cwt_classifier.session:
+            acc, auc, f1_score = cwt_classifier.train_test()
+            cross_valid_acc.append(acc)
+            cross_valid_auc.append(auc)
+            cross_valid_f1_score.append(f1_score)
+    final_results_print = "Results acc:{}, auc:{}, f1_score:{}".format(np.mean(cross_valid_acc),
+                                                                       np.mean(cross_valid_auc),
+                                                                       np.mean(cross_valid_f1_score))
     print(final_results_print)
     logging.debug(final_results_print)
-    logging.debug(cross_vald_acc)
-    metrics.plot_line(cross_vald_acc, name="CWT_Cross_Valid_ACC")
-    metrics.plot_line(cross_vald_auc, name="CWT_Cross_Valid_AUC")
+    logging.debug(cross_valid_acc)
+    logging.debug(cross_valid_auc)
+    logging.debug(cross_valid_f1_score)
+    np.save('cwt_cross_vald_auc', cross_valid_auc)
+    np.save('cwt_cross_vald_acc', cross_valid_acc)
+    np.save('cross_valid_f1_score', cross_valid_f1_score)
+    metrics.plot_line(cross_valid_acc, name="CWT Cross Valid ACC")
+    metrics.plot_line(cross_valid_auc, name="CWT Cross Valid_AUC")
+    metrics.plot_line(cross_valid_f1_score, name="CWT Cross Valid F1")
