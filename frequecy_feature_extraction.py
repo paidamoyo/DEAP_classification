@@ -27,7 +27,7 @@ class FrequencyFeatureExtraction(object):
         cwtmatr = signal.cwt(data, signal.ricker, widths)
         return cwtmatr, self.get_max_freq(cwtmatr)
 
-    def extract_features(self, test_idx, valid_idx):
+    def extract_features(self, test_idx, valid_idx, flatten_pca=True):
         train_data = []
         train_lab = []
         valid_data = []
@@ -52,9 +52,10 @@ class FrequencyFeatureExtraction(object):
                     channels_max_freq.append(maxfreq)
                 observation_freq = np.array(channels_max_freq)
                 # print('observation_freq:{}'.format(observation_freq.shape))
-                n_components = 3
-                observation_freq = self.pca_transform(observation_freq, n_components)
-                # print('observation_freq:{}'.format(observation_freq.shape))
+                if flatten_pca:
+                    n_components = 3
+                    observation_freq = self.pca_transform(observation_freq, n_components)
+                    print('observation_freq:{}'.format(observation_freq.shape))
                 if subj == valid_idx:
                     valid_data.append(observation_freq)
                     valid_lab.append(s_label_obs)
@@ -69,9 +70,9 @@ class FrequencyFeatureExtraction(object):
                 'valid': [np.array(valid_data), np.array(valid_lab)],
                 'test': [np.array(test_data), np.array(test_lab)]}
 
-        self.shuffle_obs(data['train'], name='train')
-        self.shuffle_obs(data['valid'], name='valid')
-        self.shuffle_obs(data['test'], name='test')
+        self.shuffle_obs(data['train'], name='train', flatten_pca=flatten_pca)
+        self.shuffle_obs(data['valid'], name='valid', flatten_pca=flatten_pca)
+        self.shuffle_obs(data['test'], name='test, flatten_pca')
         return data
 
     def pca_transform(self, observation_freq, n_components):
@@ -81,7 +82,7 @@ class FrequencyFeatureExtraction(object):
         pca_trans = np.reshape(pca_trans, newshape=(self.channels * n_components))
         return pca_trans
 
-    def shuffle_obs(self, observations, name):
+    def shuffle_obs(self, observations, name, flatten_pca):
         signal = observations[0]
         lab = observations[1]
         print('{} cwt_signal:{}, labels:{}'.format(name, signal.shape, lab.shape))
@@ -91,8 +92,12 @@ class FrequencyFeatureExtraction(object):
         np.random.shuffle(idx_range)
         data = signal[idx_range]
         label = lab[idx_range]
-        label_file = os.path.abspath(os.path.join(self.dir_path, '', 'MHCTW/{}_label'.format(name)))
-        data_file = os.path.abspath(os.path.join(self.dir_path, '', 'MHCTW/{}_data'.format(name)))
+        if flatten_pca:
+            folder = 'MHCTW/'
+        else:
+            folder = 'CONV/'
+        label_file = os.path.abspath(os.path.join(self.dir_path, '', '{}{}_label'.format(name, folder)))
+        data_file = os.path.abspath(os.path.join(self.dir_path, '', '{}{}_data'.format(name, folder)))
         np.save(label_file, label)
         np.save(data_file, data)
         return data, label

@@ -8,6 +8,7 @@ import numpy as np
 import tensorflow as tf
 
 import conv_feature_extraction
+import frequecy_feature_extraction
 import metrics
 import tf_helper
 
@@ -352,6 +353,7 @@ if __name__ == '__main__':
     subj_idx = np.arange(start=1, step=1, stop=subjects + 1)
     p = np.array([1 / subjects] * subjects)
     conv_feature = conv_feature_extraction.ConvFeatureExtraction()
+    conv_feature = frequecy_feature_extraction.FrequencyFeatureExtraction()
     held_out_obs = np.random.choice(subj_idx, (2, 16), replace=False, p=p)
     print("held_our_obs:{}, shape:{}".format(held_out_obs, held_out_obs.shape))
     for cross_valid_it in np.arange(held_out_obs.shape[1]):
@@ -362,7 +364,7 @@ if __name__ == '__main__':
         logging.debug(idx_cross)
         logging.debug(held_out_obs)
         print(idx_cross)
-        conv_feature.extract_features(valid_idx=valid_idx, test_idx=test_idx)
+        conv_feature.extract_features(valid_idx=valid_idx, test_idx=test_idx, flatten_pca=False)
         print(args)
         logging.debug(args_print)
 
