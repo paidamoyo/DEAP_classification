@@ -51,10 +51,10 @@ class Frequency_Feature_Extraction(object):
                     _, maxfreq = self.clean_tranform(s_data[obs, channel, :])
                     channels_max_freq.append(maxfreq)
                 observation_freq = np.array(channels_max_freq)
-                print('observation_freq:{}'.format(observation_freq.shape))
+                # print('observation_freq:{}'.format(observation_freq.shape))
                 pca = PCAAnalysis()
                 pca_trans = pca.pca_components(observation_freq, n_components=3).transform(observation_freq)
-                print("pca_trans:{}".format(pca_trans.shape, pca_trans))
+                # print("pca_trans:{}{}".format(pca_trans.shape, pca_trans))
                 pca_trans = np.reshape(pca_trans, newshape=(self.channels * 3))
                 if subj == valid_idx:
                     valid_data.append(pca_trans)
@@ -123,8 +123,12 @@ class Frequency_Feature_Extraction(object):
         fig.savefig(name)
 
         plt.figure()
-        plt.plot(max_freq)
-        plt.savefig(name + 'max_freq')
+        plt.plot(np.arange(start=0, stop=63, step=1 / 128), max_freq)
+        plt.ylabel('Coefficient')
+        plt.xlabel('Time [sec]')
+        plt.xlim([0, 65])
+        plt.title(name + ' max coefficient')
+        plt.savefig(name + ' max coefficient')
 
     def clean_tranform(self, s_data_subject):
         wa = WaveletAnalysis(data=s_data_subject, wavelet=Ricker(), dt=1 / 128)
@@ -132,6 +136,7 @@ class Frequency_Feature_Extraction(object):
         return wa, max_freq
 
     def get_max_freq(self, ctwmatr):
+        # np.argmax(ctwmatr, axis=0)
         return np.max(ctwmatr, axis=0)
 
     def plot_spectrogram(self, trial):
