@@ -51,10 +51,10 @@ class FrequencyFeatureExtraction(object):
                     _, maxfreq = self.ricket_cwt(s_data[obs, channel, :])
                     channels_max_freq.append(maxfreq)
                 observation_freq = np.array(channels_max_freq)
-                print('observation_freq:{}'.format(observation_freq.shape))
+                # print('observation_freq:{}'.format(observation_freq.shape))
                 n_components = 3
                 observation_freq = self.pca_transform(observation_freq, n_components)
-                print('observation_freq:{}'.format(observation_freq.shape))
+                # print('observation_freq:{}'.format(observation_freq.shape))
                 if subj == valid_idx:
                     valid_data.append(observation_freq)
                     valid_lab.append(s_label_obs)
