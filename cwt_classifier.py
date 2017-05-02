@@ -31,6 +31,8 @@ class CWTClassifier(object):
                  valid,
                  l2_reg,
                  ration_observation,
+                 valid_idx,
+                 test_idx,
                  hidden_dim=50
                  ):
         self.input_dim = input_dim
@@ -57,6 +59,8 @@ class CWTClassifier(object):
         self._build_graph()
         self.train_cost, self.train_acc = [], []
         self.validation_cost, self.validation_acc = [], []
+        self.valid_idx = valid_idx
+        self.test_idx = test_idx
 
     def _build_graph(self):
         self.G = tf.Graph()
@@ -313,7 +317,8 @@ if __name__ == '__main__':
                                        batch_norm=True,
                                        gpu_memory_fraction=vm, keep_prob=FLAGS['keep_prob'], train=train_data,
                                        test=test_data,
-                                       valid=valid_data, l2_reg=FLAGS['l2_reg'], ration_observation=0.5)
+                                       valid=valid_data, l2_reg=FLAGS['l2_reg'], valid_idx=valid_idx, test_idx=test_idx,
+                                       ration_observation=0.5)
 
         with cwt_classifier.session:
             acc, auc, f1_score = cwt_classifier.train_test()
