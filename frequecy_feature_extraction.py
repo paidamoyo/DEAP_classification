@@ -54,9 +54,7 @@ class FrequencyFeatureExtraction(object):
                 print('observation_freq:{}'.format(observation_freq.shape))
                 n_components = 3
                 observation_freq = self.pca_transform(observation_freq, n_components)
-                observation_freq = np.reshape(observation_freq,
-                                              newshape=(observation_freq.shape[0] * observation_freq.shape[1]))
-
+                print('observation_freq:{}'.format(observation_freq.shape))
                 if subj == valid_idx:
                     valid_data.append(observation_freq)
                     valid_lab.append(s_label_obs)
