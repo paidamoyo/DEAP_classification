@@ -4,7 +4,7 @@ import numpy as np
 from scipy.io import loadmat
 
 
-class ConvFeatureExtraction(object):
+class TimeFeatureExtraction(object):
     def __init__(self, ):
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
         self.subjects = 32
@@ -66,5 +66,5 @@ class ConvFeatureExtraction(object):
 
 if __name__ == '__main__':
     np.random.seed(31415)
-    cwt = ConvFeatureExtraction()
-    data = cwt.extract_features(valid_idx=1, test_idx=2)
+    time = TimeFeatureExtraction()
+    data = time.extract_features(valid_idx=1, test_idx=2)
