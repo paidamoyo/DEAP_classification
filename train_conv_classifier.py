@@ -5,6 +5,7 @@ import numpy as np
 
 from conv_classifier import ConvClassifier
 from frequecy_feature_extraction import FrequencyFeatureExtraction
+from lag_feature_extraction import LAGFeatureExtraction
 from utils import metrics
 
 
@@ -70,8 +71,8 @@ if __name__ == '__main__':
     cross_valid_f1_score = []
     subj_idx = np.arange(start=1, step=1, stop=subjects + 1)
     p = np.array([1 / subjects] * subjects)
-    conv_feature = FrequencyFeatureExtraction(compute_cwt=extract)
-    # conv_feature = LAGFeatureExtraction(compute_lag2=extract)
+    # conv_feature = FrequencyFeatureExtraction(compute_cwt=extract)
+    conv_feature = LAGFeatureExtraction(compute_lag2=extract)
     held_out_obs = np.random.choice(subj_idx, (2, 16), replace=False, p=p)
     print("held_our_obs:{}, shape:{}".format(held_out_obs, held_out_obs.shape))
     for cross_valid_it in np.arange(held_out_obs.shape[1]):
