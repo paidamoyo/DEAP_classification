@@ -43,16 +43,17 @@ class LoadData(object):
                     train_data.append(s_data_obs)
                     train_lab.append(s_label_obs)
 
-        data = {'train': [np.array(train_data), np.array(train_lab)],
-                'valid': [np.array(valid_data), np.array(valid_lab)],
-                'test': [np.array(test_data), np.array(test_lab)]}
+        shuffled_train = self.shuffle_obs([np.array(train_data), np.array(train_lab)], name='train')
+        shuffled_valid = self.shuffle_obs([np.array(valid_data), np.array(valid_lab)], name='valid')
+        shuffled_test = self.shuffle_obs([np.array(test_data), np.array(test_lab)], name='test')
 
-        self.shuffle_obs(data['train'], name='train')
-        self.shuffle_obs(data['valid'], name='valid')
-        self.shuffle_obs(data['test'], name='test')
+        data = {'train': shuffled_train,
+                'valid': shuffled_valid,
+                'test': shuffled_test}
         return data
 
-    def shuffle_obs(self, observations, name):
+    @staticmethod
+    def shuffle_obs(observations, name):
         signal = observations[0]
         lab = observations[1]
         print('{} signal:{}, labels:{}'.format(name, signal.shape, lab.shape))
@@ -63,8 +64,8 @@ class LoadData(object):
         data = signal[idx_range]
         label = lab[idx_range]
         folder = 'CONV/'
-        label_file = os.path.abspath(os.path.join(self.dir_path, '..', '{}{}_label'.format(folder, name)))
-        data_file = os.path.abspath(os.path.join(self.dir_path, '..', '{}{}_data'.format(folder, name)))
-        np.save(label_file, label)
-        np.save(data_file, data)
+        # label_file = os.path.abspath(os.path.join(self.dir_path, '..', '{}{}_label'.format(folder, name)))
+        # data_file = os.path.abspath(os.path.join(self.dir_path, '..', '{}{}_data'.format(folder, name)))
+        # np.save(label_file, label)
+        # np.save(data_file, data)
         return data, label

@@ -4,7 +4,6 @@ import sys
 import numpy as np
 
 from conv_classifier import ConvClassifier
-from frequecy_feature_extraction import FrequencyFeatureExtraction
 from lag_feature_extraction import LAGFeatureExtraction
 from utils import metrics
 
@@ -83,19 +82,24 @@ if __name__ == '__main__':
         logging.debug(idx_cross)
         logging.debug(held_out_obs)
         print(idx_cross)
-        conv_feature.load_features(valid_idx=valid_idx, test_idx=test_idx)
+        data = conv_feature.load_features(valid_idx=valid_idx, test_idx=test_idx)
+        train = data['train']
+        test = data['test']
+        valid = data['valid']
         print(args)
         logging.debug(args_print)
 
-        train_label, train_ration = encode_label(np.load('CONV/train_label.npy'))
+        train_label, train_ration = encode_label(train[1])
         obs_perc_print = "train_obs:{}".format(train_ration)
         print(obs_perc_print)
         logging.debug(obs_perc_print)
-        train_data = [swap_axes_data(np.load('CONV/train_data.npy')), train_label]
-        valid_label, _ = encode_label(np.load('CONV/valid_label.npy'))
-        valid_data = [swap_axes_data(np.load('CONV/valid_data.npy')), valid_label]
-        test_label, _ = encode_label(np.load('CONV/test_label.npy'))
-        test_data = [swap_axes_data(np.load('CONV/test_data.npy')), test_label]
+        train_data = [swap_axes_data(train[0]), train_label]
+        # Valid Data
+        valid_label, _ = encode_label(valid[1])
+        valid_data = [swap_axes_data(valid[0]), valid_label]
+        # Test Data
+        test_label, _ = encode_label(test[1])
+        test_data = [swap_axes_data(test[0]), test_label]
 
         data_infor_print = "test:{}, valid:{}, train:{}".format(test_data[0].shape, valid_data[0].shape,
                                                                 train_data[0].shape)
