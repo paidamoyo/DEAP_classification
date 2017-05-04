@@ -16,7 +16,7 @@ class LAGFeatureExtraction(object):
         self.subject_1_path = os.path.abspath(os.path.join(self.dir_path, '', "DEAP_s/s_1.mat"))
         self.folder = 'LAG'
         if not os.listdir(self.folder) or compute_lag2:
-            print("extracting frequency features:")
+            print("extracting lag features:")
             self.extract_lag_features()
 
     def view_s1(self):
