@@ -3,9 +3,9 @@ import sys
 
 import numpy as np
 
-import frequecy_feature_extraction
 import metrics
 from conv_classifier import ConvClassifier
+from frequecy_feature_extraction import FrequencyFeatureExtraction
 
 
 def reshape_data(data):
@@ -43,8 +43,10 @@ if __name__ == '__main__':
     args_print = "args:{}".format(args)
     if args:
         vm = float(args[0])
+        compute_cwt = args[1]
     else:
         vm = 1.0
+        compute_cwt = False
     print("gpu_memory_fraction:{}".format(vm))
     FLAGS = {
         'num_iterations': 10000,  # should 3000 epochs
@@ -67,8 +69,7 @@ if __name__ == '__main__':
     cross_valid_f1_score = []
     subj_idx = np.arange(start=1, step=1, stop=subjects + 1)
     p = np.array([1 / subjects] * subjects)
-    # conv_feature = conv_feature_extraction.ConvFeatureExtraction()
-    conv_feature = frequecy_feature_extraction.FrequencyFeatureExtraction()
+    conv_feature = FrequencyFeatureExtraction(compute_cwt=compute_cwt)
     held_out_obs = np.random.choice(subj_idx, (2, 16), replace=False, p=p)
     print("held_our_obs:{}, shape:{}".format(held_out_obs, held_out_obs.shape))
     for cross_valid_it in np.arange(held_out_obs.shape[1]):

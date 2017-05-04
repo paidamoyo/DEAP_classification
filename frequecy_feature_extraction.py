@@ -13,7 +13,7 @@ from  pca_features import PCAAnalysis
 
 
 class FrequencyFeatureExtraction(object):
-    def __init__(self, ):
+    def __init__(self, compute_cwt=False):
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
         self.subjects = 32
         self.num_labels = 4
@@ -22,7 +22,7 @@ class FrequencyFeatureExtraction(object):
         self.subject_1 = loadmat(os.path.abspath(os.path.join(self.dir_path, '', "DEAP_s/s_{}.mat".format(1))))['data']
         print("subject_1:{}".format(self.subject_1.shape))
 
-        if not os.listdir('CWT'):
+        if not os.listdir('CWT') or compute_cwt:
             print("extracting frequency features:")
             self.extract_cwt_features()
 
@@ -40,20 +40,26 @@ class FrequencyFeatureExtraction(object):
             s_label = s['label']
             s_data = s['data']
             print("data:{}, label:{}".format(s_data.shape, s_label.shape))
+            subject_data = []
+            subject_label = []
             for obs in np.arange(s_data.shape[0]):
                 channels_max_freq = []
                 s_label_obs = s_label[obs, :]
                 for channel in np.arange(self.channels):
                     _, maxfreq = self.ricket_cwt(s_data[obs, channel, :])
                     channels_max_freq.append(maxfreq)
-                observation_freq = np.array(channels_max_freq)
-                folder = 'CWT/'
-                data_file = os.path.abspath(
-                    os.path.join(self.dir_path, '', '{}{}_data'.format(folder, 's_{}'.format(subj))))
-                label_file = os.path.abspath(
-                    os.path.join(self.dir_path, '', '{}{}_label'.format(folder, 's_{}'.format(subj))))
-                np.save(data_file, observation_freq)
-                np.save(label_file, s_label_obs)
+                subject_data.append(channels_max_freq)
+                subject_label.append(s_label_obs)
+            folder = 'CWT/'
+            subject_data = np.array(subject_data)
+            subject_label = np.array(subject_label)
+            print("subject_obs:{}, subject_label{}".format(subject_data.shape, subject_label.shape))
+            data_file = os.path.abspath(
+                os.path.join(self.dir_path, '', '{}{}_data'.format(folder, 's_{}'.format(subj))))
+            label_file = os.path.abspath(
+                os.path.join(self.dir_path, '', '{}{}_label'.format(folder, 's_{}'.format(subj))))
+            np.save(data_file, subject_data)
+            np.save(label_file, subject_label)
         print('CWT feature extraction complete')
 
     def load_features(self, test_idx, valid_idx):
