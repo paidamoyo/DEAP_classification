@@ -190,7 +190,7 @@ class ConvClassifier(object):
 
     def build_model(self):
         with tf.variable_scope("y_classifier"):
-            layer_conv1, weights_conv1 = tf_helper.conv_layer(input=tf.expand_dims(self.x, 1),
+            layer_conv1, weights_conv1 = tf_helper.conv_layer(input=self.x,
                                                               num_input_channels=32,
                                                               filter_size=self.filter_sizes[0],
                                                               num_filters=self.num_filters[0], use_pooling=True,
