@@ -8,8 +8,8 @@ import numpy as np
 import tensorflow as tf
 
 import frequecy_feature_extraction
-import metrics
 import tf_helper
+from utils import metrics
 
 
 class CWTClassifier(object):

@@ -10,6 +10,7 @@ from scipy import signal
 import matplotlib.cm as cm
 from wavelets import WaveletAnalysis, Ricker
 from  pca_features import PCAAnalysis
+from utils.load_features import LoadData
 
 
 class FrequencyFeatureExtraction(object):
@@ -21,8 +22,8 @@ class FrequencyFeatureExtraction(object):
         self.channels = 32
         self.subject_1 = loadmat(os.path.abspath(os.path.join(self.dir_path, '', "DEAP_s/s_{}.mat".format(1))))['data']
         print("subject_1:{}".format(self.subject_1.shape))
-
-        if not os.listdir('CWT') or compute_cwt:
+        self.folder = 'CWT'
+        if not os.listdir(self.folder) or compute_cwt:
             print("extracting frequency features:")
             self.extract_cwt_features()
 
@@ -50,55 +51,16 @@ class FrequencyFeatureExtraction(object):
                     channels_max_freq.append(maxfreq)
                 subject_data.append(channels_max_freq)
                 subject_label.append(s_label_obs)
-            folder = 'CWT/'
             subject_data = np.array(subject_data)
             subject_label = np.array(subject_label)
             print("subject_obs:{}, subject_label{}".format(subject_data.shape, subject_label.shape))
             data_file = os.path.abspath(
-                os.path.join(self.dir_path, '', '{}{}_data'.format(folder, 's_{}'.format(subj))))
+                os.path.join(self.dir_path, '.', '{}/{}_data'.format(self.folder, 's_{}'.format(subj))))
             label_file = os.path.abspath(
-                os.path.join(self.dir_path, '', '{}{}_label'.format(folder, 's_{}'.format(subj))))
+                os.path.join(self.dir_path, '.', '{}/{}_label'.format(self.folder, 's_{}'.format(subj))))
             np.save(data_file, subject_data)
             np.save(label_file, subject_label)
         print('CWT feature extraction complete')
-
-    def load_features(self, test_idx, valid_idx):
-        train_data = []
-        train_lab = []
-        valid_data = []
-        valid_lab = []
-        test_data = []
-        test_lab = []
-
-        print("valid_idx:{}, test_idx:{}".format(valid_idx, test_idx))
-        for subj in np.arange(start=1, stop=self.subjects + 1, step=1):
-            print("subject:{}".format(subj))
-            data_file = os.path.abspath(os.path.join(self.dir_path, '', "CWT/s_{}_data.npy".format(subj)))
-            label_file = os.path.abspath(os.path.join(self.dir_path, '', "CWT/s_{}_label.npy".format(subj)))
-            s_label = np.load(label_file)
-            s_data = np.load(data_file)
-            print("data:{}, label:{}".format(s_data.shape, s_label.shape))
-            for obs in np.arange(s_data.shape[0]):
-                s_label_obs = s_label[obs, :]
-                s_data_obs = s_data[obs, :, :]
-                if subj == valid_idx:
-                    valid_data.append(s_data_obs)
-                    valid_lab.append(s_label_obs)
-                elif subj == test_idx:
-                    test_data.append(s_data_obs)
-                    test_lab.append(s_label_obs)
-                else:
-                    train_data.append(s_data_obs)
-                    train_lab.append(s_label_obs)
-
-        data = {'train': [np.array(train_data), np.array(train_lab)],
-                'valid': [np.array(valid_data), np.array(valid_lab)],
-                'test': [np.array(test_data), np.array(test_lab)]}
-
-        self.shuffle_obs(data['train'], name='train')
-        self.shuffle_obs(data['valid'], name='valid')
-        self.shuffle_obs(data['test'], name='test')
-        return data
 
     def pca_transform(self, observation_freq, n_components):
         pca = PCAAnalysis()
@@ -106,23 +68,6 @@ class FrequencyFeatureExtraction(object):
         # print("pca_trans:{}{}".format(pca_trans.shape, pca_trans))
         pca_trans = np.reshape(pca_trans, newshape=(self.channels * n_components))
         return pca_trans
-
-    def shuffle_obs(self, observations, name):
-        signal = observations[0]
-        lab = observations[1]
-        print('{} cwt_signal:{}, labels:{}'.format(name, signal.shape, lab.shape))
-
-        trials = signal.shape[0]
-        idx_range = np.arange(trials)
-        np.random.shuffle(idx_range)
-        data = signal[idx_range]
-        label = lab[idx_range]
-        folder = 'CONV/'
-        label_file = os.path.abspath(os.path.join(self.dir_path, '', '{}{}_label'.format(folder, name)))
-        data_file = os.path.abspath(os.path.join(self.dir_path, '', '{}{}_data'.format(folder, name)))
-        np.save(label_file, label)
-        np.save(data_file, data)
-        return data, label
 
     def plot_ricket_transform(self, trial):
         ctwmatr, _ = self.ricket_cwt(data=self.subject_1[trial, 1, :])
@@ -204,6 +149,10 @@ class FrequencyFeatureExtraction(object):
         f, Pxx_den = signal.welch(s_data_subject, self.fs, nperseg=1024)
         print("power_spectrum:{}".format(Pxx_den.shape))
         return Pxx_den, f
+
+    def load_features(self, valid_idx, test_idx):
+        load = LoadData(folder=self.folder)
+        load.load_features(test_idx=test_idx, valid_idx=valid_idx)
 
 
 if __name__ == '__main__':
