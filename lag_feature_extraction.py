@@ -97,7 +97,7 @@ class LAGFeatureExtraction(object):
 
     def load_features(self, valid_idx, test_idx):
         load = LoadData(folder=self.folder)
-        load.load_features(test_idx=test_idx, valid_idx=valid_idx)
+        return load.load_features(test_idx=test_idx, valid_idx=valid_idx)
 
 
 if __name__ == '__main__':

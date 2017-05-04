@@ -6,8 +6,7 @@ from datetime import timedelta
 import numpy as np
 import tensorflow as tf
 
-import tf_helper
-from utils import metrics
+from utils import metrics, tf_helper
 
 
 class ConvClassifier(object):
