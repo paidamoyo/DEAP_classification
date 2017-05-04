@@ -41,6 +41,7 @@ if __name__ == '__main__':
 
     args = sys.argv[1:]
     args_print = "args:{}".format(args)
+    print(args_print)
     if args:
         vm = float(args[0])
         compute_cwt = args[1]
