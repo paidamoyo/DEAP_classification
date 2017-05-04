@@ -49,9 +49,9 @@ class FrequencyFeatureExtraction(object):
                 observation_freq = np.array(channels_max_freq)
                 folder = 'CWT/'
                 data_file = os.path.abspath(
-                    os.path.join(self.dir_path, '', '{}{}_data.npy'.format(folder, 's_{}'.format(subj))))
+                    os.path.join(self.dir_path, '', '{}{}_data'.format(folder, 's_{}'.format(subj))))
                 label_file = os.path.abspath(
-                    os.path.join(self.dir_path, '', '{}{}_label.npy'.format(folder, 's_{}'.format(subj))))
+                    os.path.join(self.dir_path, '', '{}{}_label'.format(folder, 's_{}'.format(subj))))
                 np.save(data_file, observation_freq)
                 np.save(label_file, s_label_obs)
         print('CWT feature extraction complete')
@@ -67,8 +67,8 @@ class FrequencyFeatureExtraction(object):
         print("valid_idx:{}, test_idx:{}".format(valid_idx, test_idx))
         for subj in np.arange(start=1, stop=self.subjects + 1, step=1):
             print("subject:{}".format(subj))
-            data_file = os.path.abspath(os.path.join(self.dir_path, '', "CWT/s_{}_data".format(subj)))
-            label_file = os.path.abspath(os.path.join(self.dir_path, '', "CWT/s_{}_label".format(subj)))
+            data_file = os.path.abspath(os.path.join(self.dir_path, '', "CWT/s_{}_data.npy".format(subj)))
+            label_file = os.path.abspath(os.path.join(self.dir_path, '', "CWT/s_{}_label.npy".format(subj)))
             s_label = np.load(label_file)
             s_data = np.load(data_file)
             print("data:{}, label:{}".format(s_data.shape, s_label.shape))
