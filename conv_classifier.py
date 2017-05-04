@@ -91,10 +91,10 @@ class ConvClassifier(object):
                                                 beta2=self.beta2).minimize(self.cost)
 
     def train_neural_network(self):
-        print_training = "Training MLP:  valid_idx:{}, test_idx{} batch_norm:{}, keep_prob:{}".format(self.valid_idx,
-                                                                                                      self.test_idx,
-                                                                                                      self.batch_norm,
-                                                                                                      self.keep_prob)
+        print_training = "Training CONV:  valid_idx:{}, test_idx{} batch_norm:{}, keep_prob:{}".format(self.valid_idx,
+                                                                                                       self.test_idx,
+                                                                                                       self.batch_norm,
+                                                                                                       self.keep_prob)
         print(print_training)
         logging.debug(print_training)
         self.session.run(tf.global_variables_initializer())

@@ -7,3 +7,5 @@ MHCTW/
 CWT/
 */__pycache__/*
 summaries/
+LAG/
+__pycache__/

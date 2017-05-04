@@ -21,7 +21,10 @@ class FrequencyFeatureExtraction(object):
         self.channels = 32
         self.subject_1 = loadmat(os.path.abspath(os.path.join(self.dir_path, '', "DEAP_s/s_{}.mat".format(1))))['data']
         print("subject_1:{}".format(self.subject_1.shape))
-        self.extract_cwt_features()
+
+        if not os.listdir('CWT'):
+            print("extracting frequency features:")
+            self.extract_cwt_features()
 
     def ricket_cwt(self, data):
         widths = np.arange(1, 21)
@@ -46,9 +49,9 @@ class FrequencyFeatureExtraction(object):
                 observation_freq = np.array(channels_max_freq)
                 folder = 'CWT/'
                 data_file = os.path.abspath(
-                    os.path.join(self.dir_path, '', '{}{}_data'.format(folder, 's_{}'.format(subj))))
+                    os.path.join(self.dir_path, '', '{}{}_data.npy'.format(folder, 's_{}'.format(subj))))
                 label_file = os.path.abspath(
-                    os.path.join(self.dir_path, '', '{}{}_label'.format(folder, 's_{}'.format(subj))))
+                    os.path.join(self.dir_path, '', '{}{}_label.npy'.format(folder, 's_{}'.format(subj))))
                 np.save(data_file, observation_freq)
                 np.save(label_file, s_label_obs)
         print('CWT feature extraction complete')
