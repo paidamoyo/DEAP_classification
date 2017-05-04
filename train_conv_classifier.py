@@ -30,7 +30,7 @@ def encode_label(label):
 
 
 def swap_axes_data(input_data):
-    data_shape = input_data.shape()
+    data_shape = input_data.shape
     num_axis = len(data_shape)
     print("num_axis:{}".format(num_axis))
     swapped_data = np.swapaxes(input_data, data_shape(1), data_shape(num_axis - 1))
