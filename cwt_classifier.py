@@ -294,7 +294,7 @@ if __name__ == '__main__':
         logging.debug(idx_cross)
         logging.debug(held_out_obs)
         print(idx_cross)
-        cwt.extract_features(valid_idx=valid_idx, test_idx=test_idx)
+        cwt.load_features(valid_idx=valid_idx, test_idx=test_idx)
         logging.debug(args_print)
 
         train_label, train_ration = encode_label(np.load('MHCTW/train_label.npy'))
