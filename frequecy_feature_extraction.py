@@ -72,7 +72,7 @@ class FrequencyFeatureExtraction(object):
 
         self.shuffle_obs(data['train'], name='train', flatten_pca=flatten_pca)
         self.shuffle_obs(data['valid'], name='valid', flatten_pca=flatten_pca)
-        self.shuffle_obs(data['test'], name='test, flatten_pca', flatten_pca=flatten_pca)
+        self.shuffle_obs(data['test'], name='test', flatten_pca=flatten_pca)
         return data
 
     def pca_transform(self, observation_freq, n_components):
