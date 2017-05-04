@@ -48,7 +48,7 @@ class FrequencyFeatureExtraction(object):
                 s_label_obs = s_label[obs, :]
                 for channel in np.arange(self.channels):
                     cwtmatr, max_freq = self.ricket_cwt(s_data[obs, channel, :])
-                    channels_max_freq.append(cwtmatr)
+                    channels_max_freq.append(max_freq)
                 subject_data.append(channels_max_freq)
                 subject_label.append(s_label_obs)
             subject_data = np.array(subject_data)
