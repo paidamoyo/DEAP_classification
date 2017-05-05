@@ -48,7 +48,7 @@ if __name__ == '__main__':
     print(args_print)
     if args:
         vm = float(args[0])
-        extract = args[1]
+        extract = bool(args[1])
     else:
         vm = 1.0
         extract = False
