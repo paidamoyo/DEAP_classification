@@ -11,6 +11,7 @@ class LoadData(object):
         self.subjects = 32
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
         self.folder = folder
+        np.random.seed(3145)
 
     def load_features(self, test_idx, valid_idx):
         print("loading features from:{}".format(self.folder))

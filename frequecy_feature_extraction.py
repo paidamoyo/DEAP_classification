@@ -19,6 +19,7 @@ class FrequencyFeatureExtraction(object):
         self.subjects = 32
         self.num_labels = 4
         self.fs = 128
+        np.random.seed(31415)
         self.channels = 32
         self.subject_1 = loadmat(os.path.abspath(os.path.join(self.dir_path, '', "DEAP_s/s_{}.mat".format(1))))['data']
         print("subject_1:{}".format(self.subject_1.shape))

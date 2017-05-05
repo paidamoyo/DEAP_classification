@@ -10,12 +10,14 @@ from utils.load_features import LoadData
 
 
 class LAGFeatureExtraction(object):
-    def __init__(self, compute_lag2=False):
+    def __init__(self, lag=2, compute_lag=False):
         self.dir_path = os.path.dirname(os.path.realpath(__file__))
         self.subjects, self.channels, self.time_stamps = 32, 32, 8064
         self.subject_1_path = os.path.abspath(os.path.join(self.dir_path, '', "DEAP_s/s_1.mat"))
         self.folder = 'LAG'
-        if not os.listdir(self.folder) or compute_lag2:
+        self.lag = lag
+        np.random.seed(31415)
+        if not os.listdir(self.folder) or compute_lag:
             print("extracting lag features:")
             self.extract_lag_features()
 
@@ -33,8 +35,10 @@ class LAGFeatureExtraction(object):
         self.plot_single_channel(signal=s1_obs1_chan1, name='s1_obs1_chan_1')
         self.plot_single_channel(signal=s1_obs9_chan1, name='s1_obs9_chan1')
 
-        s1_obs1_chan1_lag2 = self.lag_2(s1_obs1_chan1)
-        s1_obs9_chan1_lag2 = self.lag_2(s1_obs9_chan1)
+        s1_obs1_chan1_lag2 = self.lag_map(s1_obs1_chan1)
+        s1_obs9_chan1_lag2 = self.lag_map(s1_obs9_chan1)
+        print("s1_obs1_chan1_lag2:{}".format(s1_obs1_chan1_lag2.shape))
+        print("s1_obs9_chan1_lag2:{}".format(s1_obs9_chan1_lag2.shape))
         self.plot_lag(s1_obs1_chan1_lag2, name='s1_obs1_chan1_lag2')
         self.plot_lag(s1_obs9_chan1_lag2, name='s1_obs9_chan1_lag2')
 
@@ -48,12 +52,19 @@ class LAGFeatureExtraction(object):
         plt.title(title)
         plt.savefig(title)
 
-    def lag_2(self, signal):
-        idx = np.arange(int(self.time_stamps - 1))
-        output = np.array([[0, 0], ] * len(idx))
+    def lag_map(self, signal):
+        idx = np.arange(int(self.time_stamps))
+        lag_output = []
         for i in idx:
-            output[i] = [signal[i], signal[i + 1]]
-        return output
+            max_index = i + self.lag
+            if max_index >= self.time_stamps:
+                break
+            else:
+                lag_indexes = np.arange(start=i, stop=max_index, step=1)
+            lag_trans = np.array(signal[lag_indexes])
+            # print("max_index:{}, lag_indexes:{} lag_trans:{}".format(max_index, lag_indexes, lag_trans.shape))
+            lag_output.append(lag_trans)
+        return np.array(lag_output)
 
     @staticmethod
     def plot_lag(signal, name):
@@ -80,8 +91,8 @@ class LAGFeatureExtraction(object):
                 channels_lag2 = []
                 s_label_obs = s_label[obs, :]
                 for channel in np.arange(self.channels):
-                    lag2_map = self.lag_2(s_data[obs, channel, :])
-                    channels_lag2.append(lag2_map)
+                    lag_map = self.lag_map(s_data[obs, channel, :])
+                    channels_lag2.append(lag_map)
                 subject_data.append(channels_lag2)
                 subject_label.append(s_label_obs)
             subject_data = np.array(subject_data)
