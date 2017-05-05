@@ -46,7 +46,7 @@ def conv_layer(layer_name, input,  # The previous layer.
         with tf.name_scope('conv2d'):
             layer = tf.nn.conv2d(input=input,
                                  filter=weights,
-                                 strides=[1, 2, 2, 1],
+                                 strides=[1, 5, 5, 1],
                                  padding='SAME')
             # A bias-value is added to each filter-channel.
             layer += biases
@@ -58,8 +58,8 @@ def conv_layer(layer_name, input,  # The previous layer.
                 # consider 2x2 windows and select the largest value
                 # in each window. Then we move 2 pixels to the next window.
                 layer = tf.nn.max_pool(value=layer,
-                                       ksize=[1, 2, 2, 1],
-                                       strides=[1, 2, 2, 1],
+                                       ksize=[1, 5, 5, 1],
+                                       strides=[1, 5, 5, 1],
                                        padding='SAME')
 
         layer = tf.nn.relu(layer)

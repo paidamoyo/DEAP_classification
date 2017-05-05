@@ -104,7 +104,7 @@ class LAGFeatureExtraction(object):
                 os.path.join(self.dir_path, '.', '{}/{}_label'.format(self.folder, 's_{}'.format(subj))))
             np.save(data_file, subject_data)
             np.save(label_file, subject_label)
-        print('CWT feature extraction complete')
+        print('LAG feature extraction complete')
 
     def load_features(self, valid_idx, test_idx):
         load = LoadData(folder=self.folder)
@@ -113,6 +113,6 @@ class LAGFeatureExtraction(object):
 
 if __name__ == '__main__':
     np.random.seed(31415)
-    lag = LAGFeatureExtraction()
-    lag.view_s1()
+    lag_feature = LAGFeatureExtraction()
+    lag_feature.view_s1()
     # lag.extract_lag_features()
