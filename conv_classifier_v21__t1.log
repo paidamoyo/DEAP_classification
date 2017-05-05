@@ -1,12 +1,12 @@
 DEBUG:root:valid_idx:21, test_idx:1
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.36583333333333334
 DEBUG:root:train_obs:0.36583333333333334
 DEBUG:root:label_1 percent:0.2
 DEBUG:root:label_1 percent:0.375
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -15,56 +15,59 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:21, test_idx1 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.4481183290481567, Acc: 0.7,  Validation Loss:1.8738471269607544, Acc:0.325 *
-DEBUG:root:Epoch: 2, Training Loss:1.4298443794250488, Acc: 0.65,  Validation Loss:1.3141427040100098, Acc:0.8 *
-DEBUG:root:Epoch: 3, Training Loss:1.2756898403167725, Acc: 0.825,  Validation Loss:1.3334943056106567, Acc:0.7 
-DEBUG:root:Epoch: 4, Training Loss:1.102165937423706, Acc: 0.95,  Validation Loss:1.2790753841400146, Acc:0.775 
-DEBUG:root:Epoch: 5, Training Loss:0.8917833566665649, Acc: 1.0,  Validation Loss:1.2700414657592773, Acc:0.775 
-DEBUG:root:Epoch: 6, Training Loss:0.8105477094650269, Acc: 1.0,  Validation Loss:1.214050531387329, Acc:0.725 
-DEBUG:root:Epoch: 7, Training Loss:0.7710719704627991, Acc: 1.0,  Validation Loss:1.1878615617752075, Acc:0.8 
-DEBUG:root:Epoch: 8, Training Loss:0.873785138130188, Acc: 0.875,  Validation Loss:1.587186336517334, Acc:0.4 
-DEBUG:root:Epoch: 9, Training Loss:0.7133039236068726, Acc: 1.0,  Validation Loss:1.2431610822677612, Acc:0.675 
-DEBUG:root:Epoch: 10, Training Loss:0.6383853554725647, Acc: 1.0,  Validation Loss:1.197894811630249, Acc:0.725 
-DEBUG:root:Epoch: 11, Training Loss:0.6099321246147156, Acc: 1.0,  Validation Loss:1.1402133703231812, Acc:0.7 
-DEBUG:root:Epoch: 12, Training Loss:0.5762771964073181, Acc: 1.0,  Validation Loss:1.115199089050293, Acc:0.725 
-DEBUG:root:Epoch: 13, Training Loss:0.5597811937332153, Acc: 1.0,  Validation Loss:1.1285933256149292, Acc:0.7 
-DEBUG:root:Epoch: 14, Training Loss:0.535256028175354, Acc: 1.0,  Validation Loss:1.1121296882629395, Acc:0.7 
-DEBUG:root:Epoch: 15, Training Loss:0.5173454880714417, Acc: 1.0,  Validation Loss:1.1071813106536865, Acc:0.7 
-DEBUG:root:Epoch: 16, Training Loss:0.5009574294090271, Acc: 1.0,  Validation Loss:1.1824052333831787, Acc:0.675 
-DEBUG:root:Epoch: 17, Training Loss:0.48407062888145447, Acc: 1.0,  Validation Loss:1.1894327402114868, Acc:0.575 
-DEBUG:root:Epoch: 18, Training Loss:0.4706951081752777, Acc: 1.0,  Validation Loss:1.0850670337677002, Acc:0.7 
-DEBUG:root:Epoch: 19, Training Loss:0.45380568504333496, Acc: 1.0,  Validation Loss:1.1800302267074585, Acc:0.625 
-DEBUG:root:Epoch: 20, Training Loss:0.44114944338798523, Acc: 1.0,  Validation Loss:1.2149626016616821, Acc:0.525 
-DEBUG:root:Epoch: 21, Training Loss:0.4284120500087738, Acc: 1.0,  Validation Loss:1.1219704151153564, Acc:0.65 
-DEBUG:root:Epoch: 22, Training Loss:0.4155234694480896, Acc: 1.0,  Validation Loss:1.1019408702850342, Acc:0.55 
-DEBUG:root:Epoch: 23, Training Loss:0.40463343262672424, Acc: 1.0,  Validation Loss:1.1382651329040527, Acc:0.575 
-DEBUG:root:Epoch: 24, Training Loss:0.3936566114425659, Acc: 1.0,  Validation Loss:1.1224771738052368, Acc:0.625 
-DEBUG:root:Epoch: 25, Training Loss:0.3835461437702179, Acc: 1.0,  Validation Loss:1.0801966190338135, Acc:0.625 
-DEBUG:root:Epoch: 26, Training Loss:0.37423276901245117, Acc: 1.0,  Validation Loss:1.0255528688430786, Acc:0.625 
-DEBUG:root:Epoch: 27, Training Loss:0.364938884973526, Acc: 1.0,  Validation Loss:1.0678257942199707, Acc:0.625 
-DEBUG:root:Epoch: 28, Training Loss:0.3558849096298218, Acc: 1.0,  Validation Loss:1.0146993398666382, Acc:0.625 
-DEBUG:root:Epoch: 29, Training Loss:0.347190797328949, Acc: 1.0,  Validation Loss:1.1577097177505493, Acc:0.525 
-DEBUG:root:Epoch: 30, Training Loss:0.34012356400489807, Acc: 1.0,  Validation Loss:1.0211312770843506, Acc:0.575 
-DEBUG:root:Epoch: 31, Training Loss:0.33576884865760803, Acc: 1.0,  Validation Loss:0.8704816102981567, Acc:0.775 
-DEBUG:root:Epoch: 32, Training Loss:0.3604353666305542, Acc: 0.975,  Validation Loss:0.8721568584442139, Acc:0.8 
-DEBUG:root:Epoch: 33, Training Loss:0.5048406720161438, Acc: 0.95,  Validation Loss:0.9487628936767578, Acc:0.65 
-DEBUG:root:Epoch: 34, Training Loss:0.3711877167224884, Acc: 1.0,  Validation Loss:0.9054883718490601, Acc:0.75 
-DEBUG:root:Epoch: 35, Training Loss:0.36647921800613403, Acc: 1.0,  Validation Loss:1.0841891765594482, Acc:0.575 
+DEBUG:root:Epoch: 1, Training Loss:1.5762625932693481, Acc: 0.525,  Validation Loss:1.6387882232666016, Acc:0.575 *
+DEBUG:root:Epoch: 2, Training Loss:1.4332133531570435, Acc: 0.65,  Validation Loss:1.508971929550171, Acc:0.525 
+DEBUG:root:Epoch: 3, Training Loss:1.3051626682281494, Acc: 0.775,  Validation Loss:1.4674019813537598, Acc:0.525 
+DEBUG:root:Epoch: 4, Training Loss:1.1354081630706787, Acc: 0.85,  Validation Loss:1.3440697193145752, Acc:0.75 *
+DEBUG:root:Epoch: 5, Training Loss:0.9666564464569092, Acc: 0.95,  Validation Loss:1.2882519960403442, Acc:0.8 *
+DEBUG:root:Epoch: 6, Training Loss:0.8640363216400146, Acc: 0.975,  Validation Loss:1.46589994430542, Acc:0.375 
+DEBUG:root:Epoch: 7, Training Loss:0.750789999961853, Acc: 1.0,  Validation Loss:1.4711627960205078, Acc:0.4 
+DEBUG:root:Epoch: 8, Training Loss:0.7576087117195129, Acc: 0.975,  Validation Loss:1.5798521041870117, Acc:0.2 
+DEBUG:root:Epoch: 9, Training Loss:0.6970670819282532, Acc: 1.0,  Validation Loss:1.2518144845962524, Acc:0.725 
+DEBUG:root:Epoch: 10, Training Loss:0.6495493054389954, Acc: 1.0,  Validation Loss:1.1933133602142334, Acc:0.675 
+DEBUG:root:Epoch: 11, Training Loss:0.6148166656494141, Acc: 1.0,  Validation Loss:1.2338614463806152, Acc:0.575 
+DEBUG:root:Epoch: 12, Training Loss:0.5900354981422424, Acc: 1.0,  Validation Loss:1.3546491861343384, Acc:0.5 
+DEBUG:root:Epoch: 13, Training Loss:0.5717501044273376, Acc: 1.0,  Validation Loss:1.3650434017181396, Acc:0.5 
+DEBUG:root:Epoch: 14, Training Loss:0.5510727167129517, Acc: 1.0,  Validation Loss:1.2351902723312378, Acc:0.575 
+DEBUG:root:Epoch: 15, Training Loss:0.5334109663963318, Acc: 1.0,  Validation Loss:1.1327921152114868, Acc:0.625 
+DEBUG:root:Epoch: 16, Training Loss:0.5189298391342163, Acc: 1.0,  Validation Loss:1.0689311027526855, Acc:0.7 
+DEBUG:root:Epoch: 17, Training Loss:0.5038343071937561, Acc: 1.0,  Validation Loss:1.092979907989502, Acc:0.625 
+DEBUG:root:Epoch: 18, Training Loss:0.4857243299484253, Acc: 1.0,  Validation Loss:1.1754777431488037, Acc:0.625 
+DEBUG:root:Epoch: 19, Training Loss:0.4736115038394928, Acc: 1.0,  Validation Loss:1.1773135662078857, Acc:0.6 
+DEBUG:root:Epoch: 20, Training Loss:0.45961400866508484, Acc: 1.0,  Validation Loss:1.1557821035385132, Acc:0.55 
+DEBUG:root:Epoch: 21, Training Loss:0.4468645453453064, Acc: 1.0,  Validation Loss:1.1401495933532715, Acc:0.6 
+DEBUG:root:Epoch: 22, Training Loss:0.4353947937488556, Acc: 1.0,  Validation Loss:1.143735408782959, Acc:0.575 
+DEBUG:root:Epoch: 23, Training Loss:0.4238550364971161, Acc: 1.0,  Validation Loss:1.1808981895446777, Acc:0.575 
+DEBUG:root:Epoch: 24, Training Loss:0.41387513279914856, Acc: 1.0,  Validation Loss:1.1462721824645996, Acc:0.575 
+DEBUG:root:Epoch: 25, Training Loss:0.4027068316936493, Acc: 1.0,  Validation Loss:1.102566123008728, Acc:0.65 
+DEBUG:root:Epoch: 26, Training Loss:0.39356184005737305, Acc: 1.0,  Validation Loss:1.1254955530166626, Acc:0.575 
+DEBUG:root:Epoch: 27, Training Loss:0.38432908058166504, Acc: 1.0,  Validation Loss:1.2066093683242798, Acc:0.5 
+DEBUG:root:Epoch: 28, Training Loss:0.37511155009269714, Acc: 1.0,  Validation Loss:1.1378693580627441, Acc:0.55 
+DEBUG:root:Epoch: 29, Training Loss:0.36689966917037964, Acc: 1.0,  Validation Loss:1.1941653490066528, Acc:0.5 
+DEBUG:root:Epoch: 30, Training Loss:0.35849815607070923, Acc: 1.0,  Validation Loss:1.1450698375701904, Acc:0.525 
+DEBUG:root:Epoch: 31, Training Loss:0.34976571798324585, Acc: 1.0,  Validation Loss:1.1586735248565674, Acc:0.575 
+DEBUG:root:Epoch: 32, Training Loss:0.34193694591522217, Acc: 1.0,  Validation Loss:1.1353626251220703, Acc:0.575 
+DEBUG:root:Epoch: 33, Training Loss:0.33454591035842896, Acc: 1.0,  Validation Loss:1.2309013605117798, Acc:0.425 
+DEBUG:root:Epoch: 34, Training Loss:0.32682567834854126, Acc: 1.0,  Validation Loss:1.2676230669021606, Acc:0.5 
+DEBUG:root:Epoch: 35, Training Loss:0.32056042551994324, Acc: 1.0,  Validation Loss:1.1758639812469482, Acc:0.45 
+DEBUG:root:Epoch: 36, Training Loss:0.3146142363548279, Acc: 1.0,  Validation Loss:1.2942836284637451, Acc:0.4 
+DEBUG:root:Epoch: 37, Training Loss:0.30932101607322693, Acc: 1.0,  Validation Loss:1.0734434127807617, Acc:0.625 
+DEBUG:root:Epoch: 38, Training Loss:0.34471002221107483, Acc: 0.975,  Validation Loss:1.0873833894729614, Acc:0.45 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:22
-DEBUG:root:Accuracy on Test-Set: 65.0% (26 / 40)
+DEBUG:root:Time usage: 0:08:25
+DEBUG:root:Accuracy on Test-Set: 62.5% (25 / 40)
 DEBUG:root:Confusion Matrix:
 DEBUG:root:[[25  0]
- [14  1]]
+ [15  0]]
 DEBUG:root:valid_idx:22, test_idx:24
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.37166666666666665
 DEBUG:root:train_obs:0.37166666666666665
 DEBUG:root:label_1 percent:0.275
 DEBUG:root:label_1 percent:0.125
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -73,59 +76,120 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:22, test_idx24 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.4474453926086426, Acc: 0.7,  Validation Loss:5.831891059875488, Acc:0.5 *
-DEBUG:root:Epoch: 2, Training Loss:1.377985954284668, Acc: 0.775,  Validation Loss:4.855960845947266, Acc:0.4 
-DEBUG:root:Epoch: 3, Training Loss:1.2059731483459473, Acc: 0.85,  Validation Loss:3.370828866958618, Acc:0.45 
-DEBUG:root:Epoch: 4, Training Loss:1.1348786354064941, Acc: 0.875,  Validation Loss:3.1262245178222656, Acc:0.525 *
-DEBUG:root:Epoch: 5, Training Loss:0.9575973749160767, Acc: 0.975,  Validation Loss:2.1515161991119385, Acc:0.625 *
-DEBUG:root:Epoch: 6, Training Loss:0.8789639472961426, Acc: 0.975,  Validation Loss:1.893188238143921, Acc:0.625 
-DEBUG:root:Epoch: 7, Training Loss:0.8280351161956787, Acc: 0.975,  Validation Loss:2.910007953643799, Acc:0.475 
-DEBUG:root:Epoch: 8, Training Loss:0.9090924859046936, Acc: 0.925,  Validation Loss:6.43516731262207, Acc:0.325 
-DEBUG:root:Epoch: 9, Training Loss:0.7573568820953369, Acc: 1.0,  Validation Loss:6.509138584136963, Acc:0.35 
-DEBUG:root:Epoch: 10, Training Loss:0.6909101605415344, Acc: 0.975,  Validation Loss:4.176548004150391, Acc:0.45 
-DEBUG:root:Epoch: 11, Training Loss:0.6411842107772827, Acc: 1.0,  Validation Loss:6.119022846221924, Acc:0.325 
-DEBUG:root:Epoch: 12, Training Loss:0.6129729747772217, Acc: 1.0,  Validation Loss:4.318259239196777, Acc:0.4 
-DEBUG:root:Epoch: 13, Training Loss:0.5829973816871643, Acc: 1.0,  Validation Loss:3.6356232166290283, Acc:0.475 
-DEBUG:root:Epoch: 14, Training Loss:0.5552948117256165, Acc: 1.0,  Validation Loss:3.1335623264312744, Acc:0.5 
-DEBUG:root:Epoch: 15, Training Loss:0.5351250171661377, Acc: 1.0,  Validation Loss:3.2667081356048584, Acc:0.475 
-DEBUG:root:Epoch: 16, Training Loss:0.5488957762718201, Acc: 0.975,  Validation Loss:2.280834197998047, Acc:0.45 
-DEBUG:root:Epoch: 17, Training Loss:0.506018340587616, Acc: 1.0,  Validation Loss:2.7349436283111572, Acc:0.5 
-DEBUG:root:Epoch: 18, Training Loss:0.4936586618423462, Acc: 1.0,  Validation Loss:2.771303653717041, Acc:0.525 
-DEBUG:root:Epoch: 19, Training Loss:0.4749581813812256, Acc: 1.0,  Validation Loss:3.5419178009033203, Acc:0.425 
-DEBUG:root:Epoch: 20, Training Loss:0.4693516194820404, Acc: 1.0,  Validation Loss:4.139815807342529, Acc:0.4 
-DEBUG:root:Epoch: 21, Training Loss:0.44123467803001404, Acc: 1.0,  Validation Loss:3.797058582305908, Acc:0.375 
-DEBUG:root:Epoch: 22, Training Loss:0.4304797649383545, Acc: 1.0,  Validation Loss:3.5195794105529785, Acc:0.5 
-DEBUG:root:Epoch: 23, Training Loss:0.4144548177719116, Acc: 1.0,  Validation Loss:3.462653636932373, Acc:0.525 
-DEBUG:root:Epoch: 24, Training Loss:0.4054970443248749, Acc: 1.0,  Validation Loss:2.883380889892578, Acc:0.5 
-DEBUG:root:Epoch: 25, Training Loss:0.3908958435058594, Acc: 1.0,  Validation Loss:3.0131349563598633, Acc:0.5 
-DEBUG:root:Epoch: 26, Training Loss:0.38257235288619995, Acc: 1.0,  Validation Loss:3.027092218399048, Acc:0.5 
-DEBUG:root:Epoch: 27, Training Loss:0.3713262975215912, Acc: 1.0,  Validation Loss:2.8588383197784424, Acc:0.55 
-DEBUG:root:Epoch: 28, Training Loss:0.3643285632133484, Acc: 1.0,  Validation Loss:2.8098337650299072, Acc:0.5 
-DEBUG:root:Epoch: 29, Training Loss:0.35649722814559937, Acc: 1.0,  Validation Loss:2.6611452102661133, Acc:0.475 
-DEBUG:root:Epoch: 30, Training Loss:0.3464668393135071, Acc: 1.0,  Validation Loss:2.521395683288574, Acc:0.525 
-DEBUG:root:Epoch: 31, Training Loss:0.33928120136260986, Acc: 1.0,  Validation Loss:2.4753849506378174, Acc:0.55 
-DEBUG:root:Epoch: 32, Training Loss:0.33142346143722534, Acc: 1.0,  Validation Loss:2.182117223739624, Acc:0.525 
-DEBUG:root:Epoch: 33, Training Loss:0.3246685862541199, Acc: 1.0,  Validation Loss:2.346172571182251, Acc:0.5 
-DEBUG:root:Epoch: 34, Training Loss:0.3188077509403229, Acc: 1.0,  Validation Loss:1.9738423824310303, Acc:0.575 
-DEBUG:root:Epoch: 35, Training Loss:0.3120235204696655, Acc: 1.0,  Validation Loss:2.094017267227173, Acc:0.5 
-DEBUG:root:Epoch: 36, Training Loss:0.3045875132083893, Acc: 1.0,  Validation Loss:1.8729145526885986, Acc:0.575 
-DEBUG:root:Epoch: 37, Training Loss:0.29927945137023926, Acc: 1.0,  Validation Loss:1.910528302192688, Acc:0.5 
-DEBUG:root:Epoch: 38, Training Loss:0.2933407127857208, Acc: 1.0,  Validation Loss:1.9214346408843994, Acc:0.475 
+DEBUG:root:Epoch: 1, Training Loss:1.5692496299743652, Acc: 0.375,  Validation Loss:7.708998203277588, Acc:0.425 *
+DEBUG:root:Epoch: 2, Training Loss:1.440880537033081, Acc: 0.725,  Validation Loss:3.700453281402588, Acc:0.55 *
+DEBUG:root:Epoch: 3, Training Loss:1.2808921337127686, Acc: 0.825,  Validation Loss:2.3971550464630127, Acc:0.7 *
+DEBUG:root:Epoch: 4, Training Loss:1.1029407978057861, Acc: 0.925,  Validation Loss:3.6110541820526123, Acc:0.7 
+DEBUG:root:Epoch: 5, Training Loss:0.9914391040802002, Acc: 0.975,  Validation Loss:2.7950005531311035, Acc:0.7 
+DEBUG:root:Epoch: 6, Training Loss:0.8497623205184937, Acc: 1.0,  Validation Loss:2.0619912147521973, Acc:0.6 
+DEBUG:root:Epoch: 7, Training Loss:0.7904573082923889, Acc: 1.0,  Validation Loss:2.339247226715088, Acc:0.7 
+DEBUG:root:Epoch: 8, Training Loss:0.7720073461532593, Acc: 0.975,  Validation Loss:2.416750431060791, Acc:0.7 
+DEBUG:root:Epoch: 9, Training Loss:0.7775633931159973, Acc: 0.975,  Validation Loss:2.1435396671295166, Acc:0.525 
+DEBUG:root:Epoch: 10, Training Loss:0.6769632697105408, Acc: 1.0,  Validation Loss:2.3554816246032715, Acc:0.7 
+DEBUG:root:Epoch: 11, Training Loss:0.645279586315155, Acc: 1.0,  Validation Loss:1.8868744373321533, Acc:0.65 
+DEBUG:root:Epoch: 12, Training Loss:0.6152368187904358, Acc: 1.0,  Validation Loss:2.447298526763916, Acc:0.725 *
+DEBUG:root:Epoch: 13, Training Loss:0.5918377041816711, Acc: 1.0,  Validation Loss:2.080409526824951, Acc:0.7 
+DEBUG:root:Epoch: 14, Training Loss:0.5730019211769104, Acc: 1.0,  Validation Loss:2.2379815578460693, Acc:0.7 
+DEBUG:root:Epoch: 15, Training Loss:0.5639685988426208, Acc: 1.0,  Validation Loss:2.276202917098999, Acc:0.725 
+DEBUG:root:Epoch: 16, Training Loss:0.5488013029098511, Acc: 1.0,  Validation Loss:3.1662864685058594, Acc:0.7 
+DEBUG:root:Epoch: 17, Training Loss:0.5584545135498047, Acc: 1.0,  Validation Loss:3.0728442668914795, Acc:0.725 
+DEBUG:root:Epoch: 18, Training Loss:0.5451899766921997, Acc: 1.0,  Validation Loss:2.9687976837158203, Acc:0.725 
+DEBUG:root:Epoch: 19, Training Loss:0.5093874931335449, Acc: 1.0,  Validation Loss:2.965459108352661, Acc:0.725 
+DEBUG:root:Epoch: 20, Training Loss:0.5089154839515686, Acc: 1.0,  Validation Loss:1.8593701124191284, Acc:0.7 
+DEBUG:root:Epoch: 21, Training Loss:0.4993894398212433, Acc: 1.0,  Validation Loss:1.8162028789520264, Acc:0.625 
+DEBUG:root:Epoch: 22, Training Loss:0.47450533509254456, Acc: 1.0,  Validation Loss:2.395190954208374, Acc:0.725 
+DEBUG:root:Epoch: 23, Training Loss:0.45174479484558105, Acc: 1.0,  Validation Loss:2.2989139556884766, Acc:0.675 
+DEBUG:root:Epoch: 24, Training Loss:0.4385760426521301, Acc: 1.0,  Validation Loss:2.426132917404175, Acc:0.7 
+DEBUG:root:Epoch: 25, Training Loss:0.4283592402935028, Acc: 1.0,  Validation Loss:2.6085267066955566, Acc:0.7 
+DEBUG:root:Epoch: 26, Training Loss:0.41913041472435, Acc: 1.0,  Validation Loss:2.5820419788360596, Acc:0.7 
+DEBUG:root:Epoch: 27, Training Loss:0.40736082196235657, Acc: 1.0,  Validation Loss:2.616476535797119, Acc:0.675 
+DEBUG:root:Epoch: 28, Training Loss:0.3975333273410797, Acc: 1.0,  Validation Loss:2.4515788555145264, Acc:0.725 
+DEBUG:root:Epoch: 29, Training Loss:0.388722687959671, Acc: 1.0,  Validation Loss:2.3728301525115967, Acc:0.7 
+DEBUG:root:Epoch: 30, Training Loss:0.3796986937522888, Acc: 1.0,  Validation Loss:2.53886079788208, Acc:0.65 
+DEBUG:root:Epoch: 31, Training Loss:0.3715954124927521, Acc: 1.0,  Validation Loss:2.2313499450683594, Acc:0.725 
+DEBUG:root:Epoch: 32, Training Loss:0.36289143562316895, Acc: 1.0,  Validation Loss:2.281810998916626, Acc:0.725 
+DEBUG:root:Epoch: 33, Training Loss:0.3571215867996216, Acc: 1.0,  Validation Loss:1.9842617511749268, Acc:0.7 
+DEBUG:root:Epoch: 34, Training Loss:0.34795597195625305, Acc: 1.0,  Validation Loss:2.2497267723083496, Acc:0.725 
+DEBUG:root:Epoch: 35, Training Loss:0.3418877124786377, Acc: 1.0,  Validation Loss:2.429380416870117, Acc:0.675 
+DEBUG:root:Epoch: 36, Training Loss:0.33434078097343445, Acc: 1.0,  Validation Loss:2.1789731979370117, Acc:0.675 
+DEBUG:root:Epoch: 37, Training Loss:0.3288609981536865, Acc: 1.0,  Validation Loss:1.9004120826721191, Acc:0.75 *
+DEBUG:root:Epoch: 38, Training Loss:0.32278797030448914, Acc: 1.0,  Validation Loss:1.9576400518417358, Acc:0.75 
+DEBUG:root:Epoch: 39, Training Loss:0.31611350178718567, Acc: 1.0,  Validation Loss:2.045032262802124, Acc:0.725 
+DEBUG:root:Epoch: 40, Training Loss:0.30994224548339844, Acc: 1.0,  Validation Loss:1.904765248298645, Acc:0.725 
+DEBUG:root:Epoch: 41, Training Loss:0.3044578433036804, Acc: 1.0,  Validation Loss:1.9212895631790161, Acc:0.75 
+DEBUG:root:Epoch: 42, Training Loss:0.2978167235851288, Acc: 1.0,  Validation Loss:1.8949159383773804, Acc:0.75 
+DEBUG:root:Epoch: 43, Training Loss:0.29461342096328735, Acc: 1.0,  Validation Loss:1.8109291791915894, Acc:0.75 
+DEBUG:root:Epoch: 44, Training Loss:0.28790220618247986, Acc: 1.0,  Validation Loss:2.0188753604888916, Acc:0.7 
+DEBUG:root:Epoch: 45, Training Loss:0.28258010745048523, Acc: 1.0,  Validation Loss:1.8312461376190186, Acc:0.7 
+DEBUG:root:Epoch: 46, Training Loss:0.2775552570819855, Acc: 1.0,  Validation Loss:1.5714404582977295, Acc:0.75 
+DEBUG:root:Epoch: 47, Training Loss:0.27222761511802673, Acc: 1.0,  Validation Loss:1.5894712209701538, Acc:0.7 
+DEBUG:root:Epoch: 48, Training Loss:0.26763126254081726, Acc: 1.0,  Validation Loss:1.6337273120880127, Acc:0.65 
+DEBUG:root:Epoch: 49, Training Loss:0.2635488212108612, Acc: 1.0,  Validation Loss:1.5530250072479248, Acc:0.7 
+DEBUG:root:Epoch: 50, Training Loss:0.256671667098999, Acc: 1.0,  Validation Loss:1.5625216960906982, Acc:0.725 
+DEBUG:root:Epoch: 51, Training Loss:0.2537030875682831, Acc: 1.0,  Validation Loss:1.7509102821350098, Acc:0.7 
+DEBUG:root:Epoch: 52, Training Loss:0.24783839285373688, Acc: 1.0,  Validation Loss:1.5418140888214111, Acc:0.7 
+DEBUG:root:Epoch: 53, Training Loss:0.24459943175315857, Acc: 1.0,  Validation Loss:1.5879757404327393, Acc:0.675 
+DEBUG:root:Epoch: 54, Training Loss:0.2399703860282898, Acc: 1.0,  Validation Loss:1.6714215278625488, Acc:0.675 
+DEBUG:root:Epoch: 55, Training Loss:0.23630161583423615, Acc: 1.0,  Validation Loss:1.5385241508483887, Acc:0.725 
+DEBUG:root:Epoch: 56, Training Loss:0.23061618208885193, Acc: 1.0,  Validation Loss:1.7928050756454468, Acc:0.7 
+DEBUG:root:Epoch: 57, Training Loss:0.2263331115245819, Acc: 1.0,  Validation Loss:1.6756765842437744, Acc:0.7 
+DEBUG:root:Epoch: 58, Training Loss:0.22331786155700684, Acc: 1.0,  Validation Loss:1.7214853763580322, Acc:0.675 
+DEBUG:root:Epoch: 59, Training Loss:0.21942749619483948, Acc: 1.0,  Validation Loss:1.4310390949249268, Acc:0.7 
+DEBUG:root:Epoch: 60, Training Loss:0.25060757994651794, Acc: 0.975,  Validation Loss:1.389949083328247, Acc:0.7 
+DEBUG:root:Epoch: 61, Training Loss:0.5989612936973572, Acc: 0.825,  Validation Loss:4.293592929840088, Acc:0.275 
+DEBUG:root:Epoch: 62, Training Loss:0.3777275085449219, Acc: 0.975,  Validation Loss:1.3570938110351562, Acc:0.575 
+DEBUG:root:Epoch: 63, Training Loss:0.31639689207077026, Acc: 0.975,  Validation Loss:1.51436185836792, Acc:0.625 
+DEBUG:root:Epoch: 64, Training Loss:0.2767771780490875, Acc: 1.0,  Validation Loss:1.4230518341064453, Acc:0.6 
+DEBUG:root:Epoch: 65, Training Loss:0.2641587257385254, Acc: 1.0,  Validation Loss:1.3083301782608032, Acc:0.7 
+DEBUG:root:Epoch: 66, Training Loss:0.251770555973053, Acc: 1.0,  Validation Loss:1.4132084846496582, Acc:0.775 *
+DEBUG:root:Epoch: 67, Training Loss:0.24778077006340027, Acc: 1.0,  Validation Loss:1.3368984460830688, Acc:0.7 
+DEBUG:root:Epoch: 68, Training Loss:0.24387487769126892, Acc: 1.0,  Validation Loss:1.4546992778778076, Acc:0.65 
+DEBUG:root:Epoch: 69, Training Loss:0.23821891844272614, Acc: 1.0,  Validation Loss:1.5104084014892578, Acc:0.7 
+DEBUG:root:Epoch: 70, Training Loss:0.23578447103500366, Acc: 1.0,  Validation Loss:1.5447474718093872, Acc:0.675 
+DEBUG:root:Epoch: 71, Training Loss:0.23198631405830383, Acc: 1.0,  Validation Loss:1.3771682977676392, Acc:0.725 
+DEBUG:root:Epoch: 72, Training Loss:0.23034557700157166, Acc: 1.0,  Validation Loss:1.2908811569213867, Acc:0.775 
+DEBUG:root:Epoch: 73, Training Loss:0.2268238663673401, Acc: 1.0,  Validation Loss:1.3471161127090454, Acc:0.75 
+DEBUG:root:Epoch: 74, Training Loss:0.2240220606327057, Acc: 1.0,  Validation Loss:1.3967434167861938, Acc:0.725 
+DEBUG:root:Epoch: 75, Training Loss:0.22116968035697937, Acc: 1.0,  Validation Loss:1.4450443983078003, Acc:0.75 
+DEBUG:root:Epoch: 76, Training Loss:0.2183237373828888, Acc: 1.0,  Validation Loss:1.3789403438568115, Acc:0.725 
+DEBUG:root:Epoch: 77, Training Loss:0.2167849987745285, Acc: 1.0,  Validation Loss:1.4659526348114014, Acc:0.725 
+DEBUG:root:Epoch: 78, Training Loss:0.21296095848083496, Acc: 1.0,  Validation Loss:1.3403387069702148, Acc:0.75 
+DEBUG:root:Epoch: 79, Training Loss:0.21158522367477417, Acc: 1.0,  Validation Loss:1.5200080871582031, Acc:0.725 
+DEBUG:root:Epoch: 80, Training Loss:0.2087247669696808, Acc: 1.0,  Validation Loss:1.3929431438446045, Acc:0.725 
+DEBUG:root:Epoch: 81, Training Loss:0.2062348872423172, Acc: 1.0,  Validation Loss:1.3829950094223022, Acc:0.725 
+DEBUG:root:Epoch: 82, Training Loss:0.20431549847126007, Acc: 1.0,  Validation Loss:1.4163627624511719, Acc:0.725 
+DEBUG:root:Epoch: 83, Training Loss:0.20134973526000977, Acc: 1.0,  Validation Loss:1.5167666673660278, Acc:0.7 
+DEBUG:root:Epoch: 84, Training Loss:0.19934526085853577, Acc: 1.0,  Validation Loss:1.4049484729766846, Acc:0.7 
+DEBUG:root:Epoch: 85, Training Loss:0.1966358721256256, Acc: 1.0,  Validation Loss:1.4407322406768799, Acc:0.725 
+DEBUG:root:Epoch: 86, Training Loss:0.19572927057743073, Acc: 1.0,  Validation Loss:1.4972875118255615, Acc:0.725 
+DEBUG:root:Epoch: 87, Training Loss:0.19252458214759827, Acc: 1.0,  Validation Loss:1.4527826309204102, Acc:0.7 
+DEBUG:root:Epoch: 88, Training Loss:0.19209785759449005, Acc: 1.0,  Validation Loss:1.3801872730255127, Acc:0.7 
+DEBUG:root:Epoch: 89, Training Loss:0.18853357434272766, Acc: 1.0,  Validation Loss:1.355327844619751, Acc:0.725 
+DEBUG:root:Epoch: 90, Training Loss:0.1881074756383896, Acc: 1.0,  Validation Loss:1.4303319454193115, Acc:0.675 
+DEBUG:root:Epoch: 91, Training Loss:0.1845131665468216, Acc: 1.0,  Validation Loss:1.4574676752090454, Acc:0.725 
+DEBUG:root:Epoch: 92, Training Loss:0.1820775717496872, Acc: 1.0,  Validation Loss:1.4342854022979736, Acc:0.7 
+DEBUG:root:Epoch: 93, Training Loss:0.1798560470342636, Acc: 1.0,  Validation Loss:1.5876704454421997, Acc:0.675 
+DEBUG:root:Epoch: 94, Training Loss:0.17819441854953766, Acc: 1.0,  Validation Loss:1.368687391281128, Acc:0.675 
+DEBUG:root:Epoch: 95, Training Loss:0.1764957755804062, Acc: 1.0,  Validation Loss:1.4097964763641357, Acc:0.7 
+DEBUG:root:Epoch: 96, Training Loss:0.17414450645446777, Acc: 1.0,  Validation Loss:1.3752989768981934, Acc:0.675 
+DEBUG:root:Epoch: 97, Training Loss:0.1721639484167099, Acc: 1.0,  Validation Loss:1.3376364707946777, Acc:0.675 
+DEBUG:root:Epoch: 98, Training Loss:0.16946008801460266, Acc: 1.0,  Validation Loss:1.3642299175262451, Acc:0.675 
+DEBUG:root:Epoch: 99, Training Loss:0.1684660017490387, Acc: 1.0,  Validation Loss:1.4253532886505127, Acc:0.675 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:50
-DEBUG:root:Accuracy on Test-Set: 75.0% (30 / 40)
+DEBUG:root:Time usage: 0:21:53
+DEBUG:root:Accuracy on Test-Set: 67.5% (27 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[30  5]
+DEBUG:root:[[27  8]
  [ 5  0]]
 DEBUG:root:valid_idx:32, test_idx:10
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.3616666666666667
 DEBUG:root:train_obs:0.3616666666666667
 DEBUG:root:label_1 percent:0.275
 DEBUG:root:label_1 percent:0.425
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -134,65 +198,45 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:32, test_idx10 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.5457556247711182, Acc: 0.625,  Validation Loss:2.1823508739471436, Acc:0.425 *
-DEBUG:root:Epoch: 2, Training Loss:1.4339089393615723, Acc: 0.65,  Validation Loss:1.4710545539855957, Acc:0.6 *
-DEBUG:root:Epoch: 3, Training Loss:1.3484046459197998, Acc: 0.75,  Validation Loss:1.4965091943740845, Acc:0.6 
-DEBUG:root:Epoch: 4, Training Loss:1.273845911026001, Acc: 0.725,  Validation Loss:1.3665353059768677, Acc:0.65 *
-DEBUG:root:Epoch: 5, Training Loss:1.1015431880950928, Acc: 0.85,  Validation Loss:1.3476228713989258, Acc:0.625 
-DEBUG:root:Epoch: 6, Training Loss:1.0392897129058838, Acc: 0.85,  Validation Loss:1.35350501537323, Acc:0.575 
-DEBUG:root:Epoch: 7, Training Loss:0.8501293659210205, Acc: 0.95,  Validation Loss:1.3431775569915771, Acc:0.55 
-DEBUG:root:Epoch: 8, Training Loss:0.7671582698822021, Acc: 0.975,  Validation Loss:1.5296590328216553, Acc:0.325 
-DEBUG:root:Epoch: 9, Training Loss:0.8632760047912598, Acc: 0.925,  Validation Loss:1.5085375308990479, Acc:0.325 
-DEBUG:root:Epoch: 10, Training Loss:0.6898605823516846, Acc: 0.975,  Validation Loss:1.5410515069961548, Acc:0.375 
-DEBUG:root:Epoch: 11, Training Loss:0.6874093413352966, Acc: 0.95,  Validation Loss:1.2896668910980225, Acc:0.525 
-DEBUG:root:Epoch: 12, Training Loss:0.6249279975891113, Acc: 0.975,  Validation Loss:1.2940248250961304, Acc:0.475 
-DEBUG:root:Epoch: 13, Training Loss:0.5768805146217346, Acc: 1.0,  Validation Loss:1.2384079694747925, Acc:0.6 
-DEBUG:root:Epoch: 14, Training Loss:0.5505568981170654, Acc: 1.0,  Validation Loss:1.2699103355407715, Acc:0.575 
-DEBUG:root:Epoch: 15, Training Loss:0.5221099853515625, Acc: 1.0,  Validation Loss:1.22451651096344, Acc:0.525 
-DEBUG:root:Epoch: 16, Training Loss:0.5116482377052307, Acc: 1.0,  Validation Loss:1.245858907699585, Acc:0.5 
-DEBUG:root:Epoch: 17, Training Loss:0.5018320679664612, Acc: 1.0,  Validation Loss:1.289772868156433, Acc:0.475 
-DEBUG:root:Epoch: 18, Training Loss:0.4726009964942932, Acc: 1.0,  Validation Loss:1.326115608215332, Acc:0.475 
-DEBUG:root:Epoch: 19, Training Loss:0.4586232602596283, Acc: 1.0,  Validation Loss:1.405422568321228, Acc:0.45 
-DEBUG:root:Epoch: 20, Training Loss:0.46114814281463623, Acc: 1.0,  Validation Loss:1.8845727443695068, Acc:0.375 
-DEBUG:root:Epoch: 21, Training Loss:0.4336032569408417, Acc: 1.0,  Validation Loss:1.9699896574020386, Acc:0.275 
-DEBUG:root:Epoch: 22, Training Loss:0.4200173318386078, Acc: 1.0,  Validation Loss:1.8574533462524414, Acc:0.325 
-DEBUG:root:Epoch: 23, Training Loss:0.409415602684021, Acc: 1.0,  Validation Loss:1.2086304426193237, Acc:0.425 
-DEBUG:root:Epoch: 24, Training Loss:0.4208473861217499, Acc: 1.0,  Validation Loss:1.0306055545806885, Acc:0.725 *
-DEBUG:root:Epoch: 25, Training Loss:0.40178611874580383, Acc: 1.0,  Validation Loss:1.0811190605163574, Acc:0.625 
-DEBUG:root:Epoch: 26, Training Loss:0.3820916712284088, Acc: 1.0,  Validation Loss:1.0305346250534058, Acc:0.675 
-DEBUG:root:Epoch: 27, Training Loss:0.37074989080429077, Acc: 1.0,  Validation Loss:1.1278624534606934, Acc:0.6 
-DEBUG:root:Epoch: 28, Training Loss:0.3694640100002289, Acc: 1.0,  Validation Loss:1.1226539611816406, Acc:0.625 
-DEBUG:root:Epoch: 29, Training Loss:0.3544570505619049, Acc: 1.0,  Validation Loss:1.1701908111572266, Acc:0.575 
-DEBUG:root:Epoch: 30, Training Loss:0.34542521834373474, Acc: 1.0,  Validation Loss:1.1592787504196167, Acc:0.625 
-DEBUG:root:Epoch: 31, Training Loss:0.3368408679962158, Acc: 1.0,  Validation Loss:1.160856008529663, Acc:0.575 
-DEBUG:root:Epoch: 32, Training Loss:0.3315459191799164, Acc: 1.0,  Validation Loss:1.1747115850448608, Acc:0.625 
-DEBUG:root:Epoch: 33, Training Loss:0.3226868510246277, Acc: 1.0,  Validation Loss:1.2280747890472412, Acc:0.625 
-DEBUG:root:Epoch: 34, Training Loss:0.31612327694892883, Acc: 1.0,  Validation Loss:1.1642944812774658, Acc:0.625 
-DEBUG:root:Epoch: 35, Training Loss:0.311231404542923, Acc: 1.0,  Validation Loss:1.1652371883392334, Acc:0.65 
-DEBUG:root:Epoch: 36, Training Loss:0.30392587184906006, Acc: 1.0,  Validation Loss:1.1780891418457031, Acc:0.675 
-DEBUG:root:Epoch: 37, Training Loss:0.2986724078655243, Acc: 1.0,  Validation Loss:1.245481014251709, Acc:0.6 
-DEBUG:root:Epoch: 38, Training Loss:0.2933327257633209, Acc: 1.0,  Validation Loss:1.2394020557403564, Acc:0.575 
-DEBUG:root:Epoch: 39, Training Loss:0.287988543510437, Acc: 1.0,  Validation Loss:1.1952438354492188, Acc:0.575 
-DEBUG:root:Epoch: 40, Training Loss:0.28297165036201477, Acc: 1.0,  Validation Loss:1.2251248359680176, Acc:0.6 
-DEBUG:root:Epoch: 41, Training Loss:0.27811962366104126, Acc: 1.0,  Validation Loss:1.169756293296814, Acc:0.625 
-DEBUG:root:Epoch: 42, Training Loss:0.2731580436229706, Acc: 1.0,  Validation Loss:1.1826412677764893, Acc:0.625 
-DEBUG:root:Epoch: 43, Training Loss:0.26932886242866516, Acc: 1.0,  Validation Loss:1.26389741897583, Acc:0.6 
-DEBUG:root:Epoch: 44, Training Loss:0.2642348110675812, Acc: 1.0,  Validation Loss:1.2081385850906372, Acc:0.575 
-DEBUG:root:Epoch: 45, Training Loss:0.25976553559303284, Acc: 1.0,  Validation Loss:1.1464147567749023, Acc:0.6 
-DEBUG:root:Epoch: 46, Training Loss:0.2557846009731293, Acc: 1.0,  Validation Loss:1.1809072494506836, Acc:0.6 
-DEBUG:root:Epoch: 47, Training Loss:0.25169676542282104, Acc: 1.0,  Validation Loss:1.141527533531189, Acc:0.6 
-DEBUG:root:Epoch: 48, Training Loss:0.248229518532753, Acc: 1.0,  Validation Loss:1.1120625734329224, Acc:0.675 
-DEBUG:root:Epoch: 49, Training Loss:0.24442152678966522, Acc: 1.0,  Validation Loss:1.2289557456970215, Acc:0.575 
-DEBUG:root:Epoch: 50, Training Loss:0.24074745178222656, Acc: 1.0,  Validation Loss:1.123870611190796, Acc:0.6 
-DEBUG:root:Epoch: 51, Training Loss:0.23555517196655273, Acc: 1.0,  Validation Loss:1.1020662784576416, Acc:0.65 
-DEBUG:root:Epoch: 52, Training Loss:0.23240983486175537, Acc: 1.0,  Validation Loss:1.191245675086975, Acc:0.525 
-DEBUG:root:Epoch: 53, Training Loss:0.22952193021774292, Acc: 1.0,  Validation Loss:1.1752132177352905, Acc:0.625 
-DEBUG:root:Epoch: 54, Training Loss:0.22491995990276337, Acc: 1.0,  Validation Loss:1.1396743059158325, Acc:0.575 
-DEBUG:root:Epoch: 55, Training Loss:0.22193226218223572, Acc: 1.0,  Validation Loss:1.3635460138320923, Acc:0.4 
-DEBUG:root:Epoch: 56, Training Loss:0.21845650672912598, Acc: 1.0,  Validation Loss:1.117328405380249, Acc:0.525 
-DEBUG:root:Epoch: 57, Training Loss:0.21505407989025116, Acc: 1.0,  Validation Loss:1.0547648668289185, Acc:0.625 
+DEBUG:root:Epoch: 1, Training Loss:1.5530495643615723, Acc: 0.625,  Validation Loss:1.7914903163909912, Acc:0.575 *
+DEBUG:root:Epoch: 2, Training Loss:1.4503417015075684, Acc: 0.625,  Validation Loss:1.5076303482055664, Acc:0.6 *
+DEBUG:root:Epoch: 3, Training Loss:1.3265659809112549, Acc: 0.725,  Validation Loss:1.542202115058899, Acc:0.5 
+DEBUG:root:Epoch: 4, Training Loss:1.2517015933990479, Acc: 0.725,  Validation Loss:1.4158982038497925, Acc:0.725 *
+DEBUG:root:Epoch: 5, Training Loss:1.0697481632232666, Acc: 0.875,  Validation Loss:1.365027904510498, Acc:0.7 
+DEBUG:root:Epoch: 6, Training Loss:0.9657559990882874, Acc: 0.925,  Validation Loss:1.355238676071167, Acc:0.625 
+DEBUG:root:Epoch: 7, Training Loss:0.9986764192581177, Acc: 0.875,  Validation Loss:1.4137027263641357, Acc:0.475 
+DEBUG:root:Epoch: 8, Training Loss:0.8035325407981873, Acc: 0.95,  Validation Loss:1.6080939769744873, Acc:0.3 
+DEBUG:root:Epoch: 9, Training Loss:0.7513121962547302, Acc: 0.975,  Validation Loss:1.385371208190918, Acc:0.475 
+DEBUG:root:Epoch: 10, Training Loss:0.6888145804405212, Acc: 0.975,  Validation Loss:1.3089969158172607, Acc:0.625 
+DEBUG:root:Epoch: 11, Training Loss:0.635443925857544, Acc: 1.0,  Validation Loss:1.4458460807800293, Acc:0.4 
+DEBUG:root:Epoch: 12, Training Loss:0.5906771421432495, Acc: 1.0,  Validation Loss:1.4296625852584839, Acc:0.475 
+DEBUG:root:Epoch: 13, Training Loss:0.5707967877388, Acc: 1.0,  Validation Loss:1.552093744277954, Acc:0.35 
+DEBUG:root:Epoch: 14, Training Loss:0.5526747107505798, Acc: 1.0,  Validation Loss:1.7033592462539673, Acc:0.325 
+DEBUG:root:Epoch: 15, Training Loss:0.5307907462120056, Acc: 1.0,  Validation Loss:1.9382787942886353, Acc:0.225 
+DEBUG:root:Epoch: 16, Training Loss:0.5195647478103638, Acc: 1.0,  Validation Loss:2.0946812629699707, Acc:0.25 
+DEBUG:root:Epoch: 17, Training Loss:0.5051800608634949, Acc: 1.0,  Validation Loss:2.5322675704956055, Acc:0.25 
+DEBUG:root:Epoch: 18, Training Loss:0.48688220977783203, Acc: 1.0,  Validation Loss:2.6770639419555664, Acc:0.275 
+DEBUG:root:Epoch: 19, Training Loss:0.48276299238204956, Acc: 1.0,  Validation Loss:2.688115119934082, Acc:0.25 
+DEBUG:root:Epoch: 20, Training Loss:0.46812358498573303, Acc: 1.0,  Validation Loss:2.9395546913146973, Acc:0.275 
+DEBUG:root:Epoch: 21, Training Loss:0.4477744996547699, Acc: 1.0,  Validation Loss:2.169442892074585, Acc:0.25 
+DEBUG:root:Epoch: 22, Training Loss:0.43617916107177734, Acc: 1.0,  Validation Loss:1.298410177230835, Acc:0.475 
+DEBUG:root:Epoch: 23, Training Loss:0.43615230917930603, Acc: 1.0,  Validation Loss:1.1129813194274902, Acc:0.65 
+DEBUG:root:Epoch: 24, Training Loss:0.4156874418258667, Acc: 1.0,  Validation Loss:1.143188714981079, Acc:0.625 
+DEBUG:root:Epoch: 25, Training Loss:0.4054889976978302, Acc: 1.0,  Validation Loss:1.5356285572052002, Acc:0.375 
+DEBUG:root:Epoch: 26, Training Loss:0.39413267374038696, Acc: 1.0,  Validation Loss:1.5662269592285156, Acc:0.35 
+DEBUG:root:Epoch: 27, Training Loss:0.3852575719356537, Acc: 1.0,  Validation Loss:1.5838711261749268, Acc:0.325 
+DEBUG:root:Epoch: 28, Training Loss:0.37758633494377136, Acc: 1.0,  Validation Loss:1.6741201877593994, Acc:0.35 
+DEBUG:root:Epoch: 29, Training Loss:0.36810722947120667, Acc: 1.0,  Validation Loss:1.7307453155517578, Acc:0.3 
+DEBUG:root:Epoch: 30, Training Loss:0.3596576452255249, Acc: 1.0,  Validation Loss:1.741783618927002, Acc:0.35 
+DEBUG:root:Epoch: 31, Training Loss:0.3526524305343628, Acc: 1.0,  Validation Loss:1.647186040878296, Acc:0.325 
+DEBUG:root:Epoch: 32, Training Loss:0.3455151319503784, Acc: 1.0,  Validation Loss:1.793443202972412, Acc:0.35 
+DEBUG:root:Epoch: 33, Training Loss:0.3379339575767517, Acc: 1.0,  Validation Loss:1.7307883501052856, Acc:0.325 
+DEBUG:root:Epoch: 34, Training Loss:0.3309219479560852, Acc: 1.0,  Validation Loss:1.7657525539398193, Acc:0.325 
+DEBUG:root:Epoch: 35, Training Loss:0.32477933168411255, Acc: 1.0,  Validation Loss:1.72306489944458, Acc:0.35 
+DEBUG:root:Epoch: 36, Training Loss:0.3188265860080719, Acc: 1.0,  Validation Loss:1.6553763151168823, Acc:0.325 
+DEBUG:root:Epoch: 37, Training Loss:0.31248238682746887, Acc: 1.0,  Validation Loss:1.751676082611084, Acc:0.325 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:08:48
+DEBUG:root:Time usage: 0:08:17
 DEBUG:root:Accuracy on Test-Set: 57.5% (23 / 40)
 DEBUG:root:Confusion Matrix:
 DEBUG:root:[[23  0]
@@ -200,12 +244,12 @@ DEBUG:root:[[23  0]
 DEBUG:root:valid_idx:29, test_idx:5
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.3616666666666667
 DEBUG:root:train_obs:0.3616666666666667
 DEBUG:root:label_1 percent:0.325
 DEBUG:root:label_1 percent:0.375
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -214,56 +258,65 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:29, test_idx5 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.464080572128296, Acc: 0.65,  Validation Loss:1.6605268716812134, Acc:0.575 *
-DEBUG:root:Epoch: 2, Training Loss:1.387681484222412, Acc: 0.65,  Validation Loss:1.3961139917373657, Acc:0.7 *
-DEBUG:root:Epoch: 3, Training Loss:1.3017181158065796, Acc: 0.7,  Validation Loss:1.3550337553024292, Acc:0.675 
-DEBUG:root:Epoch: 4, Training Loss:1.1676424741744995, Acc: 0.875,  Validation Loss:1.3314356803894043, Acc:0.675 
-DEBUG:root:Epoch: 5, Training Loss:1.0821505784988403, Acc: 0.825,  Validation Loss:1.3163716793060303, Acc:0.675 
-DEBUG:root:Epoch: 6, Training Loss:0.9052481651306152, Acc: 0.9,  Validation Loss:1.3014576435089111, Acc:0.675 
-DEBUG:root:Epoch: 7, Training Loss:0.8069463968276978, Acc: 0.925,  Validation Loss:1.2923628091812134, Acc:0.625 
-DEBUG:root:Epoch: 8, Training Loss:0.9017332196235657, Acc: 0.875,  Validation Loss:1.2678916454315186, Acc:0.625 
-DEBUG:root:Epoch: 9, Training Loss:0.6964647173881531, Acc: 1.0,  Validation Loss:1.280651330947876, Acc:0.55 
-DEBUG:root:Epoch: 10, Training Loss:0.697843074798584, Acc: 0.95,  Validation Loss:1.1987136602401733, Acc:0.7 
-DEBUG:root:Epoch: 11, Training Loss:0.6358468532562256, Acc: 0.975,  Validation Loss:1.2038776874542236, Acc:0.65 
-DEBUG:root:Epoch: 12, Training Loss:0.5706670880317688, Acc: 1.0,  Validation Loss:1.2035129070281982, Acc:0.525 
-DEBUG:root:Epoch: 13, Training Loss:0.5455637574195862, Acc: 1.0,  Validation Loss:1.214707851409912, Acc:0.575 
-DEBUG:root:Epoch: 14, Training Loss:0.5246651768684387, Acc: 1.0,  Validation Loss:1.2202785015106201, Acc:0.575 
-DEBUG:root:Epoch: 15, Training Loss:0.5050690174102783, Acc: 1.0,  Validation Loss:1.3032970428466797, Acc:0.45 
-DEBUG:root:Epoch: 16, Training Loss:0.4892467260360718, Acc: 1.0,  Validation Loss:1.2896685600280762, Acc:0.45 
-DEBUG:root:Epoch: 17, Training Loss:0.4724883735179901, Acc: 1.0,  Validation Loss:1.2779831886291504, Acc:0.5 
-DEBUG:root:Epoch: 18, Training Loss:0.46224913001060486, Acc: 1.0,  Validation Loss:1.138898491859436, Acc:0.525 
-DEBUG:root:Epoch: 19, Training Loss:0.4403669536113739, Acc: 1.0,  Validation Loss:1.128169059753418, Acc:0.6 
-DEBUG:root:Epoch: 20, Training Loss:0.43116408586502075, Acc: 1.0,  Validation Loss:1.1237741708755493, Acc:0.675 
-DEBUG:root:Epoch: 21, Training Loss:0.42251890897750854, Acc: 1.0,  Validation Loss:1.243922233581543, Acc:0.675 
-DEBUG:root:Epoch: 22, Training Loss:0.41016098856925964, Acc: 1.0,  Validation Loss:1.1566832065582275, Acc:0.675 
-DEBUG:root:Epoch: 23, Training Loss:0.41101980209350586, Acc: 1.0,  Validation Loss:1.2581461668014526, Acc:0.675 
-DEBUG:root:Epoch: 24, Training Loss:0.4000312089920044, Acc: 1.0,  Validation Loss:1.0642197132110596, Acc:0.475 
-DEBUG:root:Epoch: 25, Training Loss:0.410921186208725, Acc: 1.0,  Validation Loss:1.4014981985092163, Acc:0.35 
-DEBUG:root:Epoch: 26, Training Loss:0.38249146938323975, Acc: 1.0,  Validation Loss:1.3936183452606201, Acc:0.375 
-DEBUG:root:Epoch: 27, Training Loss:0.362252414226532, Acc: 1.0,  Validation Loss:1.0886175632476807, Acc:0.475 
-DEBUG:root:Epoch: 28, Training Loss:0.35595110058784485, Acc: 1.0,  Validation Loss:1.1455588340759277, Acc:0.55 
-DEBUG:root:Epoch: 29, Training Loss:0.346081018447876, Acc: 1.0,  Validation Loss:1.0759820938110352, Acc:0.525 
-DEBUG:root:Epoch: 30, Training Loss:0.3358381688594818, Acc: 1.0,  Validation Loss:1.0344767570495605, Acc:0.575 
-DEBUG:root:Epoch: 31, Training Loss:0.32764732837677, Acc: 1.0,  Validation Loss:1.1171433925628662, Acc:0.525 
-DEBUG:root:Epoch: 32, Training Loss:0.3193565011024475, Acc: 1.0,  Validation Loss:1.0241533517837524, Acc:0.6 
-DEBUG:root:Epoch: 33, Training Loss:0.314488023519516, Acc: 1.0,  Validation Loss:1.0976529121398926, Acc:0.525 
-DEBUG:root:Epoch: 34, Training Loss:0.30574744939804077, Acc: 1.0,  Validation Loss:1.0446799993515015, Acc:0.55 
-DEBUG:root:Epoch: 35, Training Loss:0.30055803060531616, Acc: 1.0,  Validation Loss:1.0281858444213867, Acc:0.525 
+DEBUG:root:Epoch: 1, Training Loss:1.5187034606933594, Acc: 0.65,  Validation Loss:2.3739776611328125, Acc:0.325 *
+DEBUG:root:Epoch: 2, Training Loss:1.4970682859420776, Acc: 0.7,  Validation Loss:1.7422398328781128, Acc:0.4 *
+DEBUG:root:Epoch: 3, Training Loss:1.3128225803375244, Acc: 0.8,  Validation Loss:1.527439832687378, Acc:0.425 *
+DEBUG:root:Epoch: 4, Training Loss:1.264935851097107, Acc: 0.675,  Validation Loss:1.4152767658233643, Acc:0.625 *
+DEBUG:root:Epoch: 5, Training Loss:1.1184022426605225, Acc: 0.85,  Validation Loss:1.4133353233337402, Acc:0.55 
+DEBUG:root:Epoch: 6, Training Loss:0.9740358591079712, Acc: 0.9,  Validation Loss:1.3786256313323975, Acc:0.575 
+DEBUG:root:Epoch: 7, Training Loss:0.8910061120986938, Acc: 0.95,  Validation Loss:1.3392709493637085, Acc:0.6 
+DEBUG:root:Epoch: 8, Training Loss:0.8195632696151733, Acc: 0.975,  Validation Loss:1.3584420680999756, Acc:0.6 
+DEBUG:root:Epoch: 9, Training Loss:0.7428099513053894, Acc: 1.0,  Validation Loss:1.4478890895843506, Acc:0.35 
+DEBUG:root:Epoch: 10, Training Loss:0.6848790049552917, Acc: 1.0,  Validation Loss:1.4055078029632568, Acc:0.375 
+DEBUG:root:Epoch: 11, Training Loss:0.7346851229667664, Acc: 0.95,  Validation Loss:1.2364860773086548, Acc:0.675 *
+DEBUG:root:Epoch: 12, Training Loss:0.6407533884048462, Acc: 1.0,  Validation Loss:1.209868311882019, Acc:0.625 
+DEBUG:root:Epoch: 13, Training Loss:0.6016013026237488, Acc: 1.0,  Validation Loss:1.2054741382598877, Acc:0.65 
+DEBUG:root:Epoch: 14, Training Loss:0.5897161960601807, Acc: 1.0,  Validation Loss:1.2799744606018066, Acc:0.5 
+DEBUG:root:Epoch: 15, Training Loss:0.5809953212738037, Acc: 1.0,  Validation Loss:1.3964903354644775, Acc:0.425 
+DEBUG:root:Epoch: 16, Training Loss:0.5447707772254944, Acc: 1.0,  Validation Loss:1.6338958740234375, Acc:0.35 
+DEBUG:root:Epoch: 17, Training Loss:0.5273851752281189, Acc: 1.0,  Validation Loss:1.7083837985992432, Acc:0.325 
+DEBUG:root:Epoch: 18, Training Loss:0.5214590430259705, Acc: 1.0,  Validation Loss:1.6977877616882324, Acc:0.325 
+DEBUG:root:Epoch: 19, Training Loss:0.5201395750045776, Acc: 1.0,  Validation Loss:1.1452611684799194, Acc:0.55 
+DEBUG:root:Epoch: 20, Training Loss:0.4933183193206787, Acc: 1.0,  Validation Loss:1.216613531112671, Acc:0.675 
+DEBUG:root:Epoch: 21, Training Loss:0.4688582420349121, Acc: 1.0,  Validation Loss:1.1572799682617188, Acc:0.675 
+DEBUG:root:Epoch: 22, Training Loss:0.4559551179409027, Acc: 1.0,  Validation Loss:1.1764607429504395, Acc:0.5 
+DEBUG:root:Epoch: 23, Training Loss:0.44416388869285583, Acc: 1.0,  Validation Loss:1.1700600385665894, Acc:0.6 
+DEBUG:root:Epoch: 24, Training Loss:0.43211501836776733, Acc: 1.0,  Validation Loss:1.1936752796173096, Acc:0.5 
+DEBUG:root:Epoch: 25, Training Loss:0.42230701446533203, Acc: 1.0,  Validation Loss:1.1697354316711426, Acc:0.5 
+DEBUG:root:Epoch: 26, Training Loss:0.41241055727005005, Acc: 1.0,  Validation Loss:1.1608591079711914, Acc:0.45 
+DEBUG:root:Epoch: 27, Training Loss:0.40251389145851135, Acc: 1.0,  Validation Loss:1.1839263439178467, Acc:0.525 
+DEBUG:root:Epoch: 28, Training Loss:0.3936268091201782, Acc: 1.0,  Validation Loss:1.1806468963623047, Acc:0.45 
+DEBUG:root:Epoch: 29, Training Loss:0.38445988297462463, Acc: 1.0,  Validation Loss:1.1890411376953125, Acc:0.375 
+DEBUG:root:Epoch: 30, Training Loss:0.3767213523387909, Acc: 1.0,  Validation Loss:1.1840579509735107, Acc:0.4 
+DEBUG:root:Epoch: 31, Training Loss:0.36756983399391174, Acc: 1.0,  Validation Loss:1.1759761571884155, Acc:0.4 
+DEBUG:root:Epoch: 32, Training Loss:0.36043643951416016, Acc: 1.0,  Validation Loss:1.1672966480255127, Acc:0.4 
+DEBUG:root:Epoch: 33, Training Loss:0.35265251994132996, Acc: 1.0,  Validation Loss:1.150291085243225, Acc:0.55 
+DEBUG:root:Epoch: 34, Training Loss:0.34469905495643616, Acc: 1.0,  Validation Loss:1.1430737972259521, Acc:0.45 
+DEBUG:root:Epoch: 35, Training Loss:0.3378410041332245, Acc: 1.0,  Validation Loss:1.0969970226287842, Acc:0.625 
+DEBUG:root:Epoch: 36, Training Loss:0.33118247985839844, Acc: 1.0,  Validation Loss:1.1027500629425049, Acc:0.55 
+DEBUG:root:Epoch: 37, Training Loss:0.3247585892677307, Acc: 1.0,  Validation Loss:1.114755392074585, Acc:0.6 
+DEBUG:root:Epoch: 38, Training Loss:0.318952739238739, Acc: 1.0,  Validation Loss:1.1128082275390625, Acc:0.575 
+DEBUG:root:Epoch: 39, Training Loss:0.3119909465312958, Acc: 1.0,  Validation Loss:1.0456345081329346, Acc:0.65 
+DEBUG:root:Epoch: 40, Training Loss:0.30716201663017273, Acc: 1.0,  Validation Loss:1.0811505317687988, Acc:0.575 
+DEBUG:root:Epoch: 41, Training Loss:0.30073854327201843, Acc: 1.0,  Validation Loss:1.0299440622329712, Acc:0.475 
+DEBUG:root:Epoch: 42, Training Loss:0.2949305772781372, Acc: 1.0,  Validation Loss:0.9792418479919434, Acc:0.6 
+DEBUG:root:Epoch: 43, Training Loss:0.28935450315475464, Acc: 1.0,  Validation Loss:1.059725284576416, Acc:0.575 
+DEBUG:root:Epoch: 44, Training Loss:0.2850026786327362, Acc: 1.0,  Validation Loss:0.9894816875457764, Acc:0.675 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:22
-DEBUG:root:Accuracy on Test-Set: 47.5% (19 / 40)
+DEBUG:root:Time usage: 0:09:45
+DEBUG:root:Accuracy on Test-Set: 60.0% (24 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[19  6]
- [15  0]]
+DEBUG:root:[[17  8]
+ [ 8  7]]
 DEBUG:root:valid_idx:30, test_idx:6
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.3566666666666667
 DEBUG:root:train_obs:0.3566666666666667
 DEBUG:root:label_1 percent:0.375
 DEBUG:root:label_1 percent:0.475
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -272,75 +325,55 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:30, test_idx6 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.4882478713989258, Acc: 0.675,  Validation Loss:1.5411906242370605, Acc:0.65 *
-DEBUG:root:Epoch: 2, Training Loss:1.391804814338684, Acc: 0.675,  Validation Loss:1.5063127279281616, Acc:0.575 
-DEBUG:root:Epoch: 3, Training Loss:1.343666672706604, Acc: 0.675,  Validation Loss:1.4173189401626587, Acc:0.7 *
-DEBUG:root:Epoch: 4, Training Loss:1.195051908493042, Acc: 0.875,  Validation Loss:1.3952758312225342, Acc:0.625 
-DEBUG:root:Epoch: 5, Training Loss:1.0749056339263916, Acc: 0.8,  Validation Loss:1.3595614433288574, Acc:0.65 
-DEBUG:root:Epoch: 6, Training Loss:0.9783079624176025, Acc: 0.85,  Validation Loss:1.342566728591919, Acc:0.625 
-DEBUG:root:Epoch: 7, Training Loss:0.8628859519958496, Acc: 0.975,  Validation Loss:1.3169662952423096, Acc:0.65 
-DEBUG:root:Epoch: 8, Training Loss:1.0035045146942139, Acc: 0.875,  Validation Loss:1.3481754064559937, Acc:0.475 
-DEBUG:root:Epoch: 9, Training Loss:0.782051146030426, Acc: 0.95,  Validation Loss:1.346331000328064, Acc:0.425 
-DEBUG:root:Epoch: 10, Training Loss:0.7644649147987366, Acc: 0.925,  Validation Loss:1.2975685596466064, Acc:0.55 
-DEBUG:root:Epoch: 11, Training Loss:0.6860365271568298, Acc: 0.975,  Validation Loss:1.2790517807006836, Acc:0.625 
-DEBUG:root:Epoch: 12, Training Loss:0.6209976673126221, Acc: 1.0,  Validation Loss:1.2155067920684814, Acc:0.625 
-DEBUG:root:Epoch: 13, Training Loss:0.5829392671585083, Acc: 1.0,  Validation Loss:1.1973938941955566, Acc:0.65 
-DEBUG:root:Epoch: 14, Training Loss:0.5648860335350037, Acc: 1.0,  Validation Loss:1.1916897296905518, Acc:0.6 
-DEBUG:root:Epoch: 15, Training Loss:0.5490564107894897, Acc: 1.0,  Validation Loss:1.1535110473632812, Acc:0.575 
-DEBUG:root:Epoch: 16, Training Loss:0.5395739078521729, Acc: 1.0,  Validation Loss:1.4177926778793335, Acc:0.4 
-DEBUG:root:Epoch: 17, Training Loss:0.5165263414382935, Acc: 1.0,  Validation Loss:1.3962230682373047, Acc:0.4 
-DEBUG:root:Epoch: 18, Training Loss:0.5021141767501831, Acc: 0.975,  Validation Loss:1.1531721353530884, Acc:0.525 
-DEBUG:root:Epoch: 19, Training Loss:0.46695929765701294, Acc: 1.0,  Validation Loss:1.0629488229751587, Acc:0.675 
-DEBUG:root:Epoch: 20, Training Loss:0.4594860374927521, Acc: 1.0,  Validation Loss:1.1281580924987793, Acc:0.65 
-DEBUG:root:Epoch: 21, Training Loss:0.44115933775901794, Acc: 1.0,  Validation Loss:1.0727132558822632, Acc:0.725 *
-DEBUG:root:Epoch: 22, Training Loss:0.4314429461956024, Acc: 1.0,  Validation Loss:1.05745530128479, Acc:0.675 
-DEBUG:root:Epoch: 23, Training Loss:0.41449642181396484, Acc: 1.0,  Validation Loss:1.0803401470184326, Acc:0.675 
-DEBUG:root:Epoch: 24, Training Loss:0.4052405059337616, Acc: 1.0,  Validation Loss:1.0645238161087036, Acc:0.675 
-DEBUG:root:Epoch: 25, Training Loss:0.397746205329895, Acc: 1.0,  Validation Loss:1.062572956085205, Acc:0.675 
-DEBUG:root:Epoch: 26, Training Loss:0.3814430832862854, Acc: 1.0,  Validation Loss:1.0711169242858887, Acc:0.675 
-DEBUG:root:Epoch: 27, Training Loss:0.3740691840648651, Acc: 1.0,  Validation Loss:1.0469164848327637, Acc:0.675 
-DEBUG:root:Epoch: 28, Training Loss:0.3655296862125397, Acc: 1.0,  Validation Loss:1.0403013229370117, Acc:0.7 
-DEBUG:root:Epoch: 29, Training Loss:0.3556549847126007, Acc: 1.0,  Validation Loss:1.0525245666503906, Acc:0.6 
-DEBUG:root:Epoch: 30, Training Loss:0.34941983222961426, Acc: 1.0,  Validation Loss:1.009450912475586, Acc:0.7 
-DEBUG:root:Epoch: 31, Training Loss:0.34121671319007874, Acc: 1.0,  Validation Loss:1.0602043867111206, Acc:0.675 
-DEBUG:root:Epoch: 32, Training Loss:0.33328187465667725, Acc: 1.0,  Validation Loss:1.0537326335906982, Acc:0.675 
-DEBUG:root:Epoch: 33, Training Loss:0.3295063376426697, Acc: 1.0,  Validation Loss:1.040740728378296, Acc:0.675 
-DEBUG:root:Epoch: 34, Training Loss:0.32142508029937744, Acc: 1.0,  Validation Loss:1.0264745950698853, Acc:0.625 
-DEBUG:root:Epoch: 35, Training Loss:0.31447911262512207, Acc: 1.0,  Validation Loss:1.031748652458191, Acc:0.675 
-DEBUG:root:Epoch: 36, Training Loss:0.30953651666641235, Acc: 1.0,  Validation Loss:0.995178759098053, Acc:0.7 
-DEBUG:root:Epoch: 37, Training Loss:0.3037743866443634, Acc: 1.0,  Validation Loss:1.0238748788833618, Acc:0.625 
-DEBUG:root:Epoch: 38, Training Loss:0.29728764295578003, Acc: 1.0,  Validation Loss:1.019016981124878, Acc:0.575 
-DEBUG:root:Epoch: 39, Training Loss:0.29101189970970154, Acc: 1.0,  Validation Loss:1.0525422096252441, Acc:0.525 
-DEBUG:root:Epoch: 40, Training Loss:0.2867393493652344, Acc: 1.0,  Validation Loss:1.0140548944473267, Acc:0.625 
-DEBUG:root:Epoch: 41, Training Loss:0.2819455564022064, Acc: 1.0,  Validation Loss:1.006427526473999, Acc:0.625 
-DEBUG:root:Epoch: 42, Training Loss:0.2781156301498413, Acc: 1.0,  Validation Loss:0.9972895383834839, Acc:0.65 
-DEBUG:root:Epoch: 43, Training Loss:0.2726232707500458, Acc: 1.0,  Validation Loss:0.9999650120735168, Acc:0.625 
-DEBUG:root:Epoch: 44, Training Loss:0.26842328906059265, Acc: 1.0,  Validation Loss:0.9889771938323975, Acc:0.6 
-DEBUG:root:Epoch: 45, Training Loss:0.26629847288131714, Acc: 1.0,  Validation Loss:1.0079265832901, Acc:0.65 
-DEBUG:root:Epoch: 46, Training Loss:0.2592347264289856, Acc: 1.0,  Validation Loss:1.0560741424560547, Acc:0.575 
-DEBUG:root:Epoch: 47, Training Loss:0.25494712591171265, Acc: 1.0,  Validation Loss:1.0244778394699097, Acc:0.6 
-DEBUG:root:Epoch: 48, Training Loss:0.25166943669319153, Acc: 1.0,  Validation Loss:1.0704476833343506, Acc:0.575 
-DEBUG:root:Epoch: 49, Training Loss:0.24618999660015106, Acc: 1.0,  Validation Loss:0.998914897441864, Acc:0.575 
-DEBUG:root:Epoch: 50, Training Loss:0.2427746206521988, Acc: 1.0,  Validation Loss:0.9275779128074646, Acc:0.625 
-DEBUG:root:Epoch: 51, Training Loss:0.23864807188510895, Acc: 1.0,  Validation Loss:1.0090773105621338, Acc:0.6 
-DEBUG:root:Epoch: 52, Training Loss:0.23488660156726837, Acc: 1.0,  Validation Loss:0.9866808652877808, Acc:0.625 
-DEBUG:root:Epoch: 53, Training Loss:0.23129047453403473, Acc: 1.0,  Validation Loss:0.9844934344291687, Acc:0.6 
-DEBUG:root:Epoch: 54, Training Loss:0.22913655638694763, Acc: 1.0,  Validation Loss:0.9823524355888367, Acc:0.625 
+DEBUG:root:Epoch: 1, Training Loss:1.4963215589523315, Acc: 0.675,  Validation Loss:1.6051846742630005, Acc:0.625 *
+DEBUG:root:Epoch: 2, Training Loss:1.4047586917877197, Acc: 0.7,  Validation Loss:1.5289310216903687, Acc:0.625 
+DEBUG:root:Epoch: 3, Training Loss:1.3890151977539062, Acc: 0.7,  Validation Loss:1.4987657070159912, Acc:0.6 
+DEBUG:root:Epoch: 4, Training Loss:1.1784815788269043, Acc: 0.8,  Validation Loss:1.4445700645446777, Acc:0.55 
+DEBUG:root:Epoch: 5, Training Loss:1.034625768661499, Acc: 0.875,  Validation Loss:1.4290385246276855, Acc:0.475 
+DEBUG:root:Epoch: 6, Training Loss:0.8700289130210876, Acc: 0.95,  Validation Loss:1.3880890607833862, Acc:0.475 
+DEBUG:root:Epoch: 7, Training Loss:0.7883692383766174, Acc: 1.0,  Validation Loss:1.352648377418518, Acc:0.6 
+DEBUG:root:Epoch: 8, Training Loss:0.7430519461631775, Acc: 1.0,  Validation Loss:1.365924596786499, Acc:0.625 
+DEBUG:root:Epoch: 9, Training Loss:0.7021281123161316, Acc: 1.0,  Validation Loss:1.3242391347885132, Acc:0.625 
+DEBUG:root:Epoch: 10, Training Loss:0.7014794945716858, Acc: 0.975,  Validation Loss:1.3632309436798096, Acc:0.475 
+DEBUG:root:Epoch: 11, Training Loss:0.6471766829490662, Acc: 1.0,  Validation Loss:1.3169965744018555, Acc:0.5 
+DEBUG:root:Epoch: 12, Training Loss:0.618483304977417, Acc: 1.0,  Validation Loss:1.344438076019287, Acc:0.5 
+DEBUG:root:Epoch: 13, Training Loss:0.5981723070144653, Acc: 1.0,  Validation Loss:1.5640909671783447, Acc:0.35 
+DEBUG:root:Epoch: 14, Training Loss:0.5781839489936829, Acc: 1.0,  Validation Loss:1.7406858205795288, Acc:0.35 
+DEBUG:root:Epoch: 15, Training Loss:0.5582927465438843, Acc: 1.0,  Validation Loss:1.7550886869430542, Acc:0.35 
+DEBUG:root:Epoch: 16, Training Loss:0.5370429158210754, Acc: 1.0,  Validation Loss:1.5979117155075073, Acc:0.375 
+DEBUG:root:Epoch: 17, Training Loss:0.5230315327644348, Acc: 1.0,  Validation Loss:1.3392560482025146, Acc:0.35 
+DEBUG:root:Epoch: 18, Training Loss:0.5052361488342285, Acc: 1.0,  Validation Loss:1.2905997037887573, Acc:0.475 
+DEBUG:root:Epoch: 19, Training Loss:0.48637935519218445, Acc: 1.0,  Validation Loss:1.4208550453186035, Acc:0.425 
+DEBUG:root:Epoch: 20, Training Loss:0.47523534297943115, Acc: 1.0,  Validation Loss:1.4607124328613281, Acc:0.35 
+DEBUG:root:Epoch: 21, Training Loss:0.45914679765701294, Acc: 1.0,  Validation Loss:1.5138031244277954, Acc:0.35 
+DEBUG:root:Epoch: 22, Training Loss:0.4477991461753845, Acc: 1.0,  Validation Loss:1.5175435543060303, Acc:0.35 
+DEBUG:root:Epoch: 23, Training Loss:0.4357687830924988, Acc: 1.0,  Validation Loss:1.558067798614502, Acc:0.375 
+DEBUG:root:Epoch: 24, Training Loss:0.4264342486858368, Acc: 1.0,  Validation Loss:1.5561983585357666, Acc:0.425 
+DEBUG:root:Epoch: 25, Training Loss:0.41477370262145996, Acc: 1.0,  Validation Loss:1.555101752281189, Acc:0.4 
+DEBUG:root:Epoch: 26, Training Loss:0.40625497698783875, Acc: 1.0,  Validation Loss:1.635635256767273, Acc:0.375 
+DEBUG:root:Epoch: 27, Training Loss:0.39556488394737244, Acc: 1.0,  Validation Loss:1.750383973121643, Acc:0.375 
+DEBUG:root:Epoch: 28, Training Loss:0.3864380717277527, Acc: 1.0,  Validation Loss:1.5325853824615479, Acc:0.4 
+DEBUG:root:Epoch: 29, Training Loss:0.37783491611480713, Acc: 1.0,  Validation Loss:1.5788756608963013, Acc:0.4 
+DEBUG:root:Epoch: 30, Training Loss:0.3709343373775482, Acc: 1.0,  Validation Loss:1.58150315284729, Acc:0.425 
+DEBUG:root:Epoch: 31, Training Loss:0.36220458149909973, Acc: 1.0,  Validation Loss:1.562796950340271, Acc:0.45 
+DEBUG:root:Epoch: 32, Training Loss:0.35420817136764526, Acc: 1.0,  Validation Loss:1.5499883890151978, Acc:0.4 
+DEBUG:root:Epoch: 33, Training Loss:0.34711307287216187, Acc: 1.0,  Validation Loss:1.6103440523147583, Acc:0.325 
+DEBUG:root:Epoch: 34, Training Loss:0.3397854268550873, Acc: 1.0,  Validation Loss:1.592321515083313, Acc:0.325 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:08:13
-DEBUG:root:Accuracy on Test-Set: 57.5% (23 / 40)
+DEBUG:root:Time usage: 0:07:35
+DEBUG:root:Accuracy on Test-Set: 55.0% (22 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[11 10]
- [ 7 12]]
+DEBUG:root:[[20  1]
+ [17  2]]
 DEBUG:root:valid_idx:27, test_idx:14
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.3641666666666667
 DEBUG:root:train_obs:0.3641666666666667
 DEBUG:root:label_1 percent:0.3
 DEBUG:root:label_1 percent:0.325
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -349,58 +382,57 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:27, test_idx14 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.601893663406372, Acc: 0.45,  Validation Loss:1.5825917720794678, Acc:0.45 *
-DEBUG:root:Epoch: 2, Training Loss:1.3816266059875488, Acc: 0.775,  Validation Loss:1.578951120376587, Acc:0.375 
-DEBUG:root:Epoch: 3, Training Loss:1.2677323818206787, Acc: 0.825,  Validation Loss:1.5262906551361084, Acc:0.4 
-DEBUG:root:Epoch: 4, Training Loss:1.1696968078613281, Acc: 0.9,  Validation Loss:1.415125846862793, Acc:0.6 *
-DEBUG:root:Epoch: 5, Training Loss:1.064105749130249, Acc: 0.85,  Validation Loss:1.4424269199371338, Acc:0.45 
-DEBUG:root:Epoch: 6, Training Loss:0.9875763654708862, Acc: 0.85,  Validation Loss:1.3549985885620117, Acc:0.575 
-DEBUG:root:Epoch: 7, Training Loss:0.8868253231048584, Acc: 0.9,  Validation Loss:1.418426275253296, Acc:0.425 
-DEBUG:root:Epoch: 8, Training Loss:0.7900999784469604, Acc: 0.975,  Validation Loss:1.352104902267456, Acc:0.475 
-DEBUG:root:Epoch: 9, Training Loss:0.7905910611152649, Acc: 0.95,  Validation Loss:1.5182347297668457, Acc:0.375 
-DEBUG:root:Epoch: 10, Training Loss:0.7782712578773499, Acc: 0.925,  Validation Loss:1.268132209777832, Acc:0.6 
-DEBUG:root:Epoch: 11, Training Loss:0.6491658091545105, Acc: 1.0,  Validation Loss:1.4278985261917114, Acc:0.35 
-DEBUG:root:Epoch: 12, Training Loss:0.6134889721870422, Acc: 1.0,  Validation Loss:1.4318397045135498, Acc:0.35 
-DEBUG:root:Epoch: 13, Training Loss:0.5757590532302856, Acc: 1.0,  Validation Loss:1.3922080993652344, Acc:0.375 
-DEBUG:root:Epoch: 14, Training Loss:0.5588807463645935, Acc: 1.0,  Validation Loss:1.4060217142105103, Acc:0.425 
-DEBUG:root:Epoch: 15, Training Loss:0.5338714122772217, Acc: 1.0,  Validation Loss:1.3210303783416748, Acc:0.425 
-DEBUG:root:Epoch: 16, Training Loss:0.5170372724533081, Acc: 1.0,  Validation Loss:1.248310923576355, Acc:0.5 
-DEBUG:root:Epoch: 17, Training Loss:0.5030683279037476, Acc: 1.0,  Validation Loss:1.1722180843353271, Acc:0.6 
-DEBUG:root:Epoch: 18, Training Loss:0.4958725571632385, Acc: 1.0,  Validation Loss:1.164998173713684, Acc:0.6 
-DEBUG:root:Epoch: 19, Training Loss:0.4725237488746643, Acc: 1.0,  Validation Loss:1.1903175115585327, Acc:0.575 
-DEBUG:root:Epoch: 20, Training Loss:0.4608500599861145, Acc: 1.0,  Validation Loss:1.2896034717559814, Acc:0.425 
-DEBUG:root:Epoch: 21, Training Loss:0.4535024166107178, Acc: 1.0,  Validation Loss:1.4335705041885376, Acc:0.35 
-DEBUG:root:Epoch: 22, Training Loss:0.4326225817203522, Acc: 1.0,  Validation Loss:1.3802242279052734, Acc:0.45 
-DEBUG:root:Epoch: 23, Training Loss:0.42699095606803894, Acc: 1.0,  Validation Loss:1.2212773561477661, Acc:0.575 
-DEBUG:root:Epoch: 24, Training Loss:0.406867116689682, Acc: 1.0,  Validation Loss:1.2403675317764282, Acc:0.55 
-DEBUG:root:Epoch: 25, Training Loss:0.3965626060962677, Acc: 1.0,  Validation Loss:1.2794790267944336, Acc:0.4 
-DEBUG:root:Epoch: 26, Training Loss:0.3878345787525177, Acc: 1.0,  Validation Loss:1.1978954076766968, Acc:0.475 
-DEBUG:root:Epoch: 27, Training Loss:0.3769306540489197, Acc: 1.0,  Validation Loss:1.1716786623001099, Acc:0.6 
-DEBUG:root:Epoch: 28, Training Loss:0.36989444494247437, Acc: 1.0,  Validation Loss:1.1584272384643555, Acc:0.5 
-DEBUG:root:Epoch: 29, Training Loss:0.36075007915496826, Acc: 1.0,  Validation Loss:1.2078096866607666, Acc:0.5 
-DEBUG:root:Epoch: 30, Training Loss:0.351497620344162, Acc: 1.0,  Validation Loss:1.1943684816360474, Acc:0.45 
-DEBUG:root:Epoch: 31, Training Loss:0.3453478515148163, Acc: 1.0,  Validation Loss:1.202443242073059, Acc:0.5 
-DEBUG:root:Epoch: 32, Training Loss:0.33679813146591187, Acc: 1.0,  Validation Loss:1.2133796215057373, Acc:0.425 
-DEBUG:root:Epoch: 33, Training Loss:0.32922789454460144, Acc: 1.0,  Validation Loss:1.1024432182312012, Acc:0.575 
-DEBUG:root:Epoch: 34, Training Loss:0.3241773545742035, Acc: 1.0,  Validation Loss:1.1780738830566406, Acc:0.45 
-DEBUG:root:Epoch: 35, Training Loss:0.3178251385688782, Acc: 1.0,  Validation Loss:1.1543970108032227, Acc:0.475 
-DEBUG:root:Epoch: 36, Training Loss:0.31070759892463684, Acc: 1.0,  Validation Loss:1.147400140762329, Acc:0.525 
-DEBUG:root:Epoch: 37, Training Loss:0.3032669126987457, Acc: 1.0,  Validation Loss:1.1165742874145508, Acc:0.575 
+DEBUG:root:Epoch: 1, Training Loss:1.6034858226776123, Acc: 0.4,  Validation Loss:1.6500730514526367, Acc:0.475 *
+DEBUG:root:Epoch: 2, Training Loss:1.4735634326934814, Acc: 0.7,  Validation Loss:1.505091667175293, Acc:0.55 *
+DEBUG:root:Epoch: 3, Training Loss:1.350752830505371, Acc: 0.8,  Validation Loss:1.411606788635254, Acc:0.7 *
+DEBUG:root:Epoch: 4, Training Loss:1.1356853246688843, Acc: 0.9,  Validation Loss:1.4097421169281006, Acc:0.65 
+DEBUG:root:Epoch: 5, Training Loss:0.9777672290802002, Acc: 0.95,  Validation Loss:1.4003117084503174, Acc:0.6 
+DEBUG:root:Epoch: 6, Training Loss:0.9103530645370483, Acc: 0.925,  Validation Loss:1.401676893234253, Acc:0.525 
+DEBUG:root:Epoch: 7, Training Loss:0.8458657264709473, Acc: 0.975,  Validation Loss:1.4706506729125977, Acc:0.425 
+DEBUG:root:Epoch: 8, Training Loss:0.77922123670578, Acc: 0.975,  Validation Loss:1.4206969738006592, Acc:0.425 
+DEBUG:root:Epoch: 9, Training Loss:0.7171258926391602, Acc: 1.0,  Validation Loss:1.679135799407959, Acc:0.3 
+DEBUG:root:Epoch: 10, Training Loss:0.6852490901947021, Acc: 1.0,  Validation Loss:1.4392242431640625, Acc:0.35 
+DEBUG:root:Epoch: 11, Training Loss:0.663945198059082, Acc: 1.0,  Validation Loss:1.2668876647949219, Acc:0.625 
+DEBUG:root:Epoch: 12, Training Loss:0.6307294368743896, Acc: 1.0,  Validation Loss:1.611129641532898, Acc:0.3 
+DEBUG:root:Epoch: 13, Training Loss:0.5949401259422302, Acc: 1.0,  Validation Loss:1.6364293098449707, Acc:0.3 
+DEBUG:root:Epoch: 14, Training Loss:0.5832104682922363, Acc: 1.0,  Validation Loss:1.8113741874694824, Acc:0.325 
+DEBUG:root:Epoch: 15, Training Loss:0.5610488057136536, Acc: 1.0,  Validation Loss:1.95978581905365, Acc:0.3 
+DEBUG:root:Epoch: 16, Training Loss:0.5367149114608765, Acc: 1.0,  Validation Loss:1.8813416957855225, Acc:0.3 
+DEBUG:root:Epoch: 17, Training Loss:0.5249876379966736, Acc: 1.0,  Validation Loss:1.604771375656128, Acc:0.3 
+DEBUG:root:Epoch: 18, Training Loss:0.5098427534103394, Acc: 1.0,  Validation Loss:1.7060775756835938, Acc:0.325 
+DEBUG:root:Epoch: 19, Training Loss:0.5119667649269104, Acc: 1.0,  Validation Loss:1.2677180767059326, Acc:0.4 
+DEBUG:root:Epoch: 20, Training Loss:0.5033714175224304, Acc: 1.0,  Validation Loss:1.146105408668518, Acc:0.675 
+DEBUG:root:Epoch: 21, Training Loss:0.5053126215934753, Acc: 0.975,  Validation Loss:1.152366042137146, Acc:0.675 
+DEBUG:root:Epoch: 22, Training Loss:0.4717066287994385, Acc: 1.0,  Validation Loss:1.130197286605835, Acc:0.7 
+DEBUG:root:Epoch: 23, Training Loss:0.44976553320884705, Acc: 1.0,  Validation Loss:1.3209799528121948, Acc:0.4 
+DEBUG:root:Epoch: 24, Training Loss:0.43547138571739197, Acc: 1.0,  Validation Loss:1.2327983379364014, Acc:0.425 
+DEBUG:root:Epoch: 25, Training Loss:0.42476874589920044, Acc: 1.0,  Validation Loss:1.2667553424835205, Acc:0.4 
+DEBUG:root:Epoch: 26, Training Loss:0.4121622145175934, Acc: 1.0,  Validation Loss:1.2107301950454712, Acc:0.5 
+DEBUG:root:Epoch: 27, Training Loss:0.4028532803058624, Acc: 1.0,  Validation Loss:1.2284657955169678, Acc:0.45 
+DEBUG:root:Epoch: 28, Training Loss:0.39379066228866577, Acc: 1.0,  Validation Loss:1.2804791927337646, Acc:0.325 
+DEBUG:root:Epoch: 29, Training Loss:0.38601207733154297, Acc: 1.0,  Validation Loss:1.2076799869537354, Acc:0.5 
+DEBUG:root:Epoch: 30, Training Loss:0.3769877851009369, Acc: 1.0,  Validation Loss:1.1717838048934937, Acc:0.4 
+DEBUG:root:Epoch: 31, Training Loss:0.36906376481056213, Acc: 1.0,  Validation Loss:1.1935559511184692, Acc:0.45 
+DEBUG:root:Epoch: 32, Training Loss:0.36059972643852234, Acc: 1.0,  Validation Loss:1.2607495784759521, Acc:0.35 
+DEBUG:root:Epoch: 33, Training Loss:0.3526448905467987, Acc: 1.0,  Validation Loss:1.1335844993591309, Acc:0.55 
+DEBUG:root:Epoch: 34, Training Loss:0.3465198874473572, Acc: 1.0,  Validation Loss:1.1477452516555786, Acc:0.35 
+DEBUG:root:Epoch: 35, Training Loss:0.33841028809547424, Acc: 1.0,  Validation Loss:1.1895233392715454, Acc:0.375 
+DEBUG:root:Epoch: 36, Training Loss:0.3326883018016815, Acc: 1.0,  Validation Loss:1.1296908855438232, Acc:0.45 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:40
-DEBUG:root:Accuracy on Test-Set: 60.0% (24 / 40)
+DEBUG:root:Time usage: 0:08:02
+DEBUG:root:Accuracy on Test-Set: 62.5% (25 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[20  7]
- [ 9  4]]
+DEBUG:root:[[25  2]
+ [13  0]]
 DEBUG:root:valid_idx:16, test_idx:31
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.3525
 DEBUG:root:train_obs:0.3525
 DEBUG:root:label_1 percent:0.5
 DEBUG:root:label_1 percent:0.475
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -409,55 +441,76 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:16, test_idx31 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.5756492614746094, Acc: 0.55,  Validation Loss:1.7636792659759521, Acc:0.525 *
-DEBUG:root:Epoch: 2, Training Loss:1.4496912956237793, Acc: 0.7,  Validation Loss:1.534608006477356, Acc:0.45 
-DEBUG:root:Epoch: 3, Training Loss:1.3542671203613281, Acc: 0.7,  Validation Loss:1.5280475616455078, Acc:0.475 
-DEBUG:root:Epoch: 4, Training Loss:1.2238692045211792, Acc: 0.725,  Validation Loss:1.4806666374206543, Acc:0.4 
-DEBUG:root:Epoch: 5, Training Loss:1.1393414735794067, Acc: 0.775,  Validation Loss:1.4476344585418701, Acc:0.35 
-DEBUG:root:Epoch: 6, Training Loss:1.0127284526824951, Acc: 0.875,  Validation Loss:1.4153196811676025, Acc:0.45 
-DEBUG:root:Epoch: 7, Training Loss:0.9167981147766113, Acc: 0.925,  Validation Loss:1.3953415155410767, Acc:0.4 
-DEBUG:root:Epoch: 8, Training Loss:0.8242682218551636, Acc: 0.95,  Validation Loss:1.3965338468551636, Acc:0.35 
-DEBUG:root:Epoch: 9, Training Loss:0.8920737504959106, Acc: 0.85,  Validation Loss:1.3869670629501343, Acc:0.375 
-DEBUG:root:Epoch: 10, Training Loss:0.8198687434196472, Acc: 0.9,  Validation Loss:1.449049472808838, Acc:0.475 
-DEBUG:root:Epoch: 11, Training Loss:0.7678471803665161, Acc: 0.9,  Validation Loss:1.3227715492248535, Acc:0.5 
-DEBUG:root:Epoch: 12, Training Loss:0.6549277305603027, Acc: 1.0,  Validation Loss:1.3038135766983032, Acc:0.425 
-DEBUG:root:Epoch: 13, Training Loss:0.6042773127555847, Acc: 1.0,  Validation Loss:1.3534269332885742, Acc:0.425 
-DEBUG:root:Epoch: 14, Training Loss:0.5556961894035339, Acc: 1.0,  Validation Loss:1.364288330078125, Acc:0.525 
-DEBUG:root:Epoch: 15, Training Loss:0.5415369272232056, Acc: 1.0,  Validation Loss:1.3488919734954834, Acc:0.45 
-DEBUG:root:Epoch: 16, Training Loss:0.5082899332046509, Acc: 1.0,  Validation Loss:1.3479418754577637, Acc:0.35 
-DEBUG:root:Epoch: 17, Training Loss:0.4948912262916565, Acc: 1.0,  Validation Loss:1.3673299551010132, Acc:0.475 
-DEBUG:root:Epoch: 18, Training Loss:0.47530996799468994, Acc: 1.0,  Validation Loss:1.3657047748565674, Acc:0.4 
-DEBUG:root:Epoch: 19, Training Loss:0.45790398120880127, Acc: 1.0,  Validation Loss:1.3414956331253052, Acc:0.4 
-DEBUG:root:Epoch: 20, Training Loss:0.44913798570632935, Acc: 1.0,  Validation Loss:1.3423166275024414, Acc:0.425 
-DEBUG:root:Epoch: 21, Training Loss:0.4339931011199951, Acc: 1.0,  Validation Loss:1.3477734327316284, Acc:0.4 
-DEBUG:root:Epoch: 22, Training Loss:0.4189968407154083, Acc: 1.0,  Validation Loss:1.3890700340270996, Acc:0.475 
-DEBUG:root:Epoch: 23, Training Loss:0.4130072593688965, Acc: 1.0,  Validation Loss:1.3213155269622803, Acc:0.4 
-DEBUG:root:Epoch: 24, Training Loss:0.41649726033210754, Acc: 1.0,  Validation Loss:1.3257043361663818, Acc:0.5 
-DEBUG:root:Epoch: 25, Training Loss:0.4187435805797577, Acc: 1.0,  Validation Loss:1.3794814348220825, Acc:0.45 
-DEBUG:root:Epoch: 26, Training Loss:0.399048388004303, Acc: 1.0,  Validation Loss:1.4683458805084229, Acc:0.45 
-DEBUG:root:Epoch: 27, Training Loss:0.4132342040538788, Acc: 0.975,  Validation Loss:1.6846598386764526, Acc:0.475 
-DEBUG:root:Epoch: 28, Training Loss:0.38475528359413147, Acc: 1.0,  Validation Loss:1.6978411674499512, Acc:0.45 
-DEBUG:root:Epoch: 29, Training Loss:0.3723636865615845, Acc: 1.0,  Validation Loss:1.7292522192001343, Acc:0.475 
-DEBUG:root:Epoch: 30, Training Loss:0.3644421100616455, Acc: 1.0,  Validation Loss:1.7555735111236572, Acc:0.5 
-DEBUG:root:Epoch: 31, Training Loss:0.35316380858421326, Acc: 1.0,  Validation Loss:1.5824538469314575, Acc:0.475 
-DEBUG:root:Epoch: 32, Training Loss:0.372959166765213, Acc: 0.975,  Validation Loss:1.2893911600112915, Acc:0.475 
-DEBUG:root:Epoch: 33, Training Loss:0.34847864508628845, Acc: 1.0,  Validation Loss:1.5038402080535889, Acc:0.35 
-DEBUG:root:Epoch: 34, Training Loss:0.3365830183029175, Acc: 1.0,  Validation Loss:1.2852840423583984, Acc:0.45 
+DEBUG:root:Epoch: 1, Training Loss:1.5957612991333008, Acc: 0.375,  Validation Loss:1.649125576019287, Acc:0.525 *
+DEBUG:root:Epoch: 2, Training Loss:1.4362107515335083, Acc: 0.7,  Validation Loss:1.5210758447647095, Acc:0.475 
+DEBUG:root:Epoch: 3, Training Loss:1.333085298538208, Acc: 0.725,  Validation Loss:1.5422136783599854, Acc:0.475 
+DEBUG:root:Epoch: 4, Training Loss:1.2405056953430176, Acc: 0.775,  Validation Loss:1.5020694732666016, Acc:0.5 
+DEBUG:root:Epoch: 5, Training Loss:1.1233251094818115, Acc: 0.825,  Validation Loss:1.5051820278167725, Acc:0.5 
+DEBUG:root:Epoch: 6, Training Loss:1.018140435218811, Acc: 0.85,  Validation Loss:1.4031827449798584, Acc:0.45 
+DEBUG:root:Epoch: 7, Training Loss:0.9422537088394165, Acc: 0.925,  Validation Loss:1.4126739501953125, Acc:0.5 
+DEBUG:root:Epoch: 8, Training Loss:0.8763906955718994, Acc: 0.925,  Validation Loss:1.3781203031539917, Acc:0.55 *
+DEBUG:root:Epoch: 9, Training Loss:0.7769250273704529, Acc: 1.0,  Validation Loss:1.321230173110962, Acc:0.5 
+DEBUG:root:Epoch: 10, Training Loss:0.722160816192627, Acc: 0.975,  Validation Loss:1.3332674503326416, Acc:0.475 
+DEBUG:root:Epoch: 11, Training Loss:0.6602091789245605, Acc: 1.0,  Validation Loss:1.3196778297424316, Acc:0.45 
+DEBUG:root:Epoch: 12, Training Loss:0.6405016779899597, Acc: 1.0,  Validation Loss:1.3184807300567627, Acc:0.475 
+DEBUG:root:Epoch: 13, Training Loss:0.607459306716919, Acc: 1.0,  Validation Loss:1.3327679634094238, Acc:0.45 
+DEBUG:root:Epoch: 14, Training Loss:0.5973511338233948, Acc: 1.0,  Validation Loss:1.423132061958313, Acc:0.45 
+DEBUG:root:Epoch: 15, Training Loss:0.5662593245506287, Acc: 1.0,  Validation Loss:1.300105094909668, Acc:0.425 
+DEBUG:root:Epoch: 16, Training Loss:0.5477548241615295, Acc: 1.0,  Validation Loss:1.3930964469909668, Acc:0.45 
+DEBUG:root:Epoch: 17, Training Loss:0.5331236124038696, Acc: 1.0,  Validation Loss:1.294458031654358, Acc:0.425 
+DEBUG:root:Epoch: 18, Training Loss:0.5153453350067139, Acc: 1.0,  Validation Loss:1.2931008338928223, Acc:0.425 
+DEBUG:root:Epoch: 19, Training Loss:0.5045232176780701, Acc: 1.0,  Validation Loss:1.3248471021652222, Acc:0.375 
+DEBUG:root:Epoch: 20, Training Loss:0.48744112253189087, Acc: 1.0,  Validation Loss:1.2788275480270386, Acc:0.525 
+DEBUG:root:Epoch: 21, Training Loss:0.47606098651885986, Acc: 1.0,  Validation Loss:1.2418158054351807, Acc:0.525 
+DEBUG:root:Epoch: 22, Training Loss:0.4642467796802521, Acc: 1.0,  Validation Loss:1.2589666843414307, Acc:0.575 *
+DEBUG:root:Epoch: 23, Training Loss:0.45332422852516174, Acc: 1.0,  Validation Loss:1.330914855003357, Acc:0.5 
+DEBUG:root:Epoch: 24, Training Loss:0.4427834153175354, Acc: 1.0,  Validation Loss:1.378416657447815, Acc:0.525 
+DEBUG:root:Epoch: 25, Training Loss:0.43007490038871765, Acc: 1.0,  Validation Loss:1.4314424991607666, Acc:0.5 
+DEBUG:root:Epoch: 26, Training Loss:0.4229585528373718, Acc: 1.0,  Validation Loss:1.5408744812011719, Acc:0.5 
+DEBUG:root:Epoch: 27, Training Loss:0.41732513904571533, Acc: 1.0,  Validation Loss:1.6658058166503906, Acc:0.5 
+DEBUG:root:Epoch: 28, Training Loss:0.40180647373199463, Acc: 1.0,  Validation Loss:1.477853775024414, Acc:0.5 
+DEBUG:root:Epoch: 29, Training Loss:0.39376190304756165, Acc: 1.0,  Validation Loss:1.3038430213928223, Acc:0.5 
+DEBUG:root:Epoch: 30, Training Loss:0.39998969435691833, Acc: 1.0,  Validation Loss:1.1614372730255127, Acc:0.55 
+DEBUG:root:Epoch: 31, Training Loss:0.38376879692077637, Acc: 1.0,  Validation Loss:1.250726580619812, Acc:0.45 
+DEBUG:root:Epoch: 32, Training Loss:0.389647513628006, Acc: 1.0,  Validation Loss:1.1632647514343262, Acc:0.5 
+DEBUG:root:Epoch: 33, Training Loss:0.38543015718460083, Acc: 1.0,  Validation Loss:1.228376865386963, Acc:0.5 
+DEBUG:root:Epoch: 34, Training Loss:0.39065420627593994, Acc: 1.0,  Validation Loss:1.2354319095611572, Acc:0.5 
+DEBUG:root:Epoch: 35, Training Loss:0.48458415269851685, Acc: 0.925,  Validation Loss:1.5553185939788818, Acc:0.5 
+DEBUG:root:Epoch: 36, Training Loss:0.4389006495475769, Acc: 0.95,  Validation Loss:2.1573421955108643, Acc:0.5 
+DEBUG:root:Epoch: 37, Training Loss:0.39375585317611694, Acc: 1.0,  Validation Loss:2.071608304977417, Acc:0.5 
+DEBUG:root:Epoch: 38, Training Loss:0.3898983597755432, Acc: 1.0,  Validation Loss:1.5884535312652588, Acc:0.475 
+DEBUG:root:Epoch: 39, Training Loss:0.36445507407188416, Acc: 1.0,  Validation Loss:1.5626916885375977, Acc:0.45 
+DEBUG:root:Epoch: 40, Training Loss:0.3492531180381775, Acc: 1.0,  Validation Loss:1.6316180229187012, Acc:0.425 
+DEBUG:root:Epoch: 41, Training Loss:0.34406042098999023, Acc: 1.0,  Validation Loss:1.6644325256347656, Acc:0.45 
+DEBUG:root:Epoch: 42, Training Loss:0.3346906304359436, Acc: 1.0,  Validation Loss:1.6982630491256714, Acc:0.45 
+DEBUG:root:Epoch: 43, Training Loss:0.32921454310417175, Acc: 1.0,  Validation Loss:1.671234130859375, Acc:0.45 
+DEBUG:root:Epoch: 44, Training Loss:0.32498741149902344, Acc: 1.0,  Validation Loss:1.6440637111663818, Acc:0.475 
+DEBUG:root:Epoch: 45, Training Loss:0.32082924246788025, Acc: 1.0,  Validation Loss:1.6304123401641846, Acc:0.425 
+DEBUG:root:Epoch: 46, Training Loss:0.3159668445587158, Acc: 1.0,  Validation Loss:1.658499002456665, Acc:0.425 
+DEBUG:root:Epoch: 47, Training Loss:0.3102186918258667, Acc: 1.0,  Validation Loss:1.6017303466796875, Acc:0.475 
+DEBUG:root:Epoch: 48, Training Loss:0.3051437735557556, Acc: 1.0,  Validation Loss:1.578255295753479, Acc:0.45 
+DEBUG:root:Epoch: 49, Training Loss:0.3033280372619629, Acc: 1.0,  Validation Loss:1.5688416957855225, Acc:0.45 
+DEBUG:root:Epoch: 50, Training Loss:0.2971237599849701, Acc: 1.0,  Validation Loss:1.552777647972107, Acc:0.45 
+DEBUG:root:Epoch: 51, Training Loss:0.29293927550315857, Acc: 1.0,  Validation Loss:1.5934978723526, Acc:0.45 
+DEBUG:root:Epoch: 52, Training Loss:0.2889842987060547, Acc: 1.0,  Validation Loss:1.6291155815124512, Acc:0.45 
+DEBUG:root:Epoch: 53, Training Loss:0.2859651744365692, Acc: 1.0,  Validation Loss:1.5246405601501465, Acc:0.425 
+DEBUG:root:Epoch: 54, Training Loss:0.2809257507324219, Acc: 1.0,  Validation Loss:1.5627033710479736, Acc:0.45 
+DEBUG:root:Epoch: 55, Training Loss:0.2774384915828705, Acc: 1.0,  Validation Loss:1.4651113748550415, Acc:0.425 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:14
+DEBUG:root:Time usage: 0:12:11
 DEBUG:root:Accuracy on Test-Set: 47.5% (19 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[ 0 21]
- [ 0 19]]
+DEBUG:root:[[ 4 17]
+ [ 4 15]]
 DEBUG:root:valid_idx:20, test_idx:26
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.36333333333333334
 DEBUG:root:train_obs:0.36333333333333334
 DEBUG:root:label_1 percent:0.15
 DEBUG:root:label_1 percent:0.5
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -466,74 +519,56 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:20, test_idx26 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.6117066144943237, Acc: 0.4,  Validation Loss:1.8820072412490845, Acc:0.225 *
-DEBUG:root:Epoch: 2, Training Loss:1.4242308139801025, Acc: 0.625,  Validation Loss:1.4168024063110352, Acc:0.7 *
-DEBUG:root:Epoch: 3, Training Loss:1.3171552419662476, Acc: 0.725,  Validation Loss:1.3955223560333252, Acc:0.7 
-DEBUG:root:Epoch: 4, Training Loss:1.2099207639694214, Acc: 0.8,  Validation Loss:1.2851179838180542, Acc:0.825 *
-DEBUG:root:Epoch: 5, Training Loss:1.039980173110962, Acc: 0.9,  Validation Loss:1.3181676864624023, Acc:0.775 
-DEBUG:root:Epoch: 6, Training Loss:0.9594796895980835, Acc: 0.925,  Validation Loss:1.4590559005737305, Acc:0.35 
-DEBUG:root:Epoch: 7, Training Loss:0.8805589079856873, Acc: 0.95,  Validation Loss:1.3446447849273682, Acc:0.55 
-DEBUG:root:Epoch: 8, Training Loss:0.7798902988433838, Acc: 1.0,  Validation Loss:1.30449640750885, Acc:0.65 
-DEBUG:root:Epoch: 9, Training Loss:0.8147827386856079, Acc: 0.95,  Validation Loss:1.7793447971343994, Acc:0.175 
-DEBUG:root:Epoch: 10, Training Loss:0.6995713114738464, Acc: 0.975,  Validation Loss:1.2000447511672974, Acc:0.775 
-DEBUG:root:Epoch: 11, Training Loss:0.6866628527641296, Acc: 0.975,  Validation Loss:1.376619577407837, Acc:0.25 
-DEBUG:root:Epoch: 12, Training Loss:0.6228026747703552, Acc: 1.0,  Validation Loss:1.6740601062774658, Acc:0.15 
-DEBUG:root:Epoch: 13, Training Loss:0.5878461599349976, Acc: 1.0,  Validation Loss:1.7062475681304932, Acc:0.2 
-DEBUG:root:Epoch: 14, Training Loss:0.5603105425834656, Acc: 1.0,  Validation Loss:1.5285112857818604, Acc:0.275 
-DEBUG:root:Epoch: 15, Training Loss:0.5380479693412781, Acc: 1.0,  Validation Loss:1.737589716911316, Acc:0.175 
-DEBUG:root:Epoch: 16, Training Loss:0.5180015563964844, Acc: 1.0,  Validation Loss:1.6361072063446045, Acc:0.2 
-DEBUG:root:Epoch: 17, Training Loss:0.5021229386329651, Acc: 1.0,  Validation Loss:1.5211575031280518, Acc:0.3 
-DEBUG:root:Epoch: 18, Training Loss:0.48718270659446716, Acc: 1.0,  Validation Loss:1.254464864730835, Acc:0.425 
-DEBUG:root:Epoch: 19, Training Loss:0.4796993136405945, Acc: 1.0,  Validation Loss:0.9819965958595276, Acc:0.725 
-DEBUG:root:Epoch: 20, Training Loss:0.5141741037368774, Acc: 0.975,  Validation Loss:0.8856253027915955, Acc:0.85 *
-DEBUG:root:Epoch: 21, Training Loss:0.4926629662513733, Acc: 0.975,  Validation Loss:1.0779635906219482, Acc:0.55 
-DEBUG:root:Epoch: 22, Training Loss:0.44740208983421326, Acc: 1.0,  Validation Loss:1.5805511474609375, Acc:0.275 
-DEBUG:root:Epoch: 23, Training Loss:0.44683244824409485, Acc: 0.975,  Validation Loss:1.2206923961639404, Acc:0.575 
-DEBUG:root:Epoch: 24, Training Loss:0.4180470407009125, Acc: 1.0,  Validation Loss:1.3215584754943848, Acc:0.375 
-DEBUG:root:Epoch: 25, Training Loss:0.4014880359172821, Acc: 1.0,  Validation Loss:1.5360571146011353, Acc:0.3 
-DEBUG:root:Epoch: 26, Training Loss:0.3919236958026886, Acc: 1.0,  Validation Loss:1.4690523147583008, Acc:0.35 
-DEBUG:root:Epoch: 27, Training Loss:0.3797386884689331, Acc: 1.0,  Validation Loss:1.355460286140442, Acc:0.4 
-DEBUG:root:Epoch: 28, Training Loss:0.3703354001045227, Acc: 1.0,  Validation Loss:1.3310630321502686, Acc:0.425 
-DEBUG:root:Epoch: 29, Training Loss:0.3612654209136963, Acc: 1.0,  Validation Loss:1.3704094886779785, Acc:0.45 
-DEBUG:root:Epoch: 30, Training Loss:0.35304465889930725, Acc: 1.0,  Validation Loss:1.4709558486938477, Acc:0.325 
-DEBUG:root:Epoch: 31, Training Loss:0.34388259053230286, Acc: 1.0,  Validation Loss:1.448110818862915, Acc:0.45 
-DEBUG:root:Epoch: 32, Training Loss:0.33682191371917725, Acc: 1.0,  Validation Loss:1.3812906742095947, Acc:0.35 
-DEBUG:root:Epoch: 33, Training Loss:0.3281882405281067, Acc: 1.0,  Validation Loss:1.425935983657837, Acc:0.325 
-DEBUG:root:Epoch: 34, Training Loss:0.3230365514755249, Acc: 1.0,  Validation Loss:1.3079495429992676, Acc:0.425 
-DEBUG:root:Epoch: 35, Training Loss:0.31743180751800537, Acc: 1.0,  Validation Loss:1.1898834705352783, Acc:0.475 
-DEBUG:root:Epoch: 36, Training Loss:0.3104606568813324, Acc: 1.0,  Validation Loss:1.294311285018921, Acc:0.425 
-DEBUG:root:Epoch: 37, Training Loss:0.3036557137966156, Acc: 1.0,  Validation Loss:1.3779845237731934, Acc:0.35 
-DEBUG:root:Epoch: 38, Training Loss:0.2989271283149719, Acc: 1.0,  Validation Loss:1.229935646057129, Acc:0.45 
-DEBUG:root:Epoch: 39, Training Loss:0.2927165925502777, Acc: 1.0,  Validation Loss:1.3180980682373047, Acc:0.35 
-DEBUG:root:Epoch: 40, Training Loss:0.28785255551338196, Acc: 1.0,  Validation Loss:1.2374712228775024, Acc:0.4 
-DEBUG:root:Epoch: 41, Training Loss:0.2828320264816284, Acc: 1.0,  Validation Loss:1.2147290706634521, Acc:0.425 
-DEBUG:root:Epoch: 42, Training Loss:0.27904632687568665, Acc: 1.0,  Validation Loss:1.1955881118774414, Acc:0.475 
-DEBUG:root:Epoch: 43, Training Loss:0.2728046774864197, Acc: 1.0,  Validation Loss:1.1353225708007812, Acc:0.45 
-DEBUG:root:Epoch: 44, Training Loss:0.2678926885128021, Acc: 1.0,  Validation Loss:1.212896466255188, Acc:0.425 
-DEBUG:root:Epoch: 45, Training Loss:0.26388514041900635, Acc: 1.0,  Validation Loss:1.1473406553268433, Acc:0.5 
-DEBUG:root:Epoch: 46, Training Loss:0.2588655948638916, Acc: 1.0,  Validation Loss:1.1745221614837646, Acc:0.425 
-DEBUG:root:Epoch: 47, Training Loss:0.254554808139801, Acc: 1.0,  Validation Loss:1.1084544658660889, Acc:0.5 
-DEBUG:root:Epoch: 48, Training Loss:0.24973265826702118, Acc: 1.0,  Validation Loss:1.135554552078247, Acc:0.375 
-DEBUG:root:Epoch: 49, Training Loss:0.2465476542711258, Acc: 1.0,  Validation Loss:1.100675344467163, Acc:0.5 
-DEBUG:root:Epoch: 50, Training Loss:0.24159687757492065, Acc: 1.0,  Validation Loss:1.0923008918762207, Acc:0.475 
-DEBUG:root:Epoch: 51, Training Loss:0.23919397592544556, Acc: 1.0,  Validation Loss:1.103926181793213, Acc:0.375 
-DEBUG:root:Epoch: 52, Training Loss:0.23439185321331024, Acc: 1.0,  Validation Loss:1.0873878002166748, Acc:0.475 
-DEBUG:root:Epoch: 53, Training Loss:0.23042191565036774, Acc: 1.0,  Validation Loss:1.1210086345672607, Acc:0.4 
+DEBUG:root:Epoch: 1, Training Loss:1.5538051128387451, Acc: 0.575,  Validation Loss:1.4608581066131592, Acc:0.675 *
+DEBUG:root:Epoch: 2, Training Loss:1.4387507438659668, Acc: 0.7,  Validation Loss:1.2713539600372314, Acc:0.9 *
+DEBUG:root:Epoch: 3, Training Loss:1.3185341358184814, Acc: 0.775,  Validation Loss:1.2701456546783447, Acc:0.85 
+DEBUG:root:Epoch: 4, Training Loss:1.101041316986084, Acc: 0.95,  Validation Loss:1.2360519170761108, Acc:0.85 
+DEBUG:root:Epoch: 5, Training Loss:1.0521183013916016, Acc: 0.875,  Validation Loss:1.2497601509094238, Acc:0.8 
+DEBUG:root:Epoch: 6, Training Loss:0.9470982551574707, Acc: 0.925,  Validation Loss:1.1790857315063477, Acc:0.875 
+DEBUG:root:Epoch: 7, Training Loss:0.8697554469108582, Acc: 0.95,  Validation Loss:1.4662258625030518, Acc:0.35 
+DEBUG:root:Epoch: 8, Training Loss:0.7696687579154968, Acc: 1.0,  Validation Loss:1.3461220264434814, Acc:0.525 
+DEBUG:root:Epoch: 9, Training Loss:0.7496988773345947, Acc: 0.975,  Validation Loss:1.179250955581665, Acc:0.875 
+DEBUG:root:Epoch: 10, Training Loss:0.6800206899642944, Acc: 1.0,  Validation Loss:1.1875944137573242, Acc:0.85 
+DEBUG:root:Epoch: 11, Training Loss:0.683383584022522, Acc: 0.975,  Validation Loss:1.3149484395980835, Acc:0.525 
+DEBUG:root:Epoch: 12, Training Loss:0.6297315359115601, Acc: 1.0,  Validation Loss:1.214072346687317, Acc:0.625 
+DEBUG:root:Epoch: 13, Training Loss:0.6090573072433472, Acc: 1.0,  Validation Loss:1.5055136680603027, Acc:0.325 
+DEBUG:root:Epoch: 14, Training Loss:0.5813627243041992, Acc: 1.0,  Validation Loss:1.2844667434692383, Acc:0.5 
+DEBUG:root:Epoch: 15, Training Loss:0.5641505718231201, Acc: 1.0,  Validation Loss:1.2002685070037842, Acc:0.575 
+DEBUG:root:Epoch: 16, Training Loss:0.5572397708892822, Acc: 1.0,  Validation Loss:1.0993468761444092, Acc:0.8 
+DEBUG:root:Epoch: 17, Training Loss:0.5398244857788086, Acc: 1.0,  Validation Loss:1.0078222751617432, Acc:0.85 
+DEBUG:root:Epoch: 18, Training Loss:0.5617497563362122, Acc: 1.0,  Validation Loss:0.9663448333740234, Acc:0.85 
+DEBUG:root:Epoch: 19, Training Loss:0.5521328449249268, Acc: 1.0,  Validation Loss:0.9718518257141113, Acc:0.85 
+DEBUG:root:Epoch: 20, Training Loss:0.5170267820358276, Acc: 0.975,  Validation Loss:1.195771336555481, Acc:0.525 
+DEBUG:root:Epoch: 21, Training Loss:0.5445702075958252, Acc: 0.975,  Validation Loss:1.5617597103118896, Acc:0.3 
+DEBUG:root:Epoch: 22, Training Loss:0.5831368565559387, Acc: 0.975,  Validation Loss:1.2537026405334473, Acc:0.425 
+DEBUG:root:Epoch: 23, Training Loss:0.49225807189941406, Acc: 0.975,  Validation Loss:1.3776869773864746, Acc:0.4 
+DEBUG:root:Epoch: 24, Training Loss:0.44855809211730957, Acc: 1.0,  Validation Loss:1.3924988508224487, Acc:0.4 
+DEBUG:root:Epoch: 25, Training Loss:0.43377354741096497, Acc: 1.0,  Validation Loss:1.3766818046569824, Acc:0.45 
+DEBUG:root:Epoch: 26, Training Loss:0.42281240224838257, Acc: 1.0,  Validation Loss:1.319347858428955, Acc:0.425 
+DEBUG:root:Epoch: 27, Training Loss:0.4112352132797241, Acc: 1.0,  Validation Loss:1.3260456323623657, Acc:0.475 
+DEBUG:root:Epoch: 28, Training Loss:0.4027794599533081, Acc: 1.0,  Validation Loss:1.4136810302734375, Acc:0.425 
+DEBUG:root:Epoch: 29, Training Loss:0.39210718870162964, Acc: 1.0,  Validation Loss:1.3114323616027832, Acc:0.5 
+DEBUG:root:Epoch: 30, Training Loss:0.3835154175758362, Acc: 1.0,  Validation Loss:1.4535213708877563, Acc:0.4 
+DEBUG:root:Epoch: 31, Training Loss:0.3736478090286255, Acc: 1.0,  Validation Loss:1.3226613998413086, Acc:0.45 
+DEBUG:root:Epoch: 32, Training Loss:0.3686104118824005, Acc: 1.0,  Validation Loss:1.2455995082855225, Acc:0.5 
+DEBUG:root:Epoch: 33, Training Loss:0.3585156202316284, Acc: 1.0,  Validation Loss:1.334829568862915, Acc:0.4 
+DEBUG:root:Epoch: 34, Training Loss:0.3516130745410919, Acc: 1.0,  Validation Loss:1.2213013172149658, Acc:0.525 
+DEBUG:root:Epoch: 35, Training Loss:0.34498104453086853, Acc: 1.0,  Validation Loss:1.1699795722961426, Acc:0.55 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:08:06
-DEBUG:root:Accuracy on Test-Set: 55.0% (22 / 40)
+DEBUG:root:Time usage: 0:07:47
+DEBUG:root:Accuracy on Test-Set: 50.0% (20 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[16  4]
- [14  6]]
+DEBUG:root:[[19  1]
+ [19  1]]
 DEBUG:root:valid_idx:13, test_idx:28
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.3641666666666667
 DEBUG:root:train_obs:0.3641666666666667
 DEBUG:root:label_1 percent:0.125
 DEBUG:root:label_1 percent:0.5
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -542,43 +577,64 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:13, test_idx28 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.4981443881988525, Acc: 0.675,  Validation Loss:1.3546319007873535, Acc:0.825 *
-DEBUG:root:Epoch: 2, Training Loss:1.3805696964263916, Acc: 0.75,  Validation Loss:1.211122751235962, Acc:0.9 *
-DEBUG:root:Epoch: 3, Training Loss:1.3188412189483643, Acc: 0.725,  Validation Loss:1.4365267753601074, Acc:0.575 
-DEBUG:root:Epoch: 4, Training Loss:1.2106192111968994, Acc: 0.85,  Validation Loss:1.3601763248443604, Acc:0.6 
-DEBUG:root:Epoch: 5, Training Loss:1.0855085849761963, Acc: 0.825,  Validation Loss:1.2499706745147705, Acc:0.775 
-DEBUG:root:Epoch: 6, Training Loss:0.9702710509300232, Acc: 0.875,  Validation Loss:1.3779659271240234, Acc:0.625 
-DEBUG:root:Epoch: 7, Training Loss:0.9160646200180054, Acc: 0.95,  Validation Loss:1.7301063537597656, Acc:0.225 
-DEBUG:root:Epoch: 8, Training Loss:0.8223569989204407, Acc: 0.975,  Validation Loss:1.3097035884857178, Acc:0.6 
-DEBUG:root:Epoch: 9, Training Loss:0.755358099937439, Acc: 0.975,  Validation Loss:1.631934642791748, Acc:0.25 
-DEBUG:root:Epoch: 10, Training Loss:0.8254126906394958, Acc: 0.925,  Validation Loss:2.5495455265045166, Acc:0.1 
-DEBUG:root:Epoch: 11, Training Loss:0.7221325039863586, Acc: 0.95,  Validation Loss:1.1498641967773438, Acc:0.775 
-DEBUG:root:Epoch: 12, Training Loss:0.6456061005592346, Acc: 0.975,  Validation Loss:1.3190841674804688, Acc:0.5 
-DEBUG:root:Epoch: 13, Training Loss:0.6058257222175598, Acc: 0.975,  Validation Loss:1.2095584869384766, Acc:0.65 
-DEBUG:root:Epoch: 14, Training Loss:0.5548186898231506, Acc: 1.0,  Validation Loss:1.2316787242889404, Acc:0.675 
-DEBUG:root:Epoch: 15, Training Loss:0.5290275812149048, Acc: 1.0,  Validation Loss:1.285476803779602, Acc:0.55 
-DEBUG:root:Epoch: 16, Training Loss:0.507841944694519, Acc: 1.0,  Validation Loss:1.245558261871338, Acc:0.525 
-DEBUG:root:Epoch: 17, Training Loss:0.48474735021591187, Acc: 1.0,  Validation Loss:1.413580060005188, Acc:0.4 
-DEBUG:root:Epoch: 18, Training Loss:0.47202324867248535, Acc: 1.0,  Validation Loss:1.4745652675628662, Acc:0.325 
-DEBUG:root:Epoch: 19, Training Loss:0.4508991241455078, Acc: 1.0,  Validation Loss:1.6757302284240723, Acc:0.325 
-DEBUG:root:Epoch: 20, Training Loss:0.4394022524356842, Acc: 1.0,  Validation Loss:1.7586420774459839, Acc:0.35 
-DEBUG:root:Epoch: 21, Training Loss:0.4241504371166229, Acc: 1.0,  Validation Loss:1.8182519674301147, Acc:0.35 
-DEBUG:root:Epoch: 22, Training Loss:0.41110578179359436, Acc: 1.0,  Validation Loss:1.7797636985778809, Acc:0.325 
-DEBUG:root:Epoch: 23, Training Loss:0.3999139666557312, Acc: 1.0,  Validation Loss:1.6598777770996094, Acc:0.325 
-DEBUG:root:Epoch: 24, Training Loss:0.3919181823730469, Acc: 1.0,  Validation Loss:1.6884448528289795, Acc:0.325 
-DEBUG:root:Epoch: 25, Training Loss:0.3829661011695862, Acc: 1.0,  Validation Loss:1.6846672296524048, Acc:0.325 
-DEBUG:root:Epoch: 26, Training Loss:0.3715898096561432, Acc: 1.0,  Validation Loss:1.5341088771820068, Acc:0.325 
-DEBUG:root:Epoch: 27, Training Loss:0.36560091376304626, Acc: 1.0,  Validation Loss:1.3354121446609497, Acc:0.4 
-DEBUG:root:Epoch: 28, Training Loss:0.3524262607097626, Acc: 1.0,  Validation Loss:1.2583513259887695, Acc:0.525 
-DEBUG:root:Epoch: 29, Training Loss:0.34562018513679504, Acc: 1.0,  Validation Loss:1.1839821338653564, Acc:0.575 
-DEBUG:root:Epoch: 30, Training Loss:0.33579766750335693, Acc: 1.0,  Validation Loss:1.0036920309066772, Acc:0.7 
-DEBUG:root:Epoch: 31, Training Loss:0.3286232352256775, Acc: 1.0,  Validation Loss:0.9466360807418823, Acc:0.75 
-DEBUG:root:Epoch: 32, Training Loss:0.32185667753219604, Acc: 1.0,  Validation Loss:0.8916102647781372, Acc:0.825 
-DEBUG:root:Epoch: 33, Training Loss:0.3160756826400757, Acc: 1.0,  Validation Loss:0.8427174091339111, Acc:0.85 
-DEBUG:root:Epoch: 34, Training Loss:0.30879124999046326, Acc: 1.0,  Validation Loss:1.0247929096221924, Acc:0.65 
-DEBUG:root:Epoch: 35, Training Loss:0.30047592520713806, Acc: 1.0,  Validation Loss:0.8309066295623779, Acc:0.825 
+DEBUG:root:Epoch: 1, Training Loss:1.6457555294036865, Acc: 0.4,  Validation Loss:2.494713544845581, Acc:0.35 *
+DEBUG:root:Epoch: 2, Training Loss:1.4149343967437744, Acc: 0.75,  Validation Loss:1.536963939666748, Acc:0.55 *
+DEBUG:root:Epoch: 3, Training Loss:1.3090789318084717, Acc: 0.775,  Validation Loss:1.6184210777282715, Acc:0.425 
+DEBUG:root:Epoch: 4, Training Loss:1.1497169733047485, Acc: 0.8,  Validation Loss:1.340369462966919, Acc:0.75 *
+DEBUG:root:Epoch: 5, Training Loss:1.0349160432815552, Acc: 0.875,  Validation Loss:1.2873284816741943, Acc:0.775 *
+DEBUG:root:Epoch: 6, Training Loss:0.9089596271514893, Acc: 0.95,  Validation Loss:1.2974326610565186, Acc:0.725 
+DEBUG:root:Epoch: 7, Training Loss:0.810965895652771, Acc: 0.975,  Validation Loss:1.2152135372161865, Acc:0.825 *
+DEBUG:root:Epoch: 8, Training Loss:0.7789690494537354, Acc: 0.975,  Validation Loss:1.2752556800842285, Acc:0.725 
+DEBUG:root:Epoch: 9, Training Loss:0.7722737789154053, Acc: 0.975,  Validation Loss:1.6387267112731934, Acc:0.25 
+DEBUG:root:Epoch: 10, Training Loss:0.6787546873092651, Acc: 1.0,  Validation Loss:1.1673123836517334, Acc:0.725 
+DEBUG:root:Epoch: 11, Training Loss:0.655083417892456, Acc: 1.0,  Validation Loss:1.1952381134033203, Acc:0.775 
+DEBUG:root:Epoch: 12, Training Loss:0.624006986618042, Acc: 1.0,  Validation Loss:1.0385510921478271, Acc:0.85 *
+DEBUG:root:Epoch: 13, Training Loss:0.6007522344589233, Acc: 1.0,  Validation Loss:1.044124960899353, Acc:0.85 
+DEBUG:root:Epoch: 14, Training Loss:0.5734865665435791, Acc: 1.0,  Validation Loss:1.1248661279678345, Acc:0.7 
+DEBUG:root:Epoch: 15, Training Loss:0.5504980683326721, Acc: 1.0,  Validation Loss:1.0084871053695679, Acc:0.85 
+DEBUG:root:Epoch: 16, Training Loss:0.5363998413085938, Acc: 1.0,  Validation Loss:1.1773117780685425, Acc:0.65 
+DEBUG:root:Epoch: 17, Training Loss:0.5218744874000549, Acc: 1.0,  Validation Loss:1.1851615905761719, Acc:0.6 
+DEBUG:root:Epoch: 18, Training Loss:0.5075429677963257, Acc: 1.0,  Validation Loss:1.0529003143310547, Acc:0.7 
+DEBUG:root:Epoch: 19, Training Loss:0.49269646406173706, Acc: 1.0,  Validation Loss:1.073146939277649, Acc:0.675 
+DEBUG:root:Epoch: 20, Training Loss:0.48582738637924194, Acc: 1.0,  Validation Loss:1.7563767433166504, Acc:0.275 
+DEBUG:root:Epoch: 21, Training Loss:0.47869396209716797, Acc: 1.0,  Validation Loss:1.1949349641799927, Acc:0.5 
+DEBUG:root:Epoch: 22, Training Loss:0.4605621099472046, Acc: 1.0,  Validation Loss:0.9854686260223389, Acc:0.775 
+DEBUG:root:Epoch: 23, Training Loss:0.45372316241264343, Acc: 1.0,  Validation Loss:0.8339279890060425, Acc:0.875 *
+DEBUG:root:Epoch: 24, Training Loss:0.4486416280269623, Acc: 1.0,  Validation Loss:1.0411617755889893, Acc:0.65 
+DEBUG:root:Epoch: 25, Training Loss:0.4506107270717621, Acc: 1.0,  Validation Loss:0.8037585020065308, Acc:0.875 
+DEBUG:root:Epoch: 26, Training Loss:0.4307861328125, Acc: 1.0,  Validation Loss:0.7934060096740723, Acc:0.875 
+DEBUG:root:Epoch: 27, Training Loss:0.41502636671066284, Acc: 1.0,  Validation Loss:0.7789918184280396, Acc:0.875 
+DEBUG:root:Epoch: 28, Training Loss:0.4048560857772827, Acc: 1.0,  Validation Loss:0.7872365713119507, Acc:0.875 
+DEBUG:root:Epoch: 29, Training Loss:0.3953600823879242, Acc: 1.0,  Validation Loss:1.0256462097167969, Acc:0.625 
+DEBUG:root:Epoch: 30, Training Loss:0.38450974225997925, Acc: 1.0,  Validation Loss:0.8149852752685547, Acc:0.825 
+DEBUG:root:Epoch: 31, Training Loss:0.3772130012512207, Acc: 1.0,  Validation Loss:0.8130826950073242, Acc:0.85 
+DEBUG:root:Epoch: 32, Training Loss:0.3704267144203186, Acc: 1.0,  Validation Loss:0.826673150062561, Acc:0.85 
+DEBUG:root:Epoch: 33, Training Loss:0.3627117872238159, Acc: 1.0,  Validation Loss:0.8110207319259644, Acc:0.85 
+DEBUG:root:Epoch: 34, Training Loss:0.3559281527996063, Acc: 1.0,  Validation Loss:0.8172167539596558, Acc:0.8 
+DEBUG:root:Epoch: 35, Training Loss:0.3490123748779297, Acc: 1.0,  Validation Loss:0.8020683526992798, Acc:0.825 
+DEBUG:root:Epoch: 36, Training Loss:0.342160165309906, Acc: 1.0,  Validation Loss:0.8973594307899475, Acc:0.775 
+DEBUG:root:Epoch: 37, Training Loss:0.3365245461463928, Acc: 1.0,  Validation Loss:0.8113809823989868, Acc:0.825 
+DEBUG:root:Epoch: 38, Training Loss:0.3304001986980438, Acc: 1.0,  Validation Loss:0.809532880783081, Acc:0.8 
+DEBUG:root:Epoch: 39, Training Loss:0.3258412778377533, Acc: 1.0,  Validation Loss:0.8331245183944702, Acc:0.75 
+DEBUG:root:Epoch: 40, Training Loss:0.31887227296829224, Acc: 1.0,  Validation Loss:0.8222966194152832, Acc:0.8 
+DEBUG:root:Epoch: 41, Training Loss:0.3132786750793457, Acc: 1.0,  Validation Loss:0.8227120637893677, Acc:0.825 
+DEBUG:root:Epoch: 42, Training Loss:0.3083767294883728, Acc: 1.0,  Validation Loss:0.7881160974502563, Acc:0.8 
+DEBUG:root:Epoch: 43, Training Loss:0.3026425242424011, Acc: 1.0,  Validation Loss:0.8069442510604858, Acc:0.825 
+DEBUG:root:Epoch: 44, Training Loss:0.2978774905204773, Acc: 1.0,  Validation Loss:0.8203911781311035, Acc:0.8 
+DEBUG:root:Epoch: 45, Training Loss:0.2920700013637543, Acc: 1.0,  Validation Loss:0.792904794216156, Acc:0.825 
+DEBUG:root:Epoch: 46, Training Loss:0.2879333198070526, Acc: 1.0,  Validation Loss:0.7674895524978638, Acc:0.825 
+DEBUG:root:Epoch: 47, Training Loss:0.2828133702278137, Acc: 1.0,  Validation Loss:0.7875717878341675, Acc:0.775 
+DEBUG:root:Epoch: 48, Training Loss:0.2777324914932251, Acc: 1.0,  Validation Loss:0.8017140626907349, Acc:0.8 
+DEBUG:root:Epoch: 49, Training Loss:0.2730751037597656, Acc: 1.0,  Validation Loss:0.7785598039627075, Acc:0.775 
+DEBUG:root:Epoch: 50, Training Loss:0.2690013349056244, Acc: 1.0,  Validation Loss:0.7713898420333862, Acc:0.8 
+DEBUG:root:Epoch: 51, Training Loss:0.26495492458343506, Acc: 1.0,  Validation Loss:0.765522837638855, Acc:0.85 
+DEBUG:root:Epoch: 52, Training Loss:0.26062262058258057, Acc: 1.0,  Validation Loss:0.7456715106964111, Acc:0.825 
+DEBUG:root:Epoch: 53, Training Loss:0.25602033734321594, Acc: 1.0,  Validation Loss:0.7559396028518677, Acc:0.775 
+DEBUG:root:Epoch: 54, Training Loss:0.25121647119522095, Acc: 1.0,  Validation Loss:0.7616686820983887, Acc:0.825 
+DEBUG:root:Epoch: 55, Training Loss:0.2475298047065735, Acc: 1.0,  Validation Loss:0.7071956992149353, Acc:0.85 
+DEBUG:root:Epoch: 56, Training Loss:0.2433682680130005, Acc: 1.0,  Validation Loss:0.7374368906021118, Acc:0.85 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:20
+DEBUG:root:Time usage: 0:12:26
 DEBUG:root:Accuracy on Test-Set: 50.0% (20 / 40)
 DEBUG:root:Confusion Matrix:
 DEBUG:root:[[20  0]
@@ -586,12 +642,12 @@ DEBUG:root:[[20  0]
 DEBUG:root:valid_idx:4, test_idx:3
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.3408333333333333
 DEBUG:root:train_obs:0.3408333333333333
 DEBUG:root:label_1 percent:0.55
 DEBUG:root:label_1 percent:0.775
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -600,56 +656,62 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:4, test_idx3 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.5041005611419678, Acc: 0.75,  Validation Loss:2.3185179233551025, Acc:0.525 *
-DEBUG:root:Epoch: 2, Training Loss:1.3596622943878174, Acc: 0.8,  Validation Loss:1.6576306819915771, Acc:0.65 *
-DEBUG:root:Epoch: 3, Training Loss:1.1941709518432617, Acc: 0.925,  Validation Loss:1.6984893083572388, Acc:0.55 
-DEBUG:root:Epoch: 4, Training Loss:1.0866695642471313, Acc: 0.95,  Validation Loss:1.6991891860961914, Acc:0.575 
-DEBUG:root:Epoch: 5, Training Loss:0.9399645328521729, Acc: 0.975,  Validation Loss:1.9178929328918457, Acc:0.525 
-DEBUG:root:Epoch: 6, Training Loss:0.8526543378829956, Acc: 0.95,  Validation Loss:1.526071310043335, Acc:0.525 
-DEBUG:root:Epoch: 7, Training Loss:0.7707148790359497, Acc: 1.0,  Validation Loss:1.6739989519119263, Acc:0.6 
-DEBUG:root:Epoch: 8, Training Loss:0.7020790576934814, Acc: 1.0,  Validation Loss:1.4970545768737793, Acc:0.65 
-DEBUG:root:Epoch: 9, Training Loss:0.7901241779327393, Acc: 0.925,  Validation Loss:1.7453200817108154, Acc:0.55 
-DEBUG:root:Epoch: 10, Training Loss:0.7005947232246399, Acc: 0.95,  Validation Loss:1.5588030815124512, Acc:0.425 
-DEBUG:root:Epoch: 11, Training Loss:0.6142616868019104, Acc: 1.0,  Validation Loss:1.6123466491699219, Acc:0.5 
-DEBUG:root:Epoch: 12, Training Loss:0.5756263136863708, Acc: 1.0,  Validation Loss:1.66749107837677, Acc:0.6 
-DEBUG:root:Epoch: 13, Training Loss:0.5471023917198181, Acc: 1.0,  Validation Loss:1.5632686614990234, Acc:0.55 
-DEBUG:root:Epoch: 14, Training Loss:0.531838595867157, Acc: 1.0,  Validation Loss:1.733675479888916, Acc:0.55 
-DEBUG:root:Epoch: 15, Training Loss:0.5066901445388794, Acc: 1.0,  Validation Loss:1.6927645206451416, Acc:0.55 
-DEBUG:root:Epoch: 16, Training Loss:0.4926416873931885, Acc: 1.0,  Validation Loss:1.7596346139907837, Acc:0.525 
-DEBUG:root:Epoch: 17, Training Loss:0.47101542353630066, Acc: 1.0,  Validation Loss:1.339272379875183, Acc:0.625 
-DEBUG:root:Epoch: 18, Training Loss:0.4612698256969452, Acc: 1.0,  Validation Loss:1.3757328987121582, Acc:0.525 
-DEBUG:root:Epoch: 19, Training Loss:0.48010551929473877, Acc: 1.0,  Validation Loss:1.268945336341858, Acc:0.55 
-DEBUG:root:Epoch: 20, Training Loss:0.45131826400756836, Acc: 1.0,  Validation Loss:1.2374221086502075, Acc:0.5 
-DEBUG:root:Epoch: 21, Training Loss:0.44729340076446533, Acc: 1.0,  Validation Loss:1.273740530014038, Acc:0.625 
-DEBUG:root:Epoch: 22, Training Loss:0.44046860933303833, Acc: 1.0,  Validation Loss:1.2917579412460327, Acc:0.625 
-DEBUG:root:Epoch: 23, Training Loss:0.41422489285469055, Acc: 1.0,  Validation Loss:1.396320104598999, Acc:0.525 
-DEBUG:root:Epoch: 24, Training Loss:0.39356565475463867, Acc: 1.0,  Validation Loss:1.2502985000610352, Acc:0.6 
-DEBUG:root:Epoch: 25, Training Loss:0.38451409339904785, Acc: 1.0,  Validation Loss:1.3590997457504272, Acc:0.55 
-DEBUG:root:Epoch: 26, Training Loss:0.37365835905075073, Acc: 1.0,  Validation Loss:1.383626937866211, Acc:0.6 
-DEBUG:root:Epoch: 27, Training Loss:0.3640982508659363, Acc: 1.0,  Validation Loss:1.2865853309631348, Acc:0.625 
-DEBUG:root:Epoch: 28, Training Loss:0.3556365370750427, Acc: 1.0,  Validation Loss:1.3656551837921143, Acc:0.6 
-DEBUG:root:Epoch: 29, Training Loss:0.3482282757759094, Acc: 1.0,  Validation Loss:1.235713005065918, Acc:0.625 
-DEBUG:root:Epoch: 30, Training Loss:0.3400256037712097, Acc: 1.0,  Validation Loss:1.3414206504821777, Acc:0.6 
-DEBUG:root:Epoch: 31, Training Loss:0.33323749899864197, Acc: 1.0,  Validation Loss:1.313892126083374, Acc:0.575 
-DEBUG:root:Epoch: 32, Training Loss:0.32592278718948364, Acc: 1.0,  Validation Loss:1.3565346002578735, Acc:0.6 
-DEBUG:root:Epoch: 33, Training Loss:0.32121244072914124, Acc: 1.0,  Validation Loss:1.3419071435928345, Acc:0.6 
-DEBUG:root:Epoch: 34, Training Loss:0.31321072578430176, Acc: 1.0,  Validation Loss:1.4138109683990479, Acc:0.625 
-DEBUG:root:Epoch: 35, Training Loss:0.3073473274707794, Acc: 1.0,  Validation Loss:1.4387911558151245, Acc:0.575 
+DEBUG:root:Epoch: 1, Training Loss:1.5229880809783936, Acc: 0.575,  Validation Loss:3.336560010910034, Acc:0.475 *
+DEBUG:root:Epoch: 2, Training Loss:1.4647154808044434, Acc: 0.575,  Validation Loss:2.291278839111328, Acc:0.525 *
+DEBUG:root:Epoch: 3, Training Loss:1.3277220726013184, Acc: 0.775,  Validation Loss:1.9382528066635132, Acc:0.55 *
+DEBUG:root:Epoch: 4, Training Loss:1.1532584428787231, Acc: 0.825,  Validation Loss:1.9896636009216309, Acc:0.4 
+DEBUG:root:Epoch: 5, Training Loss:0.9889026880264282, Acc: 0.975,  Validation Loss:2.08657169342041, Acc:0.4 
+DEBUG:root:Epoch: 6, Training Loss:0.85435950756073, Acc: 0.975,  Validation Loss:2.264090061187744, Acc:0.4 
+DEBUG:root:Epoch: 7, Training Loss:0.8305026888847351, Acc: 0.925,  Validation Loss:2.1949009895324707, Acc:0.475 
+DEBUG:root:Epoch: 8, Training Loss:0.7618020176887512, Acc: 0.975,  Validation Loss:1.6983211040496826, Acc:0.625 *
+DEBUG:root:Epoch: 9, Training Loss:0.7091318964958191, Acc: 0.975,  Validation Loss:1.7834843397140503, Acc:0.55 
+DEBUG:root:Epoch: 10, Training Loss:0.6810318231582642, Acc: 0.975,  Validation Loss:1.480051875114441, Acc:0.575 
+DEBUG:root:Epoch: 11, Training Loss:0.6280303597450256, Acc: 1.0,  Validation Loss:1.659354567527771, Acc:0.525 
+DEBUG:root:Epoch: 12, Training Loss:0.5976091623306274, Acc: 1.0,  Validation Loss:1.706955909729004, Acc:0.575 
+DEBUG:root:Epoch: 13, Training Loss:0.5851412415504456, Acc: 1.0,  Validation Loss:1.7520663738250732, Acc:0.55 
+DEBUG:root:Epoch: 14, Training Loss:0.565957248210907, Acc: 1.0,  Validation Loss:1.739241361618042, Acc:0.55 
+DEBUG:root:Epoch: 15, Training Loss:0.5560588240623474, Acc: 1.0,  Validation Loss:2.0703160762786865, Acc:0.575 
+DEBUG:root:Epoch: 16, Training Loss:0.5270304679870605, Acc: 1.0,  Validation Loss:2.3720850944519043, Acc:0.6 
+DEBUG:root:Epoch: 17, Training Loss:0.5127815008163452, Acc: 1.0,  Validation Loss:1.7325141429901123, Acc:0.625 
+DEBUG:root:Epoch: 18, Training Loss:0.5045331120491028, Acc: 1.0,  Validation Loss:2.0907936096191406, Acc:0.55 
+DEBUG:root:Epoch: 19, Training Loss:0.4867470860481262, Acc: 1.0,  Validation Loss:2.055358409881592, Acc:0.575 
+DEBUG:root:Epoch: 20, Training Loss:0.49325743317604065, Acc: 1.0,  Validation Loss:1.502819538116455, Acc:0.575 
+DEBUG:root:Epoch: 21, Training Loss:0.48168230056762695, Acc: 1.0,  Validation Loss:2.5182032585144043, Acc:0.4 
+DEBUG:root:Epoch: 22, Training Loss:0.4549677073955536, Acc: 1.0,  Validation Loss:1.8578529357910156, Acc:0.425 
+DEBUG:root:Epoch: 23, Training Loss:0.4431132376194, Acc: 1.0,  Validation Loss:1.7144187688827515, Acc:0.55 
+DEBUG:root:Epoch: 24, Training Loss:0.4328855574131012, Acc: 1.0,  Validation Loss:1.814807653427124, Acc:0.525 
+DEBUG:root:Epoch: 25, Training Loss:0.42261287569999695, Acc: 1.0,  Validation Loss:1.8863261938095093, Acc:0.475 
+DEBUG:root:Epoch: 26, Training Loss:0.41218167543411255, Acc: 1.0,  Validation Loss:1.7192403078079224, Acc:0.525 
+DEBUG:root:Epoch: 27, Training Loss:0.40477630496025085, Acc: 1.0,  Validation Loss:1.7572975158691406, Acc:0.475 
+DEBUG:root:Epoch: 28, Training Loss:0.3954853415489197, Acc: 1.0,  Validation Loss:1.7941192388534546, Acc:0.525 
+DEBUG:root:Epoch: 29, Training Loss:0.3875449597835541, Acc: 1.0,  Validation Loss:1.7836260795593262, Acc:0.525 
+DEBUG:root:Epoch: 30, Training Loss:0.3788423240184784, Acc: 1.0,  Validation Loss:1.686635971069336, Acc:0.525 
+DEBUG:root:Epoch: 31, Training Loss:0.37170693278312683, Acc: 1.0,  Validation Loss:1.7313292026519775, Acc:0.55 
+DEBUG:root:Epoch: 32, Training Loss:0.3641423285007477, Acc: 1.0,  Validation Loss:1.790815830230713, Acc:0.475 
+DEBUG:root:Epoch: 33, Training Loss:0.3575654625892639, Acc: 1.0,  Validation Loss:1.7664766311645508, Acc:0.475 
+DEBUG:root:Epoch: 34, Training Loss:0.35094767808914185, Acc: 1.0,  Validation Loss:1.9275716543197632, Acc:0.5 
+DEBUG:root:Epoch: 35, Training Loss:0.344756156206131, Acc: 1.0,  Validation Loss:1.7561264038085938, Acc:0.55 
+DEBUG:root:Epoch: 36, Training Loss:0.3384105861186981, Acc: 1.0,  Validation Loss:1.773838996887207, Acc:0.55 
+DEBUG:root:Epoch: 37, Training Loss:0.3324759304523468, Acc: 1.0,  Validation Loss:1.7401878833770752, Acc:0.525 
+DEBUG:root:Epoch: 38, Training Loss:0.32599619030952454, Acc: 1.0,  Validation Loss:1.787026047706604, Acc:0.55 
+DEBUG:root:Epoch: 39, Training Loss:0.3209589123725891, Acc: 1.0,  Validation Loss:1.7259745597839355, Acc:0.55 
+DEBUG:root:Epoch: 40, Training Loss:0.31520554423332214, Acc: 1.0,  Validation Loss:1.6521852016448975, Acc:0.55 
+DEBUG:root:Epoch: 41, Training Loss:0.31008899211883545, Acc: 1.0,  Validation Loss:1.6777350902557373, Acc:0.55 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:24
-DEBUG:root:Accuracy on Test-Set: 50.0% (20 / 40)
+DEBUG:root:Time usage: 0:09:06
+DEBUG:root:Accuracy on Test-Set: 57.5% (23 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[ 4  5]
- [15 16]]
+DEBUG:root:[[ 2  7]
+ [10 21]]
 DEBUG:root:valid_idx:9, test_idx:12
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.37166666666666665
 DEBUG:root:train_obs:0.37166666666666665
 DEBUG:root:label_1 percent:0.275
 DEBUG:root:label_1 percent:0.125
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -658,63 +720,45 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:9, test_idx12 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.5306121110916138, Acc: 0.6,  Validation Loss:2.561652183532715, Acc:0.65 *
-DEBUG:root:Epoch: 2, Training Loss:1.3988796472549438, Acc: 0.675,  Validation Loss:2.038784980773926, Acc:0.675 *
-DEBUG:root:Epoch: 3, Training Loss:1.3031868934631348, Acc: 0.8,  Validation Loss:1.595365285873413, Acc:0.625 
-DEBUG:root:Epoch: 4, Training Loss:1.2200342416763306, Acc: 0.75,  Validation Loss:1.6692445278167725, Acc:0.65 
-DEBUG:root:Epoch: 5, Training Loss:1.1257810592651367, Acc: 0.875,  Validation Loss:1.5066311359405518, Acc:0.575 
-DEBUG:root:Epoch: 6, Training Loss:1.0001721382141113, Acc: 0.925,  Validation Loss:1.6672348976135254, Acc:0.55 
-DEBUG:root:Epoch: 7, Training Loss:0.9302769899368286, Acc: 0.925,  Validation Loss:1.6454981565475464, Acc:0.6 
-DEBUG:root:Epoch: 8, Training Loss:0.815936267375946, Acc: 0.95,  Validation Loss:1.644844889640808, Acc:0.6 
-DEBUG:root:Epoch: 9, Training Loss:0.7738106846809387, Acc: 0.975,  Validation Loss:1.871715784072876, Acc:0.55 
-DEBUG:root:Epoch: 10, Training Loss:0.7072100043296814, Acc: 1.0,  Validation Loss:1.9038314819335938, Acc:0.575 
-DEBUG:root:Epoch: 11, Training Loss:0.6738556623458862, Acc: 0.95,  Validation Loss:1.5877184867858887, Acc:0.55 
-DEBUG:root:Epoch: 12, Training Loss:0.6323450803756714, Acc: 1.0,  Validation Loss:1.5447912216186523, Acc:0.55 
-DEBUG:root:Epoch: 13, Training Loss:0.5727397203445435, Acc: 1.0,  Validation Loss:1.4880039691925049, Acc:0.55 
-DEBUG:root:Epoch: 14, Training Loss:0.5524038076400757, Acc: 1.0,  Validation Loss:1.6076464653015137, Acc:0.575 
-DEBUG:root:Epoch: 15, Training Loss:0.529683530330658, Acc: 1.0,  Validation Loss:1.6105107069015503, Acc:0.575 
-DEBUG:root:Epoch: 16, Training Loss:0.5079894065856934, Acc: 1.0,  Validation Loss:1.609865665435791, Acc:0.525 
-DEBUG:root:Epoch: 17, Training Loss:0.49170058965682983, Acc: 1.0,  Validation Loss:1.668168544769287, Acc:0.6 
-DEBUG:root:Epoch: 18, Training Loss:0.48158618807792664, Acc: 1.0,  Validation Loss:1.5444875955581665, Acc:0.525 
-DEBUG:root:Epoch: 19, Training Loss:0.47375038266181946, Acc: 1.0,  Validation Loss:1.3071708679199219, Acc:0.55 
-DEBUG:root:Epoch: 20, Training Loss:0.45704469084739685, Acc: 1.0,  Validation Loss:1.3407045602798462, Acc:0.7 *
-DEBUG:root:Epoch: 21, Training Loss:0.4690030515193939, Acc: 1.0,  Validation Loss:1.6147511005401611, Acc:0.7 
-DEBUG:root:Epoch: 22, Training Loss:0.4503926634788513, Acc: 1.0,  Validation Loss:1.464637041091919, Acc:0.725 *
-DEBUG:root:Epoch: 23, Training Loss:0.4506877064704895, Acc: 0.975,  Validation Loss:1.4742499589920044, Acc:0.55 
-DEBUG:root:Epoch: 24, Training Loss:0.4258711338043213, Acc: 1.0,  Validation Loss:1.2581168413162231, Acc:0.65 
-DEBUG:root:Epoch: 25, Training Loss:0.40452754497528076, Acc: 1.0,  Validation Loss:1.6815041303634644, Acc:0.525 
-DEBUG:root:Epoch: 26, Training Loss:0.38990548253059387, Acc: 1.0,  Validation Loss:1.5106463432312012, Acc:0.55 
-DEBUG:root:Epoch: 27, Training Loss:0.3796983063220978, Acc: 1.0,  Validation Loss:1.4523190259933472, Acc:0.55 
-DEBUG:root:Epoch: 28, Training Loss:0.3694388270378113, Acc: 1.0,  Validation Loss:1.3268622159957886, Acc:0.6 
-DEBUG:root:Epoch: 29, Training Loss:0.36126628518104553, Acc: 1.0,  Validation Loss:1.297340750694275, Acc:0.6 
-DEBUG:root:Epoch: 30, Training Loss:0.3536754548549652, Acc: 1.0,  Validation Loss:1.2862367630004883, Acc:0.6 
-DEBUG:root:Epoch: 31, Training Loss:0.34567832946777344, Acc: 1.0,  Validation Loss:1.321569800376892, Acc:0.625 
-DEBUG:root:Epoch: 32, Training Loss:0.3373245596885681, Acc: 1.0,  Validation Loss:1.373398780822754, Acc:0.625 
-DEBUG:root:Epoch: 33, Training Loss:0.3313688635826111, Acc: 1.0,  Validation Loss:1.2681727409362793, Acc:0.6 
-DEBUG:root:Epoch: 34, Training Loss:0.3242293894290924, Acc: 1.0,  Validation Loss:1.2882457971572876, Acc:0.65 
-DEBUG:root:Epoch: 35, Training Loss:0.3166840076446533, Acc: 1.0,  Validation Loss:1.2452133893966675, Acc:0.575 
-DEBUG:root:Epoch: 36, Training Loss:0.31223198771476746, Acc: 1.0,  Validation Loss:1.2940850257873535, Acc:0.625 
-DEBUG:root:Epoch: 37, Training Loss:0.30589693784713745, Acc: 1.0,  Validation Loss:1.278880000114441, Acc:0.6 
-DEBUG:root:Epoch: 38, Training Loss:0.30075281858444214, Acc: 1.0,  Validation Loss:1.2903180122375488, Acc:0.6 
-DEBUG:root:Epoch: 39, Training Loss:0.2943129539489746, Acc: 1.0,  Validation Loss:1.3398147821426392, Acc:0.6 
-DEBUG:root:Epoch: 40, Training Loss:0.2904914915561676, Acc: 1.0,  Validation Loss:1.341150164604187, Acc:0.6 
-DEBUG:root:Epoch: 41, Training Loss:0.2844879627227783, Acc: 1.0,  Validation Loss:1.2959063053131104, Acc:0.575 
-DEBUG:root:Epoch: 42, Training Loss:0.2799600660800934, Acc: 1.0,  Validation Loss:1.2779699563980103, Acc:0.6 
-DEBUG:root:Epoch: 43, Training Loss:0.2738397419452667, Acc: 1.0,  Validation Loss:1.3358666896820068, Acc:0.6 
-DEBUG:root:Epoch: 44, Training Loss:0.27046099305152893, Acc: 1.0,  Validation Loss:1.235694169998169, Acc:0.6 
-DEBUG:root:Epoch: 45, Training Loss:0.2651119530200958, Acc: 1.0,  Validation Loss:1.2010293006896973, Acc:0.6 
-DEBUG:root:Epoch: 46, Training Loss:0.261898398399353, Acc: 1.0,  Validation Loss:1.269158124923706, Acc:0.6 
-DEBUG:root:Epoch: 47, Training Loss:0.25692620873451233, Acc: 1.0,  Validation Loss:1.3292113542556763, Acc:0.575 
-DEBUG:root:Epoch: 48, Training Loss:0.25257644057273865, Acc: 1.0,  Validation Loss:1.2796677350997925, Acc:0.625 
-DEBUG:root:Epoch: 49, Training Loss:0.24938473105430603, Acc: 1.0,  Validation Loss:1.2097668647766113, Acc:0.625 
-DEBUG:root:Epoch: 50, Training Loss:0.2450401782989502, Acc: 1.0,  Validation Loss:1.2664633989334106, Acc:0.625 
-DEBUG:root:Epoch: 51, Training Loss:0.2411867380142212, Acc: 1.0,  Validation Loss:1.2760602235794067, Acc:0.625 
-DEBUG:root:Epoch: 52, Training Loss:0.23797038197517395, Acc: 1.0,  Validation Loss:1.2307153940200806, Acc:0.575 
-DEBUG:root:Epoch: 53, Training Loss:0.23509980738162994, Acc: 1.0,  Validation Loss:1.2528018951416016, Acc:0.625 
-DEBUG:root:Epoch: 54, Training Loss:0.2318650484085083, Acc: 1.0,  Validation Loss:1.154768466949463, Acc:0.6 
-DEBUG:root:Epoch: 55, Training Loss:0.22964727878570557, Acc: 1.0,  Validation Loss:1.1908351182937622, Acc:0.7 
+DEBUG:root:Epoch: 1, Training Loss:1.5715129375457764, Acc: 0.475,  Validation Loss:2.019406318664551, Acc:0.7 *
+DEBUG:root:Epoch: 2, Training Loss:1.4567222595214844, Acc: 0.775,  Validation Loss:1.7521318197250366, Acc:0.625 
+DEBUG:root:Epoch: 3, Training Loss:1.3570947647094727, Acc: 0.725,  Validation Loss:1.694685697555542, Acc:0.55 
+DEBUG:root:Epoch: 4, Training Loss:1.2184035778045654, Acc: 0.8,  Validation Loss:1.6905564069747925, Acc:0.725 *
+DEBUG:root:Epoch: 5, Training Loss:1.0984747409820557, Acc: 0.925,  Validation Loss:1.5451802015304565, Acc:0.65 
+DEBUG:root:Epoch: 6, Training Loss:0.9397810697555542, Acc: 0.95,  Validation Loss:1.4639484882354736, Acc:0.65 
+DEBUG:root:Epoch: 7, Training Loss:0.8153458833694458, Acc: 1.0,  Validation Loss:1.5135787725448608, Acc:0.675 
+DEBUG:root:Epoch: 8, Training Loss:0.8377578854560852, Acc: 0.95,  Validation Loss:3.014615535736084, Acc:0.375 
+DEBUG:root:Epoch: 9, Training Loss:0.7643047571182251, Acc: 0.95,  Validation Loss:1.6888972520828247, Acc:0.6 
+DEBUG:root:Epoch: 10, Training Loss:0.7024081945419312, Acc: 1.0,  Validation Loss:1.5910601615905762, Acc:0.525 
+DEBUG:root:Epoch: 11, Training Loss:0.655579149723053, Acc: 1.0,  Validation Loss:1.4858254194259644, Acc:0.675 
+DEBUG:root:Epoch: 12, Training Loss:0.6180611848831177, Acc: 1.0,  Validation Loss:1.5281853675842285, Acc:0.6 
+DEBUG:root:Epoch: 13, Training Loss:0.5901269912719727, Acc: 1.0,  Validation Loss:1.804282784461975, Acc:0.55 
+DEBUG:root:Epoch: 14, Training Loss:0.5764425992965698, Acc: 1.0,  Validation Loss:1.5490622520446777, Acc:0.575 
+DEBUG:root:Epoch: 15, Training Loss:0.5580534934997559, Acc: 1.0,  Validation Loss:1.58292818069458, Acc:0.55 
+DEBUG:root:Epoch: 16, Training Loss:0.5365343689918518, Acc: 1.0,  Validation Loss:1.4210925102233887, Acc:0.65 
+DEBUG:root:Epoch: 17, Training Loss:0.5277867317199707, Acc: 1.0,  Validation Loss:1.2840489149093628, Acc:0.6 
+DEBUG:root:Epoch: 18, Training Loss:0.5110296010971069, Acc: 1.0,  Validation Loss:1.3811423778533936, Acc:0.575 
+DEBUG:root:Epoch: 19, Training Loss:0.49865540862083435, Acc: 1.0,  Validation Loss:1.358003854751587, Acc:0.55 
+DEBUG:root:Epoch: 20, Training Loss:0.4788142144680023, Acc: 1.0,  Validation Loss:1.1237396001815796, Acc:0.625 
+DEBUG:root:Epoch: 21, Training Loss:0.46391329169273376, Acc: 1.0,  Validation Loss:1.1942161321640015, Acc:0.6 
+DEBUG:root:Epoch: 22, Training Loss:0.4525873363018036, Acc: 1.0,  Validation Loss:1.1734569072723389, Acc:0.625 
+DEBUG:root:Epoch: 23, Training Loss:0.4429683983325958, Acc: 1.0,  Validation Loss:1.1999064683914185, Acc:0.6 
+DEBUG:root:Epoch: 24, Training Loss:0.4295935034751892, Acc: 1.0,  Validation Loss:1.238937258720398, Acc:0.625 
+DEBUG:root:Epoch: 25, Training Loss:0.4203915297985077, Acc: 1.0,  Validation Loss:1.25872802734375, Acc:0.65 
+DEBUG:root:Epoch: 26, Training Loss:0.40963882207870483, Acc: 1.0,  Validation Loss:1.2155691385269165, Acc:0.6 
+DEBUG:root:Epoch: 27, Training Loss:0.4013857841491699, Acc: 1.0,  Validation Loss:1.2424304485321045, Acc:0.6 
+DEBUG:root:Epoch: 28, Training Loss:0.39296820759773254, Acc: 1.0,  Validation Loss:1.17316472530365, Acc:0.65 
+DEBUG:root:Epoch: 29, Training Loss:0.3841792643070221, Acc: 1.0,  Validation Loss:1.2784662246704102, Acc:0.575 
+DEBUG:root:Epoch: 30, Training Loss:0.37497231364250183, Acc: 1.0,  Validation Loss:1.2606364488601685, Acc:0.575 
+DEBUG:root:Epoch: 31, Training Loss:0.36754104495048523, Acc: 1.0,  Validation Loss:1.2323737144470215, Acc:0.575 
+DEBUG:root:Epoch: 32, Training Loss:0.3604755401611328, Acc: 1.0,  Validation Loss:1.2978625297546387, Acc:0.575 
+DEBUG:root:Epoch: 33, Training Loss:0.3524293899536133, Acc: 1.0,  Validation Loss:1.388167381286621, Acc:0.525 
+DEBUG:root:Epoch: 34, Training Loss:0.3439573347568512, Acc: 1.0,  Validation Loss:1.3796472549438477, Acc:0.525 
+DEBUG:root:Epoch: 35, Training Loss:0.3384936451911926, Acc: 1.0,  Validation Loss:1.3025858402252197, Acc:0.55 
+DEBUG:root:Epoch: 36, Training Loss:0.3310984671115875, Acc: 1.0,  Validation Loss:1.3833789825439453, Acc:0.525 
+DEBUG:root:Epoch: 37, Training Loss:0.32428810000419617, Acc: 1.0,  Validation Loss:1.3133665323257446, Acc:0.55 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:08:24
+DEBUG:root:Time usage: 0:08:16
 DEBUG:root:Accuracy on Test-Set: 87.5% (35 / 40)
 DEBUG:root:Confusion Matrix:
 DEBUG:root:[[35  0]
@@ -722,12 +766,12 @@ DEBUG:root:[[35  0]
 DEBUG:root:valid_idx:2, test_idx:15
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.3591666666666667
 DEBUG:root:train_obs:0.3591666666666667
 DEBUG:root:label_1 percent:0.325
 DEBUG:root:label_1 percent:0.45
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -736,57 +780,58 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:2, test_idx15 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.5106103420257568, Acc: 0.65,  Validation Loss:2.782564640045166, Acc:0.4 *
-DEBUG:root:Epoch: 2, Training Loss:1.3996096849441528, Acc: 0.7,  Validation Loss:1.7740974426269531, Acc:0.5 *
-DEBUG:root:Epoch: 3, Training Loss:1.1766690015792847, Acc: 0.825,  Validation Loss:1.4019403457641602, Acc:0.65 *
-DEBUG:root:Epoch: 4, Training Loss:1.002467393875122, Acc: 0.925,  Validation Loss:1.509369134902954, Acc:0.65 
-DEBUG:root:Epoch: 5, Training Loss:0.9486563205718994, Acc: 0.9,  Validation Loss:1.455857515335083, Acc:0.525 
-DEBUG:root:Epoch: 6, Training Loss:0.8400400876998901, Acc: 0.925,  Validation Loss:1.382828712463379, Acc:0.475 
-DEBUG:root:Epoch: 7, Training Loss:0.7769998908042908, Acc: 0.975,  Validation Loss:1.5332732200622559, Acc:0.4 
-DEBUG:root:Epoch: 8, Training Loss:0.7376459240913391, Acc: 0.975,  Validation Loss:1.7062649726867676, Acc:0.375 
-DEBUG:root:Epoch: 9, Training Loss:0.698694109916687, Acc: 1.0,  Validation Loss:1.688677430152893, Acc:0.3 
-DEBUG:root:Epoch: 10, Training Loss:0.6512012481689453, Acc: 1.0,  Validation Loss:1.409891128540039, Acc:0.525 
-DEBUG:root:Epoch: 11, Training Loss:0.6128854155540466, Acc: 1.0,  Validation Loss:1.418750524520874, Acc:0.425 
-DEBUG:root:Epoch: 12, Training Loss:0.5771066546440125, Acc: 1.0,  Validation Loss:1.305999517440796, Acc:0.525 
-DEBUG:root:Epoch: 13, Training Loss:0.56751948595047, Acc: 0.975,  Validation Loss:1.3386667966842651, Acc:0.45 
-DEBUG:root:Epoch: 14, Training Loss:0.530899167060852, Acc: 1.0,  Validation Loss:1.2678313255310059, Acc:0.5 
-DEBUG:root:Epoch: 15, Training Loss:0.5363571047782898, Acc: 1.0,  Validation Loss:1.2799674272537231, Acc:0.625 
-DEBUG:root:Epoch: 16, Training Loss:0.4962885081768036, Acc: 1.0,  Validation Loss:1.2274307012557983, Acc:0.625 
-DEBUG:root:Epoch: 17, Training Loss:0.4798244535923004, Acc: 1.0,  Validation Loss:1.2811914682388306, Acc:0.4 
-DEBUG:root:Epoch: 18, Training Loss:0.4628082811832428, Acc: 1.0,  Validation Loss:1.295720100402832, Acc:0.65 
-DEBUG:root:Epoch: 19, Training Loss:0.4476606845855713, Acc: 1.0,  Validation Loss:1.322721242904663, Acc:0.425 
-DEBUG:root:Epoch: 20, Training Loss:0.43227478861808777, Acc: 1.0,  Validation Loss:1.291512370109558, Acc:0.425 
-DEBUG:root:Epoch: 21, Training Loss:0.42006370425224304, Acc: 1.0,  Validation Loss:1.2908662557601929, Acc:0.475 
-DEBUG:root:Epoch: 22, Training Loss:0.40737029910087585, Acc: 1.0,  Validation Loss:1.256887674331665, Acc:0.5 
-DEBUG:root:Epoch: 23, Training Loss:0.3981633186340332, Acc: 1.0,  Validation Loss:1.336429238319397, Acc:0.525 
-DEBUG:root:Epoch: 24, Training Loss:0.38480788469314575, Acc: 1.0,  Validation Loss:1.3205140829086304, Acc:0.5 
-DEBUG:root:Epoch: 25, Training Loss:0.3755228519439697, Acc: 1.0,  Validation Loss:1.3684108257293701, Acc:0.525 
-DEBUG:root:Epoch: 26, Training Loss:0.3668675124645233, Acc: 1.0,  Validation Loss:1.3205397129058838, Acc:0.5 
-DEBUG:root:Epoch: 27, Training Loss:0.3580724000930786, Acc: 1.0,  Validation Loss:1.3723541498184204, Acc:0.475 
-DEBUG:root:Epoch: 28, Training Loss:0.34850525856018066, Acc: 1.0,  Validation Loss:1.3662909269332886, Acc:0.5 
-DEBUG:root:Epoch: 29, Training Loss:0.3404778242111206, Acc: 1.0,  Validation Loss:1.4502779245376587, Acc:0.475 
-DEBUG:root:Epoch: 30, Training Loss:0.33295586705207825, Acc: 1.0,  Validation Loss:1.4520535469055176, Acc:0.525 
-DEBUG:root:Epoch: 31, Training Loss:0.32525357604026794, Acc: 1.0,  Validation Loss:1.4197170734405518, Acc:0.5 
-DEBUG:root:Epoch: 32, Training Loss:0.3189243972301483, Acc: 1.0,  Validation Loss:1.404616355895996, Acc:0.475 
-DEBUG:root:Epoch: 33, Training Loss:0.3121112287044525, Acc: 1.0,  Validation Loss:1.4506665468215942, Acc:0.525 
-DEBUG:root:Epoch: 34, Training Loss:0.30549314618110657, Acc: 1.0,  Validation Loss:1.485061764717102, Acc:0.475 
-DEBUG:root:Epoch: 35, Training Loss:0.2996359169483185, Acc: 1.0,  Validation Loss:1.3879276514053345, Acc:0.55 
-DEBUG:root:Epoch: 36, Training Loss:0.29331186413764954, Acc: 1.0,  Validation Loss:1.497694492340088, Acc:0.475 
+DEBUG:root:Epoch: 1, Training Loss:1.50211763381958, Acc: 0.675,  Validation Loss:2.3973655700683594, Acc:0.525 *
+DEBUG:root:Epoch: 2, Training Loss:1.4010601043701172, Acc: 0.775,  Validation Loss:1.8893020153045654, Acc:0.625 *
+DEBUG:root:Epoch: 3, Training Loss:1.2689813375473022, Acc: 0.85,  Validation Loss:1.7737373113632202, Acc:0.625 
+DEBUG:root:Epoch: 4, Training Loss:1.0800020694732666, Acc: 0.925,  Validation Loss:1.6482203006744385, Acc:0.675 *
+DEBUG:root:Epoch: 5, Training Loss:0.9363812804222107, Acc: 0.975,  Validation Loss:1.5746722221374512, Acc:0.65 
+DEBUG:root:Epoch: 6, Training Loss:0.8336222767829895, Acc: 1.0,  Validation Loss:1.5391267538070679, Acc:0.6 
+DEBUG:root:Epoch: 7, Training Loss:0.7537001967430115, Acc: 1.0,  Validation Loss:1.6687395572662354, Acc:0.5 
+DEBUG:root:Epoch: 8, Training Loss:0.6978779435157776, Acc: 1.0,  Validation Loss:1.7610673904418945, Acc:0.575 
+DEBUG:root:Epoch: 9, Training Loss:0.667183518409729, Acc: 1.0,  Validation Loss:1.5255346298217773, Acc:0.55 
+DEBUG:root:Epoch: 10, Training Loss:0.6447582840919495, Acc: 1.0,  Validation Loss:1.4868141412734985, Acc:0.625 
+DEBUG:root:Epoch: 11, Training Loss:0.623306155204773, Acc: 1.0,  Validation Loss:1.6698589324951172, Acc:0.675 
+DEBUG:root:Epoch: 12, Training Loss:0.6146854162216187, Acc: 1.0,  Validation Loss:1.5326523780822754, Acc:0.55 
+DEBUG:root:Epoch: 13, Training Loss:0.5883368849754333, Acc: 1.0,  Validation Loss:1.4697661399841309, Acc:0.575 
+DEBUG:root:Epoch: 14, Training Loss:0.5594913959503174, Acc: 1.0,  Validation Loss:1.617152452468872, Acc:0.55 
+DEBUG:root:Epoch: 15, Training Loss:0.5556154251098633, Acc: 1.0,  Validation Loss:1.6781446933746338, Acc:0.55 
+DEBUG:root:Epoch: 16, Training Loss:0.5275499224662781, Acc: 1.0,  Validation Loss:1.5348222255706787, Acc:0.525 
+DEBUG:root:Epoch: 17, Training Loss:0.5128834843635559, Acc: 1.0,  Validation Loss:1.523223638534546, Acc:0.575 
+DEBUG:root:Epoch: 18, Training Loss:0.4986567497253418, Acc: 1.0,  Validation Loss:1.4823694229125977, Acc:0.625 
+DEBUG:root:Epoch: 19, Training Loss:0.4844316244125366, Acc: 1.0,  Validation Loss:1.4206092357635498, Acc:0.625 
+DEBUG:root:Epoch: 20, Training Loss:0.4714335501194, Acc: 1.0,  Validation Loss:1.4667670726776123, Acc:0.65 
+DEBUG:root:Epoch: 21, Training Loss:0.4586392045021057, Acc: 1.0,  Validation Loss:1.446213960647583, Acc:0.625 
+DEBUG:root:Epoch: 22, Training Loss:0.4456865191459656, Acc: 1.0,  Validation Loss:1.4429185390472412, Acc:0.475 
+DEBUG:root:Epoch: 23, Training Loss:0.43300846219062805, Acc: 1.0,  Validation Loss:1.4522079229354858, Acc:0.525 
+DEBUG:root:Epoch: 24, Training Loss:0.42164912819862366, Acc: 1.0,  Validation Loss:1.520745873451233, Acc:0.55 
+DEBUG:root:Epoch: 25, Training Loss:0.4114416241645813, Acc: 1.0,  Validation Loss:1.4993818998336792, Acc:0.55 
+DEBUG:root:Epoch: 26, Training Loss:0.4051043689250946, Acc: 1.0,  Validation Loss:1.4185079336166382, Acc:0.55 
+DEBUG:root:Epoch: 27, Training Loss:0.3923359215259552, Acc: 1.0,  Validation Loss:1.4584165811538696, Acc:0.55 
+DEBUG:root:Epoch: 28, Training Loss:0.3853674829006195, Acc: 1.0,  Validation Loss:1.5077707767486572, Acc:0.575 
+DEBUG:root:Epoch: 29, Training Loss:0.37505990266799927, Acc: 1.0,  Validation Loss:1.510614037513733, Acc:0.55 
+DEBUG:root:Epoch: 30, Training Loss:0.3674791753292084, Acc: 1.0,  Validation Loss:1.5194213390350342, Acc:0.525 
+DEBUG:root:Epoch: 31, Training Loss:0.35942476987838745, Acc: 1.0,  Validation Loss:1.5310118198394775, Acc:0.525 
+DEBUG:root:Epoch: 32, Training Loss:0.35217511653900146, Acc: 1.0,  Validation Loss:1.527191162109375, Acc:0.575 
+DEBUG:root:Epoch: 33, Training Loss:0.3444404900074005, Acc: 1.0,  Validation Loss:1.5038295984268188, Acc:0.575 
+DEBUG:root:Epoch: 34, Training Loss:0.3367641866207123, Acc: 1.0,  Validation Loss:1.5466428995132446, Acc:0.55 
+DEBUG:root:Epoch: 35, Training Loss:0.3312534987926483, Acc: 1.0,  Validation Loss:1.5634522438049316, Acc:0.575 
+DEBUG:root:Epoch: 36, Training Loss:0.3243512511253357, Acc: 1.0,  Validation Loss:1.5883082151412964, Acc:0.6 
+DEBUG:root:Epoch: 37, Training Loss:0.317630797624588, Acc: 1.0,  Validation Loss:1.6042016744613647, Acc:0.55 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:30
-DEBUG:root:Accuracy on Test-Set: 47.5% (19 / 40)
+DEBUG:root:Time usage: 0:08:17
+DEBUG:root:Accuracy on Test-Set: 62.5% (25 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[18  4]
- [17  1]]
+DEBUG:root:[[21  1]
+ [14  4]]
 DEBUG:root:valid_idx:17, test_idx:25
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.36583333333333334
 DEBUG:root:train_obs:0.36583333333333334
 DEBUG:root:label_1 percent:0.35
 DEBUG:root:label_1 percent:0.225
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -795,55 +840,56 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:17, test_idx25 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.5545769929885864, Acc: 0.525,  Validation Loss:2.025744676589966, Acc:0.675 *
-DEBUG:root:Epoch: 2, Training Loss:1.4120326042175293, Acc: 0.675,  Validation Loss:1.8230688571929932, Acc:0.5 
-DEBUG:root:Epoch: 3, Training Loss:1.2879095077514648, Acc: 0.8,  Validation Loss:1.7356940507888794, Acc:0.6 
-DEBUG:root:Epoch: 4, Training Loss:1.2152214050292969, Acc: 0.825,  Validation Loss:1.7007596492767334, Acc:0.625 
-DEBUG:root:Epoch: 5, Training Loss:1.080179214477539, Acc: 0.925,  Validation Loss:1.6551549434661865, Acc:0.625 
-DEBUG:root:Epoch: 6, Training Loss:1.000502109527588, Acc: 0.9,  Validation Loss:1.4476531744003296, Acc:0.525 
-DEBUG:root:Epoch: 7, Training Loss:0.8980292081832886, Acc: 0.925,  Validation Loss:1.5694739818572998, Acc:0.45 
-DEBUG:root:Epoch: 8, Training Loss:0.8060532808303833, Acc: 0.95,  Validation Loss:1.414635419845581, Acc:0.425 
-DEBUG:root:Epoch: 9, Training Loss:0.749836802482605, Acc: 0.975,  Validation Loss:1.5549262762069702, Acc:0.425 
-DEBUG:root:Epoch: 10, Training Loss:0.7811060547828674, Acc: 0.925,  Validation Loss:1.4763214588165283, Acc:0.5 
-DEBUG:root:Epoch: 11, Training Loss:0.6807461977005005, Acc: 0.975,  Validation Loss:1.4301557540893555, Acc:0.5 
-DEBUG:root:Epoch: 12, Training Loss:0.6196162700653076, Acc: 1.0,  Validation Loss:1.520819902420044, Acc:0.425 
-DEBUG:root:Epoch: 13, Training Loss:0.5807923674583435, Acc: 1.0,  Validation Loss:1.3824044466018677, Acc:0.525 
-DEBUG:root:Epoch: 14, Training Loss:0.5540865063667297, Acc: 1.0,  Validation Loss:1.4003362655639648, Acc:0.55 
-DEBUG:root:Epoch: 15, Training Loss:0.5324108004570007, Acc: 1.0,  Validation Loss:1.2994673252105713, Acc:0.6 
-DEBUG:root:Epoch: 16, Training Loss:0.5141981840133667, Acc: 1.0,  Validation Loss:1.363171100616455, Acc:0.5 
-DEBUG:root:Epoch: 17, Training Loss:0.49677199125289917, Acc: 1.0,  Validation Loss:1.250443696975708, Acc:0.6 
-DEBUG:root:Epoch: 18, Training Loss:0.5254618525505066, Acc: 0.975,  Validation Loss:1.1753864288330078, Acc:0.625 
-DEBUG:root:Epoch: 19, Training Loss:0.5096827745437622, Acc: 0.975,  Validation Loss:1.1720690727233887, Acc:0.6 
-DEBUG:root:Epoch: 20, Training Loss:0.4768661558628082, Acc: 1.0,  Validation Loss:1.2628960609436035, Acc:0.55 
-DEBUG:root:Epoch: 21, Training Loss:0.4657019078731537, Acc: 1.0,  Validation Loss:1.230770468711853, Acc:0.6 
-DEBUG:root:Epoch: 22, Training Loss:0.4340912699699402, Acc: 1.0,  Validation Loss:1.3178980350494385, Acc:0.6 
-DEBUG:root:Epoch: 23, Training Loss:0.4222120940685272, Acc: 1.0,  Validation Loss:1.3706262111663818, Acc:0.475 
-DEBUG:root:Epoch: 24, Training Loss:0.4099535644054413, Acc: 1.0,  Validation Loss:1.2245776653289795, Acc:0.575 
-DEBUG:root:Epoch: 25, Training Loss:0.39816245436668396, Acc: 1.0,  Validation Loss:1.2381871938705444, Acc:0.65 
-DEBUG:root:Epoch: 26, Training Loss:0.3882058262825012, Acc: 1.0,  Validation Loss:1.1783722639083862, Acc:0.625 
-DEBUG:root:Epoch: 27, Training Loss:0.3792075514793396, Acc: 1.0,  Validation Loss:1.2136608362197876, Acc:0.625 
-DEBUG:root:Epoch: 28, Training Loss:0.37132975459098816, Acc: 1.0,  Validation Loss:1.112112283706665, Acc:0.6 
-DEBUG:root:Epoch: 29, Training Loss:0.3608967065811157, Acc: 1.0,  Validation Loss:1.1683862209320068, Acc:0.625 
-DEBUG:root:Epoch: 30, Training Loss:0.355015367269516, Acc: 1.0,  Validation Loss:1.129950761795044, Acc:0.65 
-DEBUG:root:Epoch: 31, Training Loss:0.3474074900150299, Acc: 1.0,  Validation Loss:1.1993670463562012, Acc:0.6 
-DEBUG:root:Epoch: 32, Training Loss:0.34092986583709717, Acc: 1.0,  Validation Loss:1.1316089630126953, Acc:0.625 
-DEBUG:root:Epoch: 33, Training Loss:0.33359628915786743, Acc: 1.0,  Validation Loss:1.0688011646270752, Acc:0.625 
-DEBUG:root:Epoch: 34, Training Loss:0.3271002769470215, Acc: 1.0,  Validation Loss:1.0624529123306274, Acc:0.65 
+DEBUG:root:Epoch: 1, Training Loss:1.478506088256836, Acc: 0.675,  Validation Loss:2.5019657611846924, Acc:0.55 *
+DEBUG:root:Epoch: 2, Training Loss:1.3709454536437988, Acc: 0.75,  Validation Loss:1.423504114151001, Acc:0.7 *
+DEBUG:root:Epoch: 3, Training Loss:1.3440184593200684, Acc: 0.775,  Validation Loss:1.9210901260375977, Acc:0.525 
+DEBUG:root:Epoch: 4, Training Loss:1.1446373462677002, Acc: 0.9,  Validation Loss:2.0480265617370605, Acc:0.55 
+DEBUG:root:Epoch: 5, Training Loss:1.0121852159500122, Acc: 0.9,  Validation Loss:1.6871812343597412, Acc:0.575 
+DEBUG:root:Epoch: 6, Training Loss:0.9075680375099182, Acc: 0.975,  Validation Loss:1.8656649589538574, Acc:0.575 
+DEBUG:root:Epoch: 7, Training Loss:0.8375051021575928, Acc: 0.975,  Validation Loss:1.7842638492584229, Acc:0.675 
+DEBUG:root:Epoch: 8, Training Loss:0.8012847900390625, Acc: 0.95,  Validation Loss:1.5605878829956055, Acc:0.55 
+DEBUG:root:Epoch: 9, Training Loss:0.7545011043548584, Acc: 0.975,  Validation Loss:1.533167839050293, Acc:0.6 
+DEBUG:root:Epoch: 10, Training Loss:0.7052538990974426, Acc: 0.975,  Validation Loss:1.651660442352295, Acc:0.625 
+DEBUG:root:Epoch: 11, Training Loss:0.6632304787635803, Acc: 1.0,  Validation Loss:1.6513315439224243, Acc:0.675 
+DEBUG:root:Epoch: 12, Training Loss:0.6528666615486145, Acc: 0.975,  Validation Loss:1.9853172302246094, Acc:0.65 
+DEBUG:root:Epoch: 13, Training Loss:0.5935556888580322, Acc: 1.0,  Validation Loss:1.508561134338379, Acc:0.575 
+DEBUG:root:Epoch: 14, Training Loss:0.5716734528541565, Acc: 1.0,  Validation Loss:1.715996265411377, Acc:0.625 
+DEBUG:root:Epoch: 15, Training Loss:0.547380805015564, Acc: 1.0,  Validation Loss:1.5837998390197754, Acc:0.55 
+DEBUG:root:Epoch: 16, Training Loss:0.5250810384750366, Acc: 1.0,  Validation Loss:1.4614925384521484, Acc:0.575 
+DEBUG:root:Epoch: 17, Training Loss:0.5143394470214844, Acc: 1.0,  Validation Loss:1.6318974494934082, Acc:0.575 
+DEBUG:root:Epoch: 18, Training Loss:0.5009911060333252, Acc: 1.0,  Validation Loss:1.5239731073379517, Acc:0.575 
+DEBUG:root:Epoch: 19, Training Loss:0.4837517738342285, Acc: 1.0,  Validation Loss:1.522695779800415, Acc:0.55 
+DEBUG:root:Epoch: 20, Training Loss:0.4724937081336975, Acc: 1.0,  Validation Loss:1.4627158641815186, Acc:0.55 
+DEBUG:root:Epoch: 21, Training Loss:0.45886343717575073, Acc: 1.0,  Validation Loss:1.4197497367858887, Acc:0.575 
+DEBUG:root:Epoch: 22, Training Loss:0.4479054808616638, Acc: 1.0,  Validation Loss:1.4302852153778076, Acc:0.55 
+DEBUG:root:Epoch: 23, Training Loss:0.4353892207145691, Acc: 1.0,  Validation Loss:1.3822014331817627, Acc:0.575 
+DEBUG:root:Epoch: 24, Training Loss:0.43423527479171753, Acc: 1.0,  Validation Loss:1.4920300245285034, Acc:0.55 
+DEBUG:root:Epoch: 25, Training Loss:0.4333232045173645, Acc: 1.0,  Validation Loss:1.6046322584152222, Acc:0.475 
+DEBUG:root:Epoch: 26, Training Loss:0.41397416591644287, Acc: 1.0,  Validation Loss:1.5124034881591797, Acc:0.5 
+DEBUG:root:Epoch: 27, Training Loss:0.4323166012763977, Acc: 1.0,  Validation Loss:1.5043630599975586, Acc:0.5 
+DEBUG:root:Epoch: 28, Training Loss:0.4608907103538513, Acc: 0.975,  Validation Loss:1.6989516019821167, Acc:0.45 
+DEBUG:root:Epoch: 29, Training Loss:0.5039314031600952, Acc: 0.95,  Validation Loss:1.4365266561508179, Acc:0.575 
+DEBUG:root:Epoch: 30, Training Loss:0.4340168237686157, Acc: 1.0,  Validation Loss:1.4729970693588257, Acc:0.45 
+DEBUG:root:Epoch: 31, Training Loss:0.41000285744667053, Acc: 1.0,  Validation Loss:1.30426025390625, Acc:0.475 
+DEBUG:root:Epoch: 32, Training Loss:0.37682044506073, Acc: 1.0,  Validation Loss:1.5099631547927856, Acc:0.5 
+DEBUG:root:Epoch: 33, Training Loss:0.37277913093566895, Acc: 1.0,  Validation Loss:1.5788408517837524, Acc:0.525 
+DEBUG:root:Epoch: 34, Training Loss:0.36526790261268616, Acc: 1.0,  Validation Loss:1.4688429832458496, Acc:0.525 
+DEBUG:root:Epoch: 35, Training Loss:0.378702312707901, Acc: 0.975,  Validation Loss:1.5770295858383179, Acc:0.65 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:09
-DEBUG:root:Accuracy on Test-Set: 70.0% (28 / 40)
+DEBUG:root:Time usage: 0:07:48
+DEBUG:root:Accuracy on Test-Set: 67.5% (27 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[28  3]
- [ 9  0]]
+DEBUG:root:[[21 10]
+ [ 3  6]]
 DEBUG:root:valid_idx:11, test_idx:18
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.35583333333333333
 DEBUG:root:train_obs:0.35583333333333333
 DEBUG:root:label_1 percent:0.55
 DEBUG:root:label_1 percent:0.325
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -852,72 +898,55 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:11, test_idx18 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.5609643459320068, Acc: 0.475,  Validation Loss:3.249952554702759, Acc:0.425 *
-DEBUG:root:Epoch: 2, Training Loss:1.408669114112854, Acc: 0.675,  Validation Loss:4.402144432067871, Acc:0.45 *
-DEBUG:root:Epoch: 3, Training Loss:1.2697036266326904, Acc: 0.85,  Validation Loss:3.8793461322784424, Acc:0.475 *
-DEBUG:root:Epoch: 4, Training Loss:1.1520657539367676, Acc: 0.9,  Validation Loss:3.754509449005127, Acc:0.45 
-DEBUG:root:Epoch: 5, Training Loss:1.0113511085510254, Acc: 0.95,  Validation Loss:3.318526029586792, Acc:0.475 
-DEBUG:root:Epoch: 6, Training Loss:0.8964670300483704, Acc: 0.975,  Validation Loss:2.528916120529175, Acc:0.45 
-DEBUG:root:Epoch: 7, Training Loss:1.019183874130249, Acc: 0.825,  Validation Loss:2.2488884925842285, Acc:0.475 
-DEBUG:root:Epoch: 8, Training Loss:0.8104928731918335, Acc: 0.95,  Validation Loss:1.844839096069336, Acc:0.525 *
-DEBUG:root:Epoch: 9, Training Loss:0.7276957035064697, Acc: 1.0,  Validation Loss:2.7933058738708496, Acc:0.3 
-DEBUG:root:Epoch: 10, Training Loss:0.6672898530960083, Acc: 1.0,  Validation Loss:2.6467554569244385, Acc:0.425 
-DEBUG:root:Epoch: 11, Training Loss:0.6295170783996582, Acc: 1.0,  Validation Loss:2.337017774581909, Acc:0.4 
-DEBUG:root:Epoch: 12, Training Loss:0.6114344000816345, Acc: 0.975,  Validation Loss:2.137324333190918, Acc:0.45 
-DEBUG:root:Epoch: 13, Training Loss:0.572984516620636, Acc: 1.0,  Validation Loss:1.9352631568908691, Acc:0.575 *
-DEBUG:root:Epoch: 14, Training Loss:0.5417504906654358, Acc: 1.0,  Validation Loss:1.8541369438171387, Acc:0.475 
-DEBUG:root:Epoch: 15, Training Loss:0.5487447381019592, Acc: 0.975,  Validation Loss:1.9071803092956543, Acc:0.4 
-DEBUG:root:Epoch: 16, Training Loss:0.5136701464653015, Acc: 1.0,  Validation Loss:3.5470223426818848, Acc:0.525 
-DEBUG:root:Epoch: 17, Training Loss:0.4917137026786804, Acc: 1.0,  Validation Loss:1.588930606842041, Acc:0.575 
-DEBUG:root:Epoch: 18, Training Loss:0.4847896993160248, Acc: 1.0,  Validation Loss:1.867227554321289, Acc:0.6 *
-DEBUG:root:Epoch: 19, Training Loss:0.4751787483692169, Acc: 1.0,  Validation Loss:2.8817901611328125, Acc:0.425 
-DEBUG:root:Epoch: 20, Training Loss:0.464568167924881, Acc: 1.0,  Validation Loss:2.274660348892212, Acc:0.45 
-DEBUG:root:Epoch: 21, Training Loss:0.49707382917404175, Acc: 0.975,  Validation Loss:4.500944137573242, Acc:0.45 
-DEBUG:root:Epoch: 22, Training Loss:0.4433404803276062, Acc: 1.0,  Validation Loss:2.850600481033325, Acc:0.45 
-DEBUG:root:Epoch: 23, Training Loss:0.4414220452308655, Acc: 1.0,  Validation Loss:2.2560858726501465, Acc:0.45 
-DEBUG:root:Epoch: 24, Training Loss:0.41563042998313904, Acc: 1.0,  Validation Loss:2.583314895629883, Acc:0.475 
-DEBUG:root:Epoch: 25, Training Loss:0.3979741036891937, Acc: 1.0,  Validation Loss:2.2059707641601562, Acc:0.5 
-DEBUG:root:Epoch: 26, Training Loss:0.3868948817253113, Acc: 1.0,  Validation Loss:1.8345401287078857, Acc:0.525 
-DEBUG:root:Epoch: 27, Training Loss:0.3763629198074341, Acc: 1.0,  Validation Loss:1.8667269945144653, Acc:0.475 
-DEBUG:root:Epoch: 28, Training Loss:0.36769649386405945, Acc: 1.0,  Validation Loss:2.1357345581054688, Acc:0.45 
-DEBUG:root:Epoch: 29, Training Loss:0.35613059997558594, Acc: 1.0,  Validation Loss:1.8728342056274414, Acc:0.5 
-DEBUG:root:Epoch: 30, Training Loss:0.3489682674407959, Acc: 1.0,  Validation Loss:1.8590823411941528, Acc:0.475 
-DEBUG:root:Epoch: 31, Training Loss:0.34005236625671387, Acc: 1.0,  Validation Loss:1.7892370223999023, Acc:0.525 
-DEBUG:root:Epoch: 32, Training Loss:0.3333525061607361, Acc: 1.0,  Validation Loss:1.727157711982727, Acc:0.5 
-DEBUG:root:Epoch: 33, Training Loss:0.3267190754413605, Acc: 1.0,  Validation Loss:1.7448060512542725, Acc:0.525 
-DEBUG:root:Epoch: 34, Training Loss:0.31914517283439636, Acc: 1.0,  Validation Loss:1.8191587924957275, Acc:0.425 
-DEBUG:root:Epoch: 35, Training Loss:0.3136789798736572, Acc: 1.0,  Validation Loss:1.725055456161499, Acc:0.475 
-DEBUG:root:Epoch: 36, Training Loss:0.3076130747795105, Acc: 1.0,  Validation Loss:1.64883291721344, Acc:0.5 
-DEBUG:root:Epoch: 37, Training Loss:0.302310973405838, Acc: 1.0,  Validation Loss:1.6961071491241455, Acc:0.425 
-DEBUG:root:Epoch: 38, Training Loss:0.2970085144042969, Acc: 1.0,  Validation Loss:1.5848934650421143, Acc:0.525 
-DEBUG:root:Epoch: 39, Training Loss:0.2906307876110077, Acc: 1.0,  Validation Loss:1.4755890369415283, Acc:0.575 
-DEBUG:root:Epoch: 40, Training Loss:0.28506267070770264, Acc: 1.0,  Validation Loss:1.6230175495147705, Acc:0.5 
-DEBUG:root:Epoch: 41, Training Loss:0.2797550857067108, Acc: 1.0,  Validation Loss:1.5580495595932007, Acc:0.475 
-DEBUG:root:Epoch: 42, Training Loss:0.2746936082839966, Acc: 1.0,  Validation Loss:1.4937214851379395, Acc:0.5 
-DEBUG:root:Epoch: 43, Training Loss:0.27025240659713745, Acc: 1.0,  Validation Loss:1.6415762901306152, Acc:0.475 
-DEBUG:root:Epoch: 44, Training Loss:0.2653953433036804, Acc: 1.0,  Validation Loss:1.5656940937042236, Acc:0.475 
-DEBUG:root:Epoch: 45, Training Loss:0.2616555690765381, Acc: 1.0,  Validation Loss:1.6179537773132324, Acc:0.5 
-DEBUG:root:Epoch: 46, Training Loss:0.25547048449516296, Acc: 1.0,  Validation Loss:1.52596116065979, Acc:0.5 
-DEBUG:root:Epoch: 47, Training Loss:0.2525361180305481, Acc: 1.0,  Validation Loss:1.5699398517608643, Acc:0.5 
-DEBUG:root:Epoch: 48, Training Loss:0.2475733458995819, Acc: 1.0,  Validation Loss:1.4315071105957031, Acc:0.5 
-DEBUG:root:Epoch: 49, Training Loss:0.2434646487236023, Acc: 1.0,  Validation Loss:1.5490126609802246, Acc:0.5 
-DEBUG:root:Epoch: 50, Training Loss:0.24029897153377533, Acc: 1.0,  Validation Loss:1.5274765491485596, Acc:0.5 
-DEBUG:root:Epoch: 51, Training Loss:0.23646415770053864, Acc: 1.0,  Validation Loss:1.5492793321609497, Acc:0.5 
+DEBUG:root:Epoch: 1, Training Loss:1.4869756698608398, Acc: 0.65,  Validation Loss:9.159513473510742, Acc:0.5 *
+DEBUG:root:Epoch: 2, Training Loss:1.3561334609985352, Acc: 0.875,  Validation Loss:7.257470607757568, Acc:0.45 
+DEBUG:root:Epoch: 3, Training Loss:1.2712891101837158, Acc: 0.85,  Validation Loss:2.692662239074707, Acc:0.45 
+DEBUG:root:Epoch: 4, Training Loss:1.1186870336532593, Acc: 0.875,  Validation Loss:3.7380175590515137, Acc:0.45 
+DEBUG:root:Epoch: 5, Training Loss:1.0151687860488892, Acc: 0.95,  Validation Loss:3.8954718112945557, Acc:0.475 
+DEBUG:root:Epoch: 6, Training Loss:0.91557377576828, Acc: 0.975,  Validation Loss:3.7864503860473633, Acc:0.45 
+DEBUG:root:Epoch: 7, Training Loss:0.791328489780426, Acc: 1.0,  Validation Loss:4.355081558227539, Acc:0.45 
+DEBUG:root:Epoch: 8, Training Loss:0.7642320394515991, Acc: 1.0,  Validation Loss:3.8066134452819824, Acc:0.45 
+DEBUG:root:Epoch: 9, Training Loss:0.7078059911727905, Acc: 1.0,  Validation Loss:3.565532684326172, Acc:0.4 
+DEBUG:root:Epoch: 10, Training Loss:0.6643474698066711, Acc: 1.0,  Validation Loss:4.347169876098633, Acc:0.45 
+DEBUG:root:Epoch: 11, Training Loss:0.6308474540710449, Acc: 1.0,  Validation Loss:3.888190269470215, Acc:0.45 
+DEBUG:root:Epoch: 12, Training Loss:0.6102666258811951, Acc: 1.0,  Validation Loss:3.6296420097351074, Acc:0.475 
+DEBUG:root:Epoch: 13, Training Loss:0.593863844871521, Acc: 1.0,  Validation Loss:3.0302770137786865, Acc:0.425 
+DEBUG:root:Epoch: 14, Training Loss:0.5704536437988281, Acc: 1.0,  Validation Loss:2.840116024017334, Acc:0.425 
+DEBUG:root:Epoch: 15, Training Loss:0.5571655631065369, Acc: 1.0,  Validation Loss:2.5005393028259277, Acc:0.425 
+DEBUG:root:Epoch: 16, Training Loss:0.540185272693634, Acc: 1.0,  Validation Loss:3.072084903717041, Acc:0.4 
+DEBUG:root:Epoch: 17, Training Loss:0.53729248046875, Acc: 1.0,  Validation Loss:2.9526009559631348, Acc:0.45 
+DEBUG:root:Epoch: 18, Training Loss:0.526726484298706, Acc: 1.0,  Validation Loss:4.156991004943848, Acc:0.45 
+DEBUG:root:Epoch: 19, Training Loss:0.5110170841217041, Acc: 1.0,  Validation Loss:2.744110107421875, Acc:0.425 
+DEBUG:root:Epoch: 20, Training Loss:0.48283055424690247, Acc: 1.0,  Validation Loss:2.6692066192626953, Acc:0.45 
+DEBUG:root:Epoch: 21, Training Loss:0.46903982758522034, Acc: 1.0,  Validation Loss:2.8927972316741943, Acc:0.45 
+DEBUG:root:Epoch: 22, Training Loss:0.4584442377090454, Acc: 1.0,  Validation Loss:3.0435338020324707, Acc:0.475 
+DEBUG:root:Epoch: 23, Training Loss:0.44441482424736023, Acc: 1.0,  Validation Loss:2.843245506286621, Acc:0.45 
+DEBUG:root:Epoch: 24, Training Loss:0.4321115016937256, Acc: 1.0,  Validation Loss:2.6757075786590576, Acc:0.425 
+DEBUG:root:Epoch: 25, Training Loss:0.4214114844799042, Acc: 1.0,  Validation Loss:2.6983017921447754, Acc:0.45 
+DEBUG:root:Epoch: 26, Training Loss:0.4117487072944641, Acc: 1.0,  Validation Loss:2.815788984298706, Acc:0.45 
+DEBUG:root:Epoch: 27, Training Loss:0.40363967418670654, Acc: 1.0,  Validation Loss:2.902996301651001, Acc:0.45 
+DEBUG:root:Epoch: 28, Training Loss:0.39227375388145447, Acc: 1.0,  Validation Loss:2.7395477294921875, Acc:0.45 
+DEBUG:root:Epoch: 29, Training Loss:0.38429343700408936, Acc: 1.0,  Validation Loss:2.63539981842041, Acc:0.475 
+DEBUG:root:Epoch: 30, Training Loss:0.3752841353416443, Acc: 1.0,  Validation Loss:2.7521133422851562, Acc:0.45 
+DEBUG:root:Epoch: 31, Training Loss:0.36767882108688354, Acc: 1.0,  Validation Loss:2.43416428565979, Acc:0.425 
+DEBUG:root:Epoch: 32, Training Loss:0.35846394300460815, Acc: 1.0,  Validation Loss:2.5696544647216797, Acc:0.45 
+DEBUG:root:Epoch: 33, Training Loss:0.3516054153442383, Acc: 1.0,  Validation Loss:2.5262577533721924, Acc:0.45 
+DEBUG:root:Epoch: 34, Training Loss:0.3440522849559784, Acc: 1.0,  Validation Loss:2.426715850830078, Acc:0.425 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:07:51
-DEBUG:root:Accuracy on Test-Set: 40.0% (16 / 40)
+DEBUG:root:Time usage: 0:07:32
+DEBUG:root:Accuracy on Test-Set: 67.5% (27 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[ 4 23]
- [ 1 12]]
+DEBUG:root:[[27  0]
+ [13  0]]
 DEBUG:root:valid_idx:7, test_idx:8
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.365
 DEBUG:root:train_obs:0.365
 DEBUG:root:label_1 percent:0.375
 DEBUG:root:label_1 percent:0.225
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -926,56 +955,108 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:7, test_idx8 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.447135329246521, Acc: 0.775,  Validation Loss:1.5187602043151855, Acc:0.575 *
-DEBUG:root:Epoch: 2, Training Loss:1.3711323738098145, Acc: 0.8,  Validation Loss:1.4596548080444336, Acc:0.675 *
-DEBUG:root:Epoch: 3, Training Loss:1.266548991203308, Acc: 0.85,  Validation Loss:1.414504885673523, Acc:0.625 
-DEBUG:root:Epoch: 4, Training Loss:1.1661205291748047, Acc: 0.85,  Validation Loss:1.4060958623886108, Acc:0.625 
-DEBUG:root:Epoch: 5, Training Loss:1.0222821235656738, Acc: 0.975,  Validation Loss:1.378481388092041, Acc:0.625 
-DEBUG:root:Epoch: 6, Training Loss:0.9095441102981567, Acc: 0.95,  Validation Loss:1.3538227081298828, Acc:0.65 
-DEBUG:root:Epoch: 7, Training Loss:0.8134937882423401, Acc: 0.975,  Validation Loss:1.3495843410491943, Acc:0.5 
-DEBUG:root:Epoch: 8, Training Loss:0.7445569634437561, Acc: 1.0,  Validation Loss:1.37506103515625, Acc:0.425 
-DEBUG:root:Epoch: 9, Training Loss:0.7881471514701843, Acc: 0.95,  Validation Loss:1.3182291984558105, Acc:0.375 
-DEBUG:root:Epoch: 10, Training Loss:0.7096004486083984, Acc: 0.975,  Validation Loss:1.518315315246582, Acc:0.35 
-DEBUG:root:Epoch: 11, Training Loss:0.6773282289505005, Acc: 1.0,  Validation Loss:1.427583932876587, Acc:0.375 
-DEBUG:root:Epoch: 12, Training Loss:0.6014414429664612, Acc: 1.0,  Validation Loss:1.2951514720916748, Acc:0.45 
-DEBUG:root:Epoch: 13, Training Loss:0.561943531036377, Acc: 1.0,  Validation Loss:1.4474666118621826, Acc:0.35 
-DEBUG:root:Epoch: 14, Training Loss:0.5405442714691162, Acc: 1.0,  Validation Loss:1.6786060333251953, Acc:0.375 
-DEBUG:root:Epoch: 15, Training Loss:0.5177788138389587, Acc: 1.0,  Validation Loss:1.4822379350662231, Acc:0.375 
-DEBUG:root:Epoch: 16, Training Loss:0.49931514263153076, Acc: 1.0,  Validation Loss:1.6580026149749756, Acc:0.375 
-DEBUG:root:Epoch: 17, Training Loss:0.48029646277427673, Acc: 1.0,  Validation Loss:1.7258708477020264, Acc:0.375 
-DEBUG:root:Epoch: 18, Training Loss:0.474017471075058, Acc: 1.0,  Validation Loss:1.3994635343551636, Acc:0.325 
-DEBUG:root:Epoch: 19, Training Loss:0.45585495233535767, Acc: 1.0,  Validation Loss:1.3436861038208008, Acc:0.35 
-DEBUG:root:Epoch: 20, Training Loss:0.45618170499801636, Acc: 1.0,  Validation Loss:1.1485544443130493, Acc:0.6 
-DEBUG:root:Epoch: 21, Training Loss:0.4360625445842743, Acc: 1.0,  Validation Loss:1.1789755821228027, Acc:0.625 
-DEBUG:root:Epoch: 22, Training Loss:0.4388871192932129, Acc: 1.0,  Validation Loss:1.352738380432129, Acc:0.625 
-DEBUG:root:Epoch: 23, Training Loss:0.4261486232280731, Acc: 1.0,  Validation Loss:1.1486042737960815, Acc:0.5 
-DEBUG:root:Epoch: 24, Training Loss:0.4079227149486542, Acc: 1.0,  Validation Loss:1.184853434562683, Acc:0.45 
-DEBUG:root:Epoch: 25, Training Loss:0.3944011926651001, Acc: 1.0,  Validation Loss:1.1676239967346191, Acc:0.525 
-DEBUG:root:Epoch: 26, Training Loss:0.3776874244213104, Acc: 1.0,  Validation Loss:1.3462340831756592, Acc:0.375 
-DEBUG:root:Epoch: 27, Training Loss:0.3656630218029022, Acc: 1.0,  Validation Loss:1.3280360698699951, Acc:0.425 
-DEBUG:root:Epoch: 28, Training Loss:0.3554728329181671, Acc: 1.0,  Validation Loss:1.196655511856079, Acc:0.475 
-DEBUG:root:Epoch: 29, Training Loss:0.3482324779033661, Acc: 1.0,  Validation Loss:1.2632924318313599, Acc:0.45 
-DEBUG:root:Epoch: 30, Training Loss:0.3420681059360504, Acc: 1.0,  Validation Loss:1.1840450763702393, Acc:0.45 
-DEBUG:root:Epoch: 31, Training Loss:0.3323874771595001, Acc: 1.0,  Validation Loss:1.2518929243087769, Acc:0.4 
-DEBUG:root:Epoch: 32, Training Loss:0.3256393074989319, Acc: 1.0,  Validation Loss:1.191388726234436, Acc:0.5 
-DEBUG:root:Epoch: 33, Training Loss:0.31748536229133606, Acc: 1.0,  Validation Loss:1.1638015508651733, Acc:0.425 
-DEBUG:root:Epoch: 34, Training Loss:0.31010064482688904, Acc: 1.0,  Validation Loss:1.1580145359039307, Acc:0.425 
-DEBUG:root:Epoch: 35, Training Loss:0.3043157756328583, Acc: 1.0,  Validation Loss:1.144820213317871, Acc:0.475 
+DEBUG:root:Epoch: 1, Training Loss:1.5203638076782227, Acc: 0.65,  Validation Loss:1.690622329711914, Acc:0.475 *
+DEBUG:root:Epoch: 2, Training Loss:1.4263629913330078, Acc: 0.7,  Validation Loss:1.6404271125793457, Acc:0.4 
+DEBUG:root:Epoch: 3, Training Loss:1.2547587156295776, Acc: 0.875,  Validation Loss:1.4550426006317139, Acc:0.55 *
+DEBUG:root:Epoch: 4, Training Loss:1.157192349433899, Acc: 0.9,  Validation Loss:1.405114769935608, Acc:0.625 *
+DEBUG:root:Epoch: 5, Training Loss:1.0194637775421143, Acc: 0.95,  Validation Loss:1.3932503461837769, Acc:0.6 
+DEBUG:root:Epoch: 6, Training Loss:0.8913893699645996, Acc: 0.975,  Validation Loss:1.3503469228744507, Acc:0.625 
+DEBUG:root:Epoch: 7, Training Loss:0.8856444358825684, Acc: 0.95,  Validation Loss:1.410372018814087, Acc:0.575 
+DEBUG:root:Epoch: 8, Training Loss:0.9430286288261414, Acc: 0.95,  Validation Loss:1.4782233238220215, Acc:0.375 
+DEBUG:root:Epoch: 9, Training Loss:0.7493255138397217, Acc: 1.0,  Validation Loss:1.3204540014266968, Acc:0.575 
+DEBUG:root:Epoch: 10, Training Loss:0.7143110632896423, Acc: 0.975,  Validation Loss:1.3085641860961914, Acc:0.575 
+DEBUG:root:Epoch: 11, Training Loss:0.6791555881500244, Acc: 0.975,  Validation Loss:1.290048360824585, Acc:0.55 
+DEBUG:root:Epoch: 12, Training Loss:0.6427145004272461, Acc: 1.0,  Validation Loss:1.2905902862548828, Acc:0.4 
+DEBUG:root:Epoch: 13, Training Loss:0.6108043193817139, Acc: 1.0,  Validation Loss:1.311713695526123, Acc:0.35 
+DEBUG:root:Epoch: 14, Training Loss:0.5833881497383118, Acc: 1.0,  Validation Loss:1.37952721118927, Acc:0.375 
+DEBUG:root:Epoch: 15, Training Loss:0.5699761509895325, Acc: 1.0,  Validation Loss:1.580176591873169, Acc:0.375 
+DEBUG:root:Epoch: 16, Training Loss:0.5448164343833923, Acc: 1.0,  Validation Loss:1.555350661277771, Acc:0.35 
+DEBUG:root:Epoch: 17, Training Loss:0.5303244590759277, Acc: 1.0,  Validation Loss:1.525665521621704, Acc:0.35 
+DEBUG:root:Epoch: 18, Training Loss:0.5308393239974976, Acc: 1.0,  Validation Loss:1.4566144943237305, Acc:0.35 
+DEBUG:root:Epoch: 19, Training Loss:0.5316277146339417, Acc: 0.975,  Validation Loss:1.137897253036499, Acc:0.625 
+DEBUG:root:Epoch: 20, Training Loss:0.5635066628456116, Acc: 0.975,  Validation Loss:1.1515297889709473, Acc:0.625 
+DEBUG:root:Epoch: 21, Training Loss:0.49248504638671875, Acc: 1.0,  Validation Loss:1.1883974075317383, Acc:0.625 
+DEBUG:root:Epoch: 22, Training Loss:0.47538524866104126, Acc: 1.0,  Validation Loss:1.1306138038635254, Acc:0.6 
+DEBUG:root:Epoch: 23, Training Loss:0.45990830659866333, Acc: 1.0,  Validation Loss:1.1393113136291504, Acc:0.65 *
+DEBUG:root:Epoch: 24, Training Loss:0.4417409896850586, Acc: 1.0,  Validation Loss:1.1740025281906128, Acc:0.65 
+DEBUG:root:Epoch: 25, Training Loss:0.4323154091835022, Acc: 1.0,  Validation Loss:1.1452975273132324, Acc:0.625 
+DEBUG:root:Epoch: 26, Training Loss:0.4228566884994507, Acc: 1.0,  Validation Loss:1.1550259590148926, Acc:0.65 
+DEBUG:root:Epoch: 27, Training Loss:0.4120139181613922, Acc: 1.0,  Validation Loss:1.1484360694885254, Acc:0.625 
+DEBUG:root:Epoch: 28, Training Loss:0.4063091278076172, Acc: 1.0,  Validation Loss:1.1719388961791992, Acc:0.575 
+DEBUG:root:Epoch: 29, Training Loss:0.40069580078125, Acc: 1.0,  Validation Loss:1.1690621376037598, Acc:0.625 
+DEBUG:root:Epoch: 30, Training Loss:0.3883269429206848, Acc: 1.0,  Validation Loss:1.1736445426940918, Acc:0.625 
+DEBUG:root:Epoch: 31, Training Loss:0.3795953691005707, Acc: 1.0,  Validation Loss:1.1471410989761353, Acc:0.575 
+DEBUG:root:Epoch: 32, Training Loss:0.37174713611602783, Acc: 1.0,  Validation Loss:1.1522550582885742, Acc:0.5 
+DEBUG:root:Epoch: 33, Training Loss:0.3663192391395569, Acc: 1.0,  Validation Loss:1.1849380731582642, Acc:0.6 
+DEBUG:root:Epoch: 34, Training Loss:0.3573494851589203, Acc: 1.0,  Validation Loss:1.1751813888549805, Acc:0.55 
+DEBUG:root:Epoch: 35, Training Loss:0.3509683310985565, Acc: 1.0,  Validation Loss:1.1600099802017212, Acc:0.5 
+DEBUG:root:Epoch: 36, Training Loss:0.3449997305870056, Acc: 1.0,  Validation Loss:1.1234350204467773, Acc:0.6 
+DEBUG:root:Epoch: 37, Training Loss:0.3373383581638336, Acc: 1.0,  Validation Loss:1.15015709400177, Acc:0.6 
+DEBUG:root:Epoch: 38, Training Loss:0.33175379037857056, Acc: 1.0,  Validation Loss:1.1179466247558594, Acc:0.575 
+DEBUG:root:Epoch: 39, Training Loss:0.32582855224609375, Acc: 1.0,  Validation Loss:1.1442649364471436, Acc:0.575 
+DEBUG:root:Epoch: 40, Training Loss:0.31912216544151306, Acc: 1.0,  Validation Loss:1.0621459484100342, Acc:0.625 
+DEBUG:root:Epoch: 41, Training Loss:0.31427496671676636, Acc: 1.0,  Validation Loss:1.0974082946777344, Acc:0.575 
+DEBUG:root:Epoch: 42, Training Loss:0.30983081459999084, Acc: 1.0,  Validation Loss:1.0965776443481445, Acc:0.65 
+DEBUG:root:Epoch: 43, Training Loss:0.3048226833343506, Acc: 1.0,  Validation Loss:1.1127824783325195, Acc:0.6 
+DEBUG:root:Epoch: 44, Training Loss:0.2993563413619995, Acc: 1.0,  Validation Loss:1.1478261947631836, Acc:0.55 
+DEBUG:root:Epoch: 45, Training Loss:0.293567031621933, Acc: 1.0,  Validation Loss:1.077828049659729, Acc:0.6 
+DEBUG:root:Epoch: 46, Training Loss:0.2889527380466461, Acc: 1.0,  Validation Loss:1.0548917055130005, Acc:0.575 
+DEBUG:root:Epoch: 47, Training Loss:0.28518030047416687, Acc: 1.0,  Validation Loss:1.1211680173873901, Acc:0.6 
+DEBUG:root:Epoch: 48, Training Loss:0.27968135476112366, Acc: 1.0,  Validation Loss:1.0987056493759155, Acc:0.525 
+DEBUG:root:Epoch: 49, Training Loss:0.2745246887207031, Acc: 1.0,  Validation Loss:1.1018407344818115, Acc:0.625 
+DEBUG:root:Epoch: 50, Training Loss:0.2704543173313141, Acc: 1.0,  Validation Loss:1.1070784330368042, Acc:0.575 
+DEBUG:root:Epoch: 51, Training Loss:0.2658773362636566, Acc: 1.0,  Validation Loss:1.016383409500122, Acc:0.65 
+DEBUG:root:Epoch: 52, Training Loss:0.2634022831916809, Acc: 1.0,  Validation Loss:1.0879666805267334, Acc:0.6 
+DEBUG:root:Epoch: 53, Training Loss:0.25676190853118896, Acc: 1.0,  Validation Loss:1.0237466096878052, Acc:0.6 
+DEBUG:root:Epoch: 54, Training Loss:0.2541203200817108, Acc: 1.0,  Validation Loss:0.9869993925094604, Acc:0.675 *
+DEBUG:root:Epoch: 55, Training Loss:0.24875278770923615, Acc: 1.0,  Validation Loss:1.0627987384796143, Acc:0.625 
+DEBUG:root:Epoch: 56, Training Loss:0.24511227011680603, Acc: 1.0,  Validation Loss:1.0668734312057495, Acc:0.6 
+DEBUG:root:Epoch: 57, Training Loss:0.24199993908405304, Acc: 1.0,  Validation Loss:1.1060140132904053, Acc:0.625 
+DEBUG:root:Epoch: 58, Training Loss:0.2382766157388687, Acc: 1.0,  Validation Loss:1.0665178298950195, Acc:0.625 
+DEBUG:root:Epoch: 59, Training Loss:0.23437736928462982, Acc: 1.0,  Validation Loss:1.094642162322998, Acc:0.625 
+DEBUG:root:Epoch: 60, Training Loss:0.22979393601417542, Acc: 1.0,  Validation Loss:0.9520462155342102, Acc:0.65 
+DEBUG:root:Epoch: 61, Training Loss:0.2257036566734314, Acc: 1.0,  Validation Loss:1.0280240774154663, Acc:0.55 
+DEBUG:root:Epoch: 62, Training Loss:0.2626616656780243, Acc: 0.975,  Validation Loss:1.0509239435195923, Acc:0.575 
+DEBUG:root:Epoch: 63, Training Loss:0.6539391279220581, Acc: 0.825,  Validation Loss:1.0988757610321045, Acc:0.625 
+DEBUG:root:Epoch: 64, Training Loss:0.42052799463272095, Acc: 0.95,  Validation Loss:0.9518349766731262, Acc:0.6 
+DEBUG:root:Epoch: 65, Training Loss:0.359084814786911, Acc: 0.95,  Validation Loss:1.3043720722198486, Acc:0.625 
+DEBUG:root:Epoch: 66, Training Loss:0.30923131108283997, Acc: 0.975,  Validation Loss:1.1526970863342285, Acc:0.625 
+DEBUG:root:Epoch: 67, Training Loss:0.2651146352291107, Acc: 1.0,  Validation Loss:1.1151231527328491, Acc:0.6 
+DEBUG:root:Epoch: 68, Training Loss:0.25889649987220764, Acc: 1.0,  Validation Loss:1.1090843677520752, Acc:0.625 
+DEBUG:root:Epoch: 69, Training Loss:0.25412070751190186, Acc: 1.0,  Validation Loss:1.1600682735443115, Acc:0.625 
+DEBUG:root:Epoch: 70, Training Loss:0.24833498895168304, Acc: 1.0,  Validation Loss:1.1320688724517822, Acc:0.625 
+DEBUG:root:Epoch: 71, Training Loss:0.24583052098751068, Acc: 1.0,  Validation Loss:1.108843445777893, Acc:0.6 
+DEBUG:root:Epoch: 72, Training Loss:0.24023234844207764, Acc: 1.0,  Validation Loss:1.1682133674621582, Acc:0.6 
+DEBUG:root:Epoch: 73, Training Loss:0.23915666341781616, Acc: 1.0,  Validation Loss:1.1859188079833984, Acc:0.625 
+DEBUG:root:Epoch: 74, Training Loss:0.23523244261741638, Acc: 1.0,  Validation Loss:1.1844698190689087, Acc:0.625 
+DEBUG:root:Epoch: 75, Training Loss:0.23375196754932404, Acc: 1.0,  Validation Loss:1.1247034072875977, Acc:0.625 
+DEBUG:root:Epoch: 76, Training Loss:0.23129893839359283, Acc: 1.0,  Validation Loss:1.2021352052688599, Acc:0.6 
+DEBUG:root:Epoch: 77, Training Loss:0.22773440182209015, Acc: 1.0,  Validation Loss:1.1439958810806274, Acc:0.65 
+DEBUG:root:Epoch: 78, Training Loss:0.2261877804994583, Acc: 1.0,  Validation Loss:1.110374927520752, Acc:0.625 
+DEBUG:root:Epoch: 79, Training Loss:0.22295112907886505, Acc: 1.0,  Validation Loss:1.1903491020202637, Acc:0.6 
+DEBUG:root:Epoch: 80, Training Loss:0.2208579182624817, Acc: 1.0,  Validation Loss:1.1859233379364014, Acc:0.6 
+DEBUG:root:Epoch: 81, Training Loss:0.2178208976984024, Acc: 1.0,  Validation Loss:1.1898473501205444, Acc:0.625 
+DEBUG:root:Epoch: 82, Training Loss:0.21558360755443573, Acc: 1.0,  Validation Loss:1.1357557773590088, Acc:0.6 
+DEBUG:root:Epoch: 83, Training Loss:0.21288573741912842, Acc: 1.0,  Validation Loss:1.1450738906860352, Acc:0.6 
+DEBUG:root:Epoch: 84, Training Loss:0.2114589512348175, Acc: 1.0,  Validation Loss:1.1772887706756592, Acc:0.65 
+DEBUG:root:Epoch: 85, Training Loss:0.20868313312530518, Acc: 1.0,  Validation Loss:1.1863926649093628, Acc:0.625 
+DEBUG:root:Epoch: 86, Training Loss:0.20579694211483002, Acc: 1.0,  Validation Loss:1.1802672147750854, Acc:0.6 
+DEBUG:root:Epoch: 87, Training Loss:0.2047012448310852, Acc: 1.0,  Validation Loss:1.1261112689971924, Acc:0.6 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:22
-DEBUG:root:Accuracy on Test-Set: 40.0% (16 / 40)
+DEBUG:root:Time usage: 0:19:10
+DEBUG:root:Accuracy on Test-Set: 67.5% (27 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[13 18]
- [ 6  3]]
+DEBUG:root:[[26  5]
+ [ 8  1]]
 DEBUG:root:valid_idx:23, test_idx:19
 DEBUG:root:[[21 22 32 29 30 27 16 20 13  4  9  2 17 11  7 23]
  [ 1 24 10  5  6 14 31 26 28  3 12 15 25 18  8 19]]
-DEBUG:root:args:['0.1', 'True']
+DEBUG:root:args:['0.1', 'False']
 DEBUG:root:label_1 percent:0.355
 DEBUG:root:train_obs:0.355
 DEBUG:root:label_1 percent:0.6
 DEBUG:root:label_1 percent:0.3
-DEBUG:root:test:(40, 8064, 32), valid:(40, 8064, 32), train:(1200, 8064, 32)
+DEBUG:root:test:(40, 2, 8063, 32), valid:(40, 2, 8063, 32), train:(1200, 2, 8063, 32)
 DEBUG:root:layer conv2: Tensor("y_classifier/layer2/Relu:0", shape=(?, 1, 504, 36), dtype=float32)
 DEBUG:root:layer flat: Tensor("y_classifier/Reshape:0", shape=(?, 18144), dtype=float32)
 DEBUG:root:num_features: 18144
@@ -984,48 +1065,47 @@ DEBUG:root:feature_vec: Tensor("y_classifier/add_1:0", shape=(?, 50), dtype=floa
 DEBUG:root:Tensor("y_classifier/dropout/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Tensor("y_classifier/dropout_1/mul:0", shape=(?, 100), dtype=float32)
 DEBUG:root:Training CONV:  valid_idx:23, test_idx19 batch_norm:True, keep_prob:0.9
-DEBUG:root:Epoch: 1, Training Loss:1.4913054704666138, Acc: 0.675,  Validation Loss:1.588308334350586, Acc:0.55 *
-DEBUG:root:Epoch: 2, Training Loss:1.3843603134155273, Acc: 0.825,  Validation Loss:1.473429560661316, Acc:0.6 *
-DEBUG:root:Epoch: 3, Training Loss:1.2942482233047485, Acc: 0.825,  Validation Loss:1.4620482921600342, Acc:0.6 
-DEBUG:root:Epoch: 4, Training Loss:1.1750319004058838, Acc: 0.825,  Validation Loss:1.422898530960083, Acc:0.575 
-DEBUG:root:Epoch: 5, Training Loss:1.034765601158142, Acc: 0.925,  Validation Loss:1.408808946609497, Acc:0.5 
-DEBUG:root:Epoch: 6, Training Loss:0.9730662703514099, Acc: 0.875,  Validation Loss:1.4116899967193604, Acc:0.425 
-DEBUG:root:Epoch: 7, Training Loss:0.8848131895065308, Acc: 0.95,  Validation Loss:1.3792080879211426, Acc:0.4 
-DEBUG:root:Epoch: 8, Training Loss:0.8062838315963745, Acc: 0.925,  Validation Loss:1.3795573711395264, Acc:0.375 
-DEBUG:root:Epoch: 9, Training Loss:0.7867792248725891, Acc: 0.95,  Validation Loss:1.3186430931091309, Acc:0.475 
-DEBUG:root:Epoch: 10, Training Loss:0.7262084484100342, Acc: 1.0,  Validation Loss:1.3395330905914307, Acc:0.35 
-DEBUG:root:Epoch: 11, Training Loss:0.655963659286499, Acc: 1.0,  Validation Loss:1.440240502357483, Acc:0.4 
-DEBUG:root:Epoch: 12, Training Loss:0.6236394047737122, Acc: 1.0,  Validation Loss:1.4024913311004639, Acc:0.425 
-DEBUG:root:Epoch: 13, Training Loss:0.6109310388565063, Acc: 1.0,  Validation Loss:1.345181941986084, Acc:0.3 
-DEBUG:root:Epoch: 14, Training Loss:0.5673948526382446, Acc: 1.0,  Validation Loss:1.3735727071762085, Acc:0.425 
-DEBUG:root:Epoch: 15, Training Loss:0.5432987809181213, Acc: 1.0,  Validation Loss:1.3499149084091187, Acc:0.425 
-DEBUG:root:Epoch: 16, Training Loss:0.5253397226333618, Acc: 1.0,  Validation Loss:1.2898123264312744, Acc:0.45 
-DEBUG:root:Epoch: 17, Training Loss:0.5038576126098633, Acc: 1.0,  Validation Loss:1.3284757137298584, Acc:0.425 
-DEBUG:root:Epoch: 18, Training Loss:0.48669350147247314, Acc: 1.0,  Validation Loss:1.304642915725708, Acc:0.375 
-DEBUG:root:Epoch: 19, Training Loss:0.47680526971817017, Acc: 1.0,  Validation Loss:1.3066424131393433, Acc:0.4 
-DEBUG:root:Epoch: 20, Training Loss:0.46533000469207764, Acc: 1.0,  Validation Loss:1.3402814865112305, Acc:0.425 
-DEBUG:root:Epoch: 21, Training Loss:0.45888009667396545, Acc: 1.0,  Validation Loss:1.4264453649520874, Acc:0.425 
-DEBUG:root:Epoch: 22, Training Loss:0.4399424195289612, Acc: 1.0,  Validation Loss:1.573603868484497, Acc:0.4 
-DEBUG:root:Epoch: 23, Training Loss:0.42809543013572693, Acc: 1.0,  Validation Loss:1.4986510276794434, Acc:0.4 
-DEBUG:root:Epoch: 24, Training Loss:0.42504966259002686, Acc: 1.0,  Validation Loss:1.4292253255844116, Acc:0.425 
-DEBUG:root:Epoch: 25, Training Loss:0.5056240558624268, Acc: 0.95,  Validation Loss:1.8617435693740845, Acc:0.4 
-DEBUG:root:Epoch: 26, Training Loss:0.43441522121429443, Acc: 1.0,  Validation Loss:1.8625621795654297, Acc:0.4 
-DEBUG:root:Epoch: 27, Training Loss:0.42249271273612976, Acc: 1.0,  Validation Loss:1.8167332410812378, Acc:0.4 
-DEBUG:root:Epoch: 28, Training Loss:0.4026441276073456, Acc: 1.0,  Validation Loss:1.9601621627807617, Acc:0.4 
-DEBUG:root:Epoch: 29, Training Loss:0.400901198387146, Acc: 1.0,  Validation Loss:1.72365140914917, Acc:0.375 
-DEBUG:root:Epoch: 30, Training Loss:0.3827574551105499, Acc: 1.0,  Validation Loss:1.3817867040634155, Acc:0.4 
-DEBUG:root:Epoch: 31, Training Loss:0.3759074807167053, Acc: 1.0,  Validation Loss:1.2509479522705078, Acc:0.5 
-DEBUG:root:Epoch: 32, Training Loss:0.361613929271698, Acc: 1.0,  Validation Loss:1.4354043006896973, Acc:0.375 
-DEBUG:root:Epoch: 33, Training Loss:0.3525592088699341, Acc: 1.0,  Validation Loss:1.477522850036621, Acc:0.4 
-DEBUG:root:Epoch: 34, Training Loss:0.347027987241745, Acc: 1.0,  Validation Loss:1.5094430446624756, Acc:0.4 
-DEBUG:root:Epoch: 35, Training Loss:0.33772972226142883, Acc: 1.0,  Validation Loss:1.5297430753707886, Acc:0.375 
+DEBUG:root:Epoch: 1, Training Loss:1.475137710571289, Acc: 0.65,  Validation Loss:1.5339066982269287, Acc:0.675 *
+DEBUG:root:Epoch: 2, Training Loss:1.319685935974121, Acc: 0.85,  Validation Loss:1.6392238140106201, Acc:0.4 
+DEBUG:root:Epoch: 3, Training Loss:1.2463130950927734, Acc: 0.875,  Validation Loss:1.576685905456543, Acc:0.4 
+DEBUG:root:Epoch: 4, Training Loss:1.0746676921844482, Acc: 0.9,  Validation Loss:1.5131306648254395, Acc:0.35 
+DEBUG:root:Epoch: 5, Training Loss:0.9795864820480347, Acc: 0.95,  Validation Loss:1.4379587173461914, Acc:0.45 
+DEBUG:root:Epoch: 6, Training Loss:0.8321894407272339, Acc: 1.0,  Validation Loss:1.432248830795288, Acc:0.4 
+DEBUG:root:Epoch: 7, Training Loss:1.0958099365234375, Acc: 0.85,  Validation Loss:1.386728286743164, Acc:0.6 
+DEBUG:root:Epoch: 8, Training Loss:0.8138117790222168, Acc: 0.975,  Validation Loss:1.359020709991455, Acc:0.575 
+DEBUG:root:Epoch: 9, Training Loss:0.7556244134902954, Acc: 0.975,  Validation Loss:1.3773536682128906, Acc:0.425 
+DEBUG:root:Epoch: 10, Training Loss:0.6955777406692505, Acc: 0.975,  Validation Loss:1.3537828922271729, Acc:0.45 
+DEBUG:root:Epoch: 11, Training Loss:0.6529473662376404, Acc: 1.0,  Validation Loss:1.3449937105178833, Acc:0.5 
+DEBUG:root:Epoch: 12, Training Loss:0.6319111585617065, Acc: 1.0,  Validation Loss:1.358628273010254, Acc:0.55 
+DEBUG:root:Epoch: 13, Training Loss:0.5935471653938293, Acc: 1.0,  Validation Loss:1.3601744174957275, Acc:0.575 
+DEBUG:root:Epoch: 14, Training Loss:0.5742335319519043, Acc: 1.0,  Validation Loss:1.3715317249298096, Acc:0.6 
+DEBUG:root:Epoch: 15, Training Loss:0.5556890964508057, Acc: 1.0,  Validation Loss:1.3367085456848145, Acc:0.575 
+DEBUG:root:Epoch: 16, Training Loss:0.5347772836685181, Acc: 1.0,  Validation Loss:1.3468542098999023, Acc:0.6 
+DEBUG:root:Epoch: 17, Training Loss:0.5241698026657104, Acc: 1.0,  Validation Loss:1.3199071884155273, Acc:0.55 
+DEBUG:root:Epoch: 18, Training Loss:0.5093224048614502, Acc: 1.0,  Validation Loss:1.3303288221359253, Acc:0.425 
+DEBUG:root:Epoch: 19, Training Loss:0.4977903664112091, Acc: 1.0,  Validation Loss:1.3907856941223145, Acc:0.4 
+DEBUG:root:Epoch: 20, Training Loss:0.495687872171402, Acc: 1.0,  Validation Loss:1.7240594625473022, Acc:0.4 
+DEBUG:root:Epoch: 21, Training Loss:0.509075403213501, Acc: 1.0,  Validation Loss:1.8019460439682007, Acc:0.375 
+DEBUG:root:Epoch: 22, Training Loss:0.47361302375793457, Acc: 1.0,  Validation Loss:1.3296061754226685, Acc:0.4 
+DEBUG:root:Epoch: 23, Training Loss:0.4538794457912445, Acc: 1.0,  Validation Loss:1.321634292602539, Acc:0.4 
+DEBUG:root:Epoch: 24, Training Loss:0.4552791118621826, Acc: 1.0,  Validation Loss:1.264121651649475, Acc:0.4 
+DEBUG:root:Epoch: 25, Training Loss:0.4326522946357727, Acc: 1.0,  Validation Loss:1.243657112121582, Acc:0.425 
+DEBUG:root:Epoch: 26, Training Loss:0.41777101159095764, Acc: 1.0,  Validation Loss:1.2841827869415283, Acc:0.4 
+DEBUG:root:Epoch: 27, Training Loss:0.40811026096343994, Acc: 1.0,  Validation Loss:1.4110982418060303, Acc:0.4 
+DEBUG:root:Epoch: 28, Training Loss:0.39788365364074707, Acc: 1.0,  Validation Loss:1.3502644300460815, Acc:0.35 
+DEBUG:root:Epoch: 29, Training Loss:0.3880595862865448, Acc: 1.0,  Validation Loss:1.2774592638015747, Acc:0.45 
+DEBUG:root:Epoch: 30, Training Loss:0.38046795129776, Acc: 1.0,  Validation Loss:1.3193176984786987, Acc:0.4 
+DEBUG:root:Epoch: 31, Training Loss:0.373719722032547, Acc: 1.0,  Validation Loss:1.2703527212142944, Acc:0.475 
+DEBUG:root:Epoch: 32, Training Loss:0.36438634991645813, Acc: 1.0,  Validation Loss:1.2783031463623047, Acc:0.425 
+DEBUG:root:Epoch: 33, Training Loss:0.35680097341537476, Acc: 1.0,  Validation Loss:1.2891184091567993, Acc:0.425 
+DEBUG:root:Epoch: 34, Training Loss:0.34964898228645325, Acc: 1.0,  Validation Loss:1.282444953918457, Acc:0.375 
 DEBUG:root:No improvement found in a while, stopping optimization.
-DEBUG:root:Time usage: 0:05:25
-DEBUG:root:Accuracy on Test-Set: 47.5% (19 / 40)
+DEBUG:root:Time usage: 0:07:34
+DEBUG:root:Accuracy on Test-Set: 52.5% (21 / 40)
 DEBUG:root:Confusion Matrix:
-DEBUG:root:[[15 13]
+DEBUG:root:[[17 11]
  [ 8  4]]
-DEBUG:root:Results acc:0.5609375, auc:0.5951171875000001, f1_score:0.505491698810249
-DEBUG:root:[0.65, 0.75, 0.575, 0.475, 0.575, 0.6, 0.475, 0.55, 0.5, 0.5, 0.875, 0.475, 0.7, 0.4, 0.4, 0.475]
-DEBUG:root:[0.61624999999999996, 0.86812500000000004, 0.61062499999999997, 0.56312499999999999, 0.57437499999999997, 0.62812500000000004, 0.52874999999999994, 0.48249999999999993, 0.59625000000000006, 0.51624999999999999, 0.91749999999999998, 0.47687499999999999, 0.64499999999999991, 0.41500000000000004, 0.38499999999999995, 0.698125]
-DEBUG:root:[0.53515625000000011, 0.75, 0.41984126984126985, 0.40254237288135597, 0.57420262664165111, 0.59047619047619049, 0.30593220338983051, 0.52000000000000002, 0.33333333333333331, 0.54120879120879106, 0.81666666666666665, 0.38649885583524018, 0.63823529411764712, 0.33125000000000004, 0.44800000000000012, 0.49452332657200815]
+DEBUG:root:Results acc:0.609375, auc:0.6092187499999999, f1_score:0.5443067709966571
+DEBUG:root:[0.625, 0.675, 0.575, 0.6, 0.55, 0.625, 0.475, 0.5, 0.5, 0.575, 0.875, 0.625, 0.675, 0.675, 0.675, 0.525]
+DEBUG:root:[0.66187499999999999, 0.76437499999999992, 0.60812500000000003, 0.56312499999999999, 0.54437499999999994, 0.68500000000000005, 0.48062500000000002, 0.56499999999999995, 0.47499999999999998, 0.54625000000000001, 0.88624999999999998, 0.55625000000000002, 0.53875000000000006, 0.66062499999999991, 0.68625000000000003, 0.52562500000000001]
+DEBUG:root:[0.48076923076923084, 0.70522388059701502, 0.41984126984126985, 0.59999999999999998, 0.4484326018808778, 0.51923076923076916, 0.42423935091277898, 0.37304075235109713, 0.33333333333333331, 0.59455205811138023, 0.81666666666666665, 0.56178489702517154, 0.69981818181818178, 0.54402985074626864, 0.64999999999999991, 0.53794549266247371]
